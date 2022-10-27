@@ -1,0 +1,36 @@
+h2 {
+    font-family: var(--fontTitle);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+form {
+    background-color: var(--backgroundProfil);
+    font-family: var(--fontText);
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+.form-userInscription {
+    display: grid;
+    margin: 20px;
+}
+.form-userInscription button {
+    width: 100px ;
+}
+.submit, #activationCode{
+    width: 100px;
+}
+
+#firstname, #lastname, #telephone, #firstnameKid{
+    width: 200px;
+}
+
+#birthdayKid{
+    width: 110px;
+}
+
+.block-userInscription {
+    border-bottom: solid 1px black;
+    padding-bottom: 10px;
+}
