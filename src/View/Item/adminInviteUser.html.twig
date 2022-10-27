@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <form action="invite" method="post">
+        <label for="invitedEmail">Veuillez renseigner l'email de la personne que vous souhaitez inviter</label>
+        <input type="email" name="invitedEmail" id="invitedEmail" required>
+        <button>Envoyer l'email d'invitation</button>
+    </form>
+    {% block errors %}
+    {% endblock %}
+    {% block invitation_success %}
+    {% endblock %}
+{% endblock %}
