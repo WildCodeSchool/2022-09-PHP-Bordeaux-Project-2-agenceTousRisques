@@ -7,3 +7,16 @@
     --fontText : 'Fuzzy Bubbles', cursive;
     --backgroundProfil : #FAD7D4;
 }
+
+h1 {
+    font-family: var(--fontTitleSite);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.logoSite {
+    height: 40vh;
+    width: auto;
+    border-radius: 20%;
+}

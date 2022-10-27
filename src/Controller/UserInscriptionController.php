@@ -15,6 +15,9 @@ class UserInscriptionController extends AbstractController
 
             $userManager = new UserManager();
             $userManager->insert($user);
+            $id = $userManager->getUserID($user);
+            $userManager->insertKid($id, $user);
+
 
             header('Location:/public/index.php');
             return null;

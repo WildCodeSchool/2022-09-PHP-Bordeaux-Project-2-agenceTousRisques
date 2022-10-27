@@ -28,12 +28,17 @@ VALUES
         $statementUser->bindValue('telephone', $user['telephone'], PDO::PARAM_INT);
         $statementUser->bindValue('address', $user['address'], PDO::PARAM_STR);
         $statementUser->execute();
+    }
 
-
+    public function getUserID($user)
+    {
         $statementUserId = $this->pdo->query("SELECT userID FROM User
               WHERE email = '" . $user['emailUserInscription'] . "'");
-        $id = $statementUserId->fetch();
+        return $statementUserId->fetch();
+    }
 
+    public function insertKid($id, $user)
+    {
         $statementKid = $this->pdo->prepare("INSERT INTO Kid
     (`userID`,`firstname`, `birthday` , `specs`)
 VALUES
