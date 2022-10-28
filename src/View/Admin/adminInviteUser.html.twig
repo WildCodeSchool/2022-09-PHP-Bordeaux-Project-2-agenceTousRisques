@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'Admin/index.html.twig' %}
 
 {% block content %}
 
@@ -8,7 +8,12 @@
         <button>Envoyer l'email d'invitation</button>
     </form>
     {% block errors %}
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
     {% endblock %}
     {% block invitation_success %}
+        {{ invitationSuccess }}
+        {{ code }}
     {% endblock %}
 {% endblock %}

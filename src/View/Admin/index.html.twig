@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}GESTION{% endblock %}
+
+    {% block content %}
+        <h1>GESTION ADMIN</h1>
+        <h3>Inviter un nouvel utilisateur</h3>
+{% include 'Admin/adminInviteUser.html.twig' %}
+    {% endblock %}

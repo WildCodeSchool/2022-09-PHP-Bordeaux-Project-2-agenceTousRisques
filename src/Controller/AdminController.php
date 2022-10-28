@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
+use App\Model\Admin;
+
 class AdminController extends AbstractController
 {
-    public function inviteUserForm()
+    public function administrationPanel()
     {
-        return $this->twig->render('Item/adminInviteUser.html.twig');
+        return $this->twig->render('Admin/index.html.twig');
     }
 
     public function validateEmail($email): array|string
@@ -21,17 +23,21 @@ class AdminController extends AbstractController
         return $errors;
     }
 
-    public function invite()
+    public function inviteUser()
     {
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $invitedEmail = $_POST['invitedEmail'];
             if (empty($this->validateEmail($invitedEmail))) {
                 $invitationSuccess = $invitedEmail . 'a été invité avec succès !';
-                return $this->twig->render('Item/userGotInvited.html.twig', [
-                    'invitationSuccess' => $invitationSuccess
+                $admin = new Admin();
+                $activationCode = $admin->codeGenerator();
+                $admin->sendEmail($invitedEmail, $activationCode);
+                return $this->twig->render('Admin/index.html.twig', [
+                    'invitationSuccess' => $invitationSuccess,
+                    'code' => $activationCode,
                 ]);
             } else {
-                return $this->twig->render('Item/userGotInvited.html.twig', [
+                return $this->twig->render('Admin/index.html.twig', [
                     'errors' => $this->validateEmail($invitedEmail)
                 ]);
             }
