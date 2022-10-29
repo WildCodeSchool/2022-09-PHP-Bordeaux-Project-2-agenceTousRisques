@@ -10,9 +10,11 @@
 
 h1 {
     font-family: var(--fontTitleSite);
-    font-size: 40px;
+    font-size: 44px;
     display: flex;
     justify-content: center;
+    color: #FAD7D4;
+    text-shadow: 1px 1px 3px black;
 }
 
 .logoSite {
