@@ -30,6 +30,11 @@ VALUES
         $statementUser->execute();
     }
 
+    /**
+     * @param $user
+     * @return mixed
+     * Récupération id parent
+     */
     public function getUserID($user)
     {
         $statementUserId = $this->pdo->query("SELECT userID FROM User
@@ -37,6 +42,12 @@ VALUES
         return $statementUserId->fetch();
     }
 
+    /**
+     * @param $id
+     * @param $user
+     * @return void
+     * Insertion enfant liè à l'Id parent
+     */
     public function insertKid($id, $user)
     {
         $statementKid = $this->pdo->prepare("INSERT INTO Kid
@@ -48,5 +59,42 @@ VALUES
         $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid']), PDO::PARAM_STR);
         $statementKid->bindValue('specs', htmlspecialchars($user['commentKid']), PDO::PARAM_STR);
         $statementKid->execute();
+    }
+
+    /**
+     * @param $user
+     * @return array
+     */
+    public function validFormCompletedUser($user): array
+    {
+        $errors = [];
+        if (!isset($user['password']) || (empty(trim($user['password'])))) {
+            $errors[] = 'Mot de passe obligatoire';
+        }
+        if ($user['password'] != $user['password2']) {
+            $errors[] = 'Mots de passe différents';
+        }
+        if (!isset($user['firstname']) || (empty(trim($user['firstname'])))) {
+            $errors[] = 'Prénom obligatoire';
+        }
+        if (!isset($user['lastname']) || (empty(trim($user['lastname'])))) {
+            $errors[] = 'Nom obligatoire';
+        }
+        if (!isset($user['telephone']) || (empty(trim($user['telephone'])))) {
+            $errors[] = 'Telephone obligatoire';
+        }
+        if (!isset($user['address']) || (empty(trim($user['address'])))) {
+            $errors[] = 'Adresse obligatoire';
+        }
+        if (!isset($user['firstnameKid']) || (empty(trim($user['firstnameKid'])))) {
+            $errors[] = 'Prénom enfant obligatoire';
+        }
+        if (!isset($user['birthdayKid']) || (empty(trim($user['birthdayKid'])))) {
+            $errors[] = 'Date de naissance enfant obligatoire';
+        }
+        if (!isset($user['commentKid']) || (empty(trim($user['commentKid'])))) {
+            $errors[] = 'Commentaires enfant obligatoire';
+        }
+        return $errors;
     }
 }
