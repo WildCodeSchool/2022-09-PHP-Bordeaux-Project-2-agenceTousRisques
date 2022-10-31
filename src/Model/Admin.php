@@ -6,9 +6,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-////Load Composer's autoloader
-//require 'vendor/autoload.php';
-
 class Admin extends AbstractManager
 {
     public function codeGenerator(): string
@@ -37,14 +34,14 @@ class Admin extends AbstractManager
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-            $mail->Username = 'nounouentrenous@gmail.com';                     //SMTP username
-            $mail->Password = 'ktevyoxcrqsniwsb';                               //SMTP password
+            $mail->Username = SMTP_USERNAME;                     //SMTP username
+            $mail->Password = SMTP_PASSWORD;                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port = 465;
             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('nounouentrenous@gmail.com');
+            $mail->setFrom(SMTP_USERNAME);
             $mail->addAddress("$email");
             //Add a recipient
             //Content
