@@ -17,7 +17,13 @@ class UserInscriptionController extends AbstractController
                 $userManager->insertUser($user);
                 $id = $userManager->getUserID($user);
                 $userManager->insertKid($id, $user);
-                header('Location:/public/index.php');
+                if (!empty($user['firstnameKid2']) && !empty($user['birthdayKid2']) && !empty($user['commentKid2'])) {
+                    $userManager->insertKid2($id, $user);
+                }
+                if (!empty($user['firstnameKid3']) && !empty($user['birthdayKid3']) && !empty($user['commentKid3'])) {
+                    $userManager->insertKid3($id, $user);
+                }
+                header('Location:/public/home');
                 return null;
             } else {
                 foreach ($errors as $error) {
