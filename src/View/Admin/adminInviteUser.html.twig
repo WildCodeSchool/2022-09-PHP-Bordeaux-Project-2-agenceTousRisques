@@ -1,19 +1,37 @@
 {% extends 'Admin/index.html.twig' %}
 
 {% block content %}
+    <div class="invite-user-container">
+        <h3 class="titleInviteUser">Inviter un nouvel utilisateur</h3>
 
-    <form action="invite" method="post">
-        <label for="invitedEmail">Veuillez renseigner l'email de la personne que vous souhaitez inviter</label>
-        <input type="email" name="invitedEmail" id="invitedEmail" required>
-        <button>Envoyer l'email d'invitation</button>
-    </form>
-    {% block errors %}
-        {% for error in errors %}
-            <li>{{ error }}</li>
-        {% endfor %}
-    {% endblock %}
-    {% block invitation_success %}
-        {{ invitationSuccess }}
-        {{ code }}
-    {% endblock %}
+        <form action="invite" method="post" class="admin-invite-form">
+            <label class="label-form-email" for="invitedEmail">Veuillez renseigner l'adresse email de la personne que
+                vous
+                souhaitez inviter</label>
+            <input type="email" name="invitedEmail" id="invitedEmail" required>
+            <br>
+            {% block errors %}
+                {% for error in errors %}
+                    <li class="invite-user-errors">{{ error }}</li>
+                {% endfor %}
+            {% endblock %}
+            {% block invitation_success %}
+                {% if email %}
+                <p class="invite-success-message">L'invitation a bien été envoyé à l'adresse
+                    <br>
+                    <span>{{ email }}</span></sp>
+                    <br>
+                    Un nouvel arrivant est en route !
+                </p>
+                {% endif %}
+            {% endblock %}
+            <button class="invitationButton">
+                <span>Envoyer l'email d'invitation</span>
+                {#                <svg width="13px" height="10px" viewBox="0 0 13 10"> #}
+                {#                    <path d="M1,5 L11,5"></path> #}
+                {#                    <polyline points="8 1 12 5 8 9"></polyline> #}
+                {#                </svg> #}
+            </button>
+        </form>
+    </div>
 {% endblock %}

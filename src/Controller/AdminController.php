@@ -28,12 +28,11 @@ class AdminController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $invitedEmail = $_POST['invitedEmail'];
             if (empty($this->validateEmail($invitedEmail))) {
-                $invitationSuccess = $invitedEmail . 'a été invité avec succès !';
                 $admin = new Admin();
                 $activationCode = $admin->codeGenerator();
                 $admin->sendEmail($invitedEmail, $activationCode);
                 return $this->twig->render('Admin/index.html.twig', [
-                    'invitationSuccess' => $invitationSuccess,
+                    'email' => $invitedEmail,
                     'code' => $activationCode,
                 ]);
             } else {

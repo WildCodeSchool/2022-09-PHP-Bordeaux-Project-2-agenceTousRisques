@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 
 class Admin extends AbstractManager
 {
-    public function codeGenerator(): int
+    public function codeGenerator(): string
     {
         $query = 'SELECT activationCode FROM user';
         $statement = $this->pdo->query($query);
@@ -20,7 +20,7 @@ class Admin extends AbstractManager
         foreach ($codes as $code) {
             $listOfCode[] = $code['activationCode'];
         }
-        $activationCode = rand(0, 999999);
+        $activationCode = bin2hex(random_bytes(5));
         if (in_array($activationCode, $listOfCode)) {
             return $this->codeGenerator();
         } else {
@@ -37,21 +37,21 @@ class Admin extends AbstractManager
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-            $mail->Username = 'lassalle.jordan@gmail.com';                     //SMTP username
-            $mail->Password = 'exkibcfswowsicvp';                               //SMTP password
+            $mail->Username = 'nounouentrenous@gmail.com';                     //SMTP username
+            $mail->Password = 'ktevyoxcrqsniwsb';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port = 465;
             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('lassalle.jordan@gmail.com');
+            $mail->setFrom('nounouentrenous@gmail.com');
             $mail->addAddress("$email");
             //Add a recipient
             //Content
             $mail->CharSet = 'UTF-8';
             include('assets/mail_content.php');
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Here is the subject';
+            $mail->Subject = 'Invitation à rejoindre notre communauté !';
             $link = "http://localhost:8000/userInscription?code=$code&email=$email";
             $mail->Body = "<h1> Vous avez été invité à rejoindre la communauté des nounous entre nous !</h1>
 <br><br>

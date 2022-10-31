@@ -1,9 +1,9 @@
 {% extends 'layout.html.twig' %}
-
+{%  block stylesheet %} <link rel="stylesheet" href="/assets/css/adminInviteUser.css"> {% endblock %}
 {% block title %}GESTION{% endblock %}
 
     {% block content %}
-        <h1>GESTION ADMIN</h1>
-        <h3>Inviter un nouvel utilisateur</h3>
+        <h2 class="titleAdminPage">GESTION ADMIN</h2>
+{% include 'Admin/adminHeader.html.twig' %}
 {% include 'Admin/adminInviteUser.html.twig' %}
     {% endblock %}
