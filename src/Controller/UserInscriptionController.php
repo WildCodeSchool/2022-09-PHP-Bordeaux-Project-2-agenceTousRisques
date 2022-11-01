@@ -23,7 +23,7 @@ class UserInscriptionController extends AbstractController
                 if (!empty($user['firstnameKid3']) && !empty($user['birthdayKid3']) && !empty($user['commentKid3'])) {
                     $userManager->insertKid3($id, $user);
                 }
-                header('Location:/public/home');
+                header('Location:/home');
                 return null;
             } else {
                 foreach ($errors as $error) {

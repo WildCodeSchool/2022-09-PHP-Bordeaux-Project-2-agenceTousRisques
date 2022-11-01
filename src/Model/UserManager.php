@@ -19,7 +19,7 @@ VALUES
     (:email, :password , :avatar ,:activationCode, :isAdmin , :firstname , :lastname , :telephone , :address)");
 
         $statementUser->bindValue('email', htmlspecialchars($_GET['email']), FILTER_VALIDATE_EMAIL);
-        $statementUser->bindValue('password', htmlspecialchars($user['password']), PDO::PARAM_STR);
+        $statementUser->bindValue('password', password_hash($user['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
         $statementUser->bindValue('avatar', 1, PDO::PARAM_INT);
         $statementUser->bindValue('activationCode', htmlspecialchars($_GET['code']), PDO::PARAM_INT);
         $statementUser->bindValue('isAdmin', false, PDO::PARAM_BOOL);
