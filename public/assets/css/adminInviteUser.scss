@@ -1,14 +1,11 @@
-body {
-    width: 90%;
-    margin: auto;
-}
-
 .invite-user-container {
     background-color: var(--backgroundProfil);
     border-radius: 10px;
     box-shadow: 1px 1px 5px gray;
     display: flex;
     flex-direction: column;
+    width:90%;
+    margin:auto;
 }
 
 .titleInviteUser {

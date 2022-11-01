@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fuzzy+Bubbles&family=Gochi+Hand&display=swap');
+
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --fontTitleSite : 'Bubblegum Sans', cursive;
-    --fontTitle : 'Gochi Hand', cursive;
-    --fontText : 'Fuzzy Bubbles', cursive;
-    --backgroundProfil : #FAD7D4;
-    --backgroundButton:#FAA07D;
+body {
+    position: fixed;
+}
+
+:root {
+    --fontTitleSite: 'Bubblegum Sans', cursive;
+    --fontTitle: 'Gochi Hand', cursive;
+    --fontText: 'Fuzzy Bubbles', cursive;
+    --backgroundProfil: #FAD7D4;
+    --backgroundButton: #FAA07D;
 }
