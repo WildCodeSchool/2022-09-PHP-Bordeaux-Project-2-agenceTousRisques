@@ -4,19 +4,19 @@
     justify-content: center;
     width: 100vw;
     position: relative;
+    background-color: var(--bleuVert);
 }
 
 .admin-avatar {
     height: 220px;
     width: 220px;
-    border-radius: 40px;
 }
 
 .avatar-container {
     position: relative;
-    background-color: var(--backgroundProfil);
-    border-radius: 50px;
+    background-color: var(--bleu);
     box-shadow: 1px 1px 3px black;
+    border-radius:40px;
 
     &::before {
         content: "";
@@ -43,7 +43,7 @@
 
 .admin-firstname, .admin-lastname {
     position: absolute;
-    background-color: var(--backgroundProfil);
+    background-color: var(--rosePastel);
     box-shadow: 1px 1px 3px black;
     font-family: var(--fontTitle);
     border-radius: 20px;
@@ -65,7 +65,7 @@
 .img-gestion-link {
     height: 50px;
     width: 50px;
-    background-color:var(--backgroundButton);
+    background-color:var(--saumonPastel);
     border-radius: 50px;
 }
 .admin-gestion-link {
@@ -137,7 +137,7 @@
         margin-bottom: 5px;
         position: relative;
 
-        background: var(--backgroundButton);
+        background: var(--saumon);
         border-radius: 3px;
 
         z-index: 1;

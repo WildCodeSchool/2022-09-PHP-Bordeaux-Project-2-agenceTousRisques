@@ -1,14 +1,14 @@
  <div class="invite-user-container">
-        <h3 class="titleInviteUser">Inviter un nouvel utilisateur</h3>
+        <h3 class="title-invite-user">Inviter un nouvel utilisateur</h3>
 
         <form action="invite" method="post" class="admin-invite-form">
             <label class="label-form-email" for="invitedEmail">Veuillez renseigner l'adresse email de la personne que
                 vous
                 souhaitez inviter</label>
-            <input type="email" name="invitedEmail" id="invitedEmail" required>
+            <input type="email" name="invited-email" id="invited-email" required>
             <br>
-            {% block errors %}
-                {% for error in errors %}
+                {% block errors %}
+                    {% for error in errors %}
                     <li class="invite-user-errors">{{ error }}</li>
                 {% endfor %}
             {% endblock %}
@@ -22,7 +22,7 @@
                 </p>
                 {% endif %}
             {% endblock %}
-            <button class="invitationButton">
+            <button class="invitation-button">
                 <span>Envoyer l'email d'invitation</span>
                 {#                <svg width="13px" height="10px" viewBox="0 0 13 10"> #}
                 {#                    <path d="M1,5 L11,5"></path> #}
