@@ -11,19 +11,14 @@ class UserInscriptionController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = array_map('trim', $_POST);
             $userManager = new UserManager();
-            $userManager->validFormCompletedUser($user);
-
+            $errors = $userManager->validFormCompletedUser($user);
 
             if (empty($errors)) {
                 $userManager->insertUser($user);
-                $id = $userManager->getUserID($user);
+                $id = $userManager->getUserID();
                 $userManager->insertKid($id, $user);
-                if (!empty($user['firstnameKid2']) && !empty($user['birthdayKid2']) && !empty($user['commentKid2'])) {
-                    $userManager->insertKid2($id, $user);
-                }
-                if (!empty($user['firstnameKid3']) && !empty($user['birthdayKid3']) && !empty($user['commentKid3'])) {
-                    $userManager->insertKid3($id, $user);
-                }
+                $userManager->insertKid2($id, $user);
+                $userManager->insertKid3($id, $user);
                 header('Location:/home');
                 return null;
             } else {

@@ -31,23 +31,17 @@ VALUES
     }
 
     /**
-     * @param $user
      * @return mixed
      * Récupération id parent
      */
-    public function getUserID($user): array
+    public function getUserID(): mixed
     {
         $statementUserId = $this->pdo->query("SELECT userID FROM User
               WHERE email = '" . htmlspecialchars($_GET['email']) . "'");
         return $statementUserId->fetch();
     }
 
-    /**
-     * @param $id
-     * @param $user
-     * @return void
-     * Insertion enfant lié à l'Id parent
-     */
+
     public function insertKid($id, $user): void
     {
         $statementKid = $this->pdo->prepare("INSERT INTO Kid
@@ -61,48 +55,39 @@ VALUES
         $statementKid->execute();
     }
 
-    /**
-     * @param $id
-     * @param $user
-     * @return void
-     * Insertion enfant2 lié à l'Id parent
-     */
+
     public function insertKid2($id, $user): void
     {
-        $statementKid = $this->pdo->prepare("INSERT INTO Kid
+        if (!empty($user['firstnameKid2']) && !empty($user['birthdayKid2']) && !empty($user['commentKid2'])) {
+            $statementKid = $this->pdo->prepare("INSERT INTO Kid
     (`userID`,`firstname`, `birthday` , `specs`)
 VALUES
     (:userID , :firstname, :birthday , :specs)");
-        $statementKid->bindValue('userID', htmlspecialchars($id['userID']), PDO::PARAM_INT);
-        $statementKid->bindValue('firstname', htmlspecialchars($user['firstnameKid2']), PDO::PARAM_STR);
-        $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid2']), PDO::PARAM_STR);
-        $statementKid->bindValue('specs', htmlspecialchars($user['commentKid2']), PDO::PARAM_STR);
-        $statementKid->execute();
+            $statementKid->bindValue('userID', htmlspecialchars($id['userID']), PDO::PARAM_INT);
+            $statementKid->bindValue('firstname', htmlspecialchars($user['firstnameKid2']), PDO::PARAM_STR);
+            $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid2']), PDO::PARAM_STR);
+            $statementKid->bindValue('specs', htmlspecialchars($user['commentKid2']), PDO::PARAM_STR);
+            $statementKid->execute();
+        }
     }
 
-    /**
-     * @param $id
-     * @param $user
-     * @return void
-     * Insertion enfant3 lié à l'Id parent
-     */
+
     public function insertKid3($id, $user): void
     {
-        $statementKid = $this->pdo->prepare("INSERT INTO Kid
+        if (!empty($user['firstnameKid3']) && !empty($user['birthdayKid3']) && !empty($user['commentKid3'])) {
+            $statementKid = $this->pdo->prepare("INSERT INTO Kid
     (`userID`,`firstname`, `birthday` , `specs`)
 VALUES
     (:userID , :firstname, :birthday , :specs)");
-        $statementKid->bindValue('userID', htmlspecialchars($id['userID']), PDO::PARAM_INT);
-        $statementKid->bindValue('firstname', htmlspecialchars($user['firstnameKid3']), PDO::PARAM_STR);
-        $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid3']), PDO::PARAM_STR);
-        $statementKid->bindValue('specs', htmlspecialchars($user['commentKid3']), PDO::PARAM_STR);
-        $statementKid->execute();
+            $statementKid->bindValue('userID', htmlspecialchars($id['userID']), PDO::PARAM_INT);
+            $statementKid->bindValue('firstname', htmlspecialchars($user['firstnameKid3']), PDO::PARAM_STR);
+            $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid3']), PDO::PARAM_STR);
+            $statementKid->bindValue('specs', htmlspecialchars($user['commentKid3']), PDO::PARAM_STR);
+            $statementKid->execute();
+        }
     }
 
-    /**
-     * @param $user
-     * @return array
-     */
+
     public function validFormCompletedUser($user): array
     {
         $errors = [];
