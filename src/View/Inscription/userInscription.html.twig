@@ -73,17 +73,17 @@
             </div>
             <div class="form-userInscription">
                 <label for="commentKid2">Allergies / Choses à savoir :</label>
-                <textarea id="commentKid2" name="commentKid2" rows="6" ></textarea>
+                <textarea id="commentKid2" name="commentKid2" rows="6"></textarea>
             </div>
             <div class="form-userInscription">
-               <a href="#" id="addJoey" onclick="afficherMasquer('Kid3')">+</a>
+                <a href="#" id="addJoey" onclick="afficherMasquer('Kid3')">+</a>
             </div>
         </div>
         <div id="Kid3" style="display: none">
             <div class="form-userInscription">
                 <h2>Mes Joeys</h2>
                 <label for="firstnameKid3">Prénom :</label>
-                <input type="text" id="firstnameKid3" name="firstnameKid3" >
+                <input type="text" id="firstnameKid3" name="firstnameKid3">
             </div>
             <div class="form-userInscription">
                 <label for="birthdayKid3">Né(e) le :</label>
@@ -92,7 +92,7 @@
             </div>
             <div class="form-userInscription">
                 <label for="commentKid3">Allergies / Choses à savoir :</label>
-                <textarea id="commentKid3" name="commentKid3" rows="6" ></textarea>
+                <textarea id="commentKid3" name="commentKid3" rows="6"></textarea>
             </div>
         </div>
         <div class="form-userInscription submit">
@@ -103,11 +103,8 @@
 {% endblock %}
 
 {% block javascript %}
-
     <script type="text/javascript">
         function afficherMasquer(id) {
-            console.log(document.getElementById(id));
-
             if (document.getElementById(id).style.display === "none")
                 document.getElementById(id).style.display = "block";
             else

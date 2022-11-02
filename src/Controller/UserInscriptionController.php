@@ -13,6 +13,7 @@ class UserInscriptionController extends AbstractController
             $userManager = new UserManager();
             $userManager->validFormCompletedUser($user);
 
+
             if (empty($errors)) {
                 $userManager->insertUser($user);
                 $id = $userManager->getUserID($user);
@@ -31,6 +32,6 @@ class UserInscriptionController extends AbstractController
                 }
             }
         }
-        return $this->twig->render('userInscription.html.twig', ["GET" => $_GET]);
+        return $this->twig->render('Inscription/userInscription.html.twig', ["GET" => $_GET]);
     }
 }
