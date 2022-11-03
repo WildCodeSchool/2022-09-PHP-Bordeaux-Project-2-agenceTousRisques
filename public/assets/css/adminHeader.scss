@@ -41,7 +41,7 @@
         height: 1px;
         left: -25vw;
         position: absolute;
-        border: 1px solid black;
+        border: 1px solid var(--smallButtonColor);
         top: 50%;
     }
 
@@ -51,7 +51,7 @@
         width: 25vw;
         height: 1px;
         position: absolute;
-        border: 1px solid black;
+        border: 1px solid var(--smallButtonColor);
         top: 50%;
         right: -25vw;
     }
@@ -61,6 +61,7 @@
     position: absolute;
     background-color: var(--bleu);
     box-shadow: 1px 1px 3px black;
+    color:var(--smallButtonColor);
     font-family: var(--fontTitle);
     border-radius: 20px;
     padding: 8px;
