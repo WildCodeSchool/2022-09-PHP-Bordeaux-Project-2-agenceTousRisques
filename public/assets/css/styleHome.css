@@ -31,7 +31,7 @@ section {
 .presentationSite {
     padding: 20px;
     margin: 40px 1rem 1rem 1rem;
-    background-color: var(--rosePastel);
+    background-color: var(--saumonPastel);
     border-radius: 5px;
 }
 
@@ -96,7 +96,7 @@ section {
 }
 
 .slide:nth-child(1) {
-    background-color: var(--rosePastel);
+    background-color: var(--saumon);
 }
 
 .slide:nth-child(2) {
@@ -117,4 +117,5 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
