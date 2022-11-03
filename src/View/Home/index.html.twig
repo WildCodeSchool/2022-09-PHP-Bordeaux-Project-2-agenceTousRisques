@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
 {% block title %}
     Home Page
-    {% endblock %}
+{% endblock %}
 
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/styleHome.css">
     <link rel="stylesheet" href="/../assets/css/userConnection.css">
-    {% endblock %}
+{% endblock %}
 
 
        {% block content %}
@@ -93,6 +93,7 @@
            </footer>
        {% endblock %}
 {% block javascript %}
+{{ parent() }}
     <script>
         const slidesContainer = document.getElementById("slides-container");
         const slide = document.querySelector(".slide");

@@ -1,22 +1,40 @@
 .admin-header-container {
   margin-bottom: 64px;
-  display: flex;
-  justify-content: center;
   width: 100vw;
   position: relative;
+  height: 315px;
   background-color: var(--bleuVert);
+}
+
+.admin-logout-link {
+  position: absolute;
+  top: 2%;
+  left: 1vw;
+  background-color: var(--bleuVert);
+}
+
+.admin-logout-img {
+  height: 50px;
+  width: 50px;
 }
 
 .admin-avatar {
   height: 220px;
   width: 220px;
+  display: inline;
 }
 
 .avatar-container {
   position: relative;
   background-color: var(--bleu);
   box-shadow: 1px 1px 3px black;
-  border-radius: 40px;
+  border-radius: 130px;
+  width: 260px;
+  height: 260px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .avatar-container::before {
   content: "";
@@ -41,7 +59,7 @@
 
 .admin-firstname, .admin-lastname {
   position: absolute;
-  background-color: var(--rosePastel);
+  background-color: var(--bleu);
   box-shadow: 1px 1px 3px black;
   font-family: var(--fontTitle);
   border-radius: 20px;
@@ -49,22 +67,20 @@
   min-width: 25vw;
   text-align: center;
   font-size: 1.5em;
+  top: 94%;
 }
 
 .admin-firstname {
-  top: 100%;
-  right: 60%;
+  right: 70%;
 }
 
 .admin-lastname {
-  top: 100%;
-  left: 60%;
+  left: 70%;
 }
 
 .img-gestion-link {
   height: 50px;
   width: 50px;
-  background-color: var(--saumonPastel);
   border-radius: 50px;
 }
 
@@ -72,8 +88,6 @@
   display: block;
   margin: auto;
   width: 50px;
-  margin-top: -60px;
-  margin-bottom: 16px;
 }
 
 .burger-menu-container {
@@ -126,7 +140,7 @@
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: var(--saumon);
+  background: var(--smallButtonColor);
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -142,16 +156,17 @@
 #menu {
   position: absolute;
   width: 100vw;
-  left: 130%;
-  background: #ededed;
+  left: 10vw;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  background-color: var(--rosePastel);
 }
 #menu li {
   padding: 10px 0;
   font-size: 22px;
+  font-family: var(--fontTitle);
 }
 
 /*# sourceMappingURL=adminHeader.css.map */
