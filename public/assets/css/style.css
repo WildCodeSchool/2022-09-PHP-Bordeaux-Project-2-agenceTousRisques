@@ -5,10 +5,6 @@
     box-sizing: border-box;
 }
 
-body {
-    position: fixed;
-}
-
 :root {
     --fontTitleSite: 'Bubblegum Sans', cursive;
     --fontTitle: 'Gochi Hand', cursive;
