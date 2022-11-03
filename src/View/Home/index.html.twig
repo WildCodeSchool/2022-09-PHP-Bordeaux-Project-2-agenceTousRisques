@@ -1,10 +1,12 @@
 {% extends 'layout.html.twig' %}
-
 {% block title %}
-    Home Page{% endblock %}
+    Home Page
+    {% endblock %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/styleHome.css"> {% endblock %}
+    <link rel="stylesheet" href="/assets/css/styleHome.css">
+    <link rel="stylesheet" href="/../assets/css/userConnection.css">
+    {% endblock %}
 
 
        {% block content %}
@@ -85,11 +87,11 @@
                    </li>
                </ul>
            </section>
+           {% include 'Home/userConnection.html.twig' %}
            <footer>
                Agence Tous Risques @ 2022 Mentions Légales
            </footer>
        {% endblock %}
-
 {% block javascript %}
     <script>
         const slidesContainer = document.getElementById("slides-container");
