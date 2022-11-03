@@ -10,7 +10,7 @@ class Admin extends AbstractManager
 {
     public function codeGenerator(): string
     {
-        $query = 'SELECT activationCode FROM user';
+        $query = 'SELECT activationCode FROM User';
         $statement = $this->pdo->query($query);
         $codes = $statement->fetchAll();
         $listOfCode = [];

@@ -1,0 +1,25 @@
+<div class="login-block">
+    <h2 class="login-title">Se connecter :</h2>
+    {% block errors %}
+    <div class="user-connection-errors">
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </div>
+    {% endblock %}
+    <div class="login-form-container">
+        <form action="userConnection" method="post" class="loginForm">
+            <div class="email-part part">
+                <label class="label-connection" for="email">E-mail :</label><br>
+                <input type="text" id="email" name="email" class="login-email-field field">
+            </div>
+            <div class="passwordPart part">
+                <label class="label-connection" for="password">Mot de passe :</label><br>
+                <input type="text" id="password" name="password" class="login-password-field field" value="">
+            </div>
+            <div class="button-part part">
+                <button type="submit" class="login-button">connexion</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -14,9 +14,11 @@ class UserManager extends AbstractManager
     public function insertUser(array $user): void
     {
         $statementUser = $this->pdo->prepare("INSERT INTO User
-    (`email`, `password` , `avatar`,`activationCode`, `isAdmin`,`firstname` , `lastname` , `telephone` , `address` )
+    (`email`, `password` , `avatar`,`activationCode`, `isAdmin`,`firstname`
+    , `lastname` , `telephone` , `address`, `isVisible` )
 VALUES
-    (:email, :password , :avatar ,:activationCode, :isAdmin , :firstname , :lastname , :telephone , :address)");
+    (:email, :password , :avatar ,:activationCode, :isAdmin , :firstname
+    , :lastname , :telephone , :address, :isVisible)");
 
         $statementUser->bindValue('email', htmlspecialchars($_GET['email']), FILTER_VALIDATE_EMAIL);
         $statementUser->bindValue('password', password_hash($user['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
@@ -27,6 +29,7 @@ VALUES
         $statementUser->bindValue('lastname', htmlspecialchars($user['lastname']), PDO::PARAM_STR);
         $statementUser->bindValue('telephone', htmlspecialchars($user['telephone']), PDO::PARAM_INT);
         $statementUser->bindValue('address', htmlspecialchars($user['address']), PDO::PARAM_STR);
+        $statementUser->bindValue('isVisible', true, PDO::PARAM_BOOL);
         $statementUser->execute();
     }
 
@@ -88,17 +91,17 @@ VALUES
     }
 
 
-    public function validFormCompletedUser($user): array
+    public function validFormCompletedUser($user): ?array
     {
         $errors = [];
-        $errors[] = $this->issetInput($user['password'], 'Mot de passe obligatoire');
-        $errors[] = $this->issetInput($user['firstname'], 'Prénom obligatoire');
-        $errors[] = $this->issetInput($user['lastname'], 'Nom obligatoire');
-        $errors[] = $this->issetInput($user['telephone'], 'Téléphone obligatoire');
-        $errors[] = $this->issetInput($user['address'], 'Adresse obligatoire');
-        $errors[] = $this->issetInput($user['firstnameKid'], 'Prénom enfant obligatoire');
-        $errors[] = $this->issetInput($user['birthdayKid'], 'Date de naissance enfant obligatoire');
-        $errors[] = $this->issetInput($user['commentKid'], 'Commentaires enfant obligatoire');
+        $errors = $this->issetInput($user['password'], 'Mot de passe obligatoire');
+        $errors = $this->issetInput($user['firstname'], 'Prénom obligatoire');
+        $errors = $this->issetInput($user['lastname'], 'Nom obligatoire');
+        $errors = $this->issetInput($user['telephone'], 'Téléphone obligatoire');
+        $errors = $this->issetInput($user['address'], 'Adresse obligatoire');
+        $errors = $this->issetInput($user['firstnameKid'], 'Prénom enfant obligatoire');
+        $errors = $this->issetInput($user['birthdayKid'], 'Date de naissance enfant obligatoire');
+        $errors = $this->issetInput($user['commentKid'], 'Commentaires enfant obligatoire');
         if ($user['password'] != $user['password2']) {
             $errors[] = 'Mots de passe différents';
         }
@@ -106,7 +109,7 @@ VALUES
         return $errors;
     }
 
-    public function issetInput($input, $message): ?array
+    public function issetInput($input, $message): ?string
     {
         if (!isset($input) || (empty(trim($input)))) {
             return $message;

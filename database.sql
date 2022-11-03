@@ -1,31 +1,31 @@
--- Création Base de Données nounouEntreNous --
-DROP DATABASE nounouentrenous;
+DROP DATABASE nounouEntreNous;
+
 CREATE DATABASE nounouEntreNous;
 
 USE nounouEntreNous;
 
--- Création Tables User, Kid, Call, Avatar, Chat --
-
 CREATE TABLE `User` (
-                        `userID` INT  NOT NULL ,
-                        `firstname` VARCHAR(255)  NOT NULL ,
-                        `lastname` VARCHAR(255)  NOT NULL ,
-                        `telephone` VARCHAR(10)  NOT NULL ,
-                        `adress` VARCHAR(255)  NOT NULL ,
-                        `email` VARCHAR(150)  NOT NULL ,
-                        `avatar` INT NOT NULL ,
-                        `activationCode` VARCHAR(10)  NOT NULL ,
-                        `isAdmin` BOOL  NOT NULL ,
+                        `userID` INT  NOT NULL AUTO_INCREMENT,
+                        `firstname` VARCHAR(255)  ,
+                        `lastname` VARCHAR(255)  ,
+                        `telephone` VARCHAR(10)  ,
+                        `address` VARCHAR(255)  ,
+                        `email` VARCHAR(150)  UNIQUE NOT NULL ,
+                        `password` VARCHAR(255),
+                        `avatar` INT ,
+                        `activationcode` VARCHAR(10)  NOT NULL ,
+                        `isAdmin` BOOL ,
+                        `isVisible` BOOL,
                         PRIMARY KEY (
                                      `userID`
                             )
 );
 
 CREATE TABLE `Kid` (
-                       `kidID` INT  NOT NULL ,
+                       `kidID` INT  NOT NULL AUTO_INCREMENT,
                        `userID` INT  NOT NULL ,
-                       `firstname` VARCHAR(255)  NOT NULL ,
-                       `birthday` DATE  NOT NULL ,
+                       `firstname` VARCHAR(255) ,
+                       `birthday` DATE ,
                        `specs` TEXT  NOT NULL ,
                        PRIMARY KEY (
                                     `kidID`
@@ -35,10 +35,10 @@ CREATE TABLE `Kid` (
 CREATE TABLE `Call` (
                         `userID` INT  NOT NULL ,
                         `kidID` INT  NOT NULL ,
-                        `startDate` DATETIME  NOT NULL ,
-                        `endDate` DATETIME  NOT NULL ,
-                        `context` TEXT  NOT NULL ,
-                        `comment` TEXT  NOT NULL
+                        `startdate` DATETIME  NOT NULL ,
+                        `enddate` DATETIME  NOT NULL ,
+                        `context` TEXT ,
+                        `comment` TEXT
 );
 
 CREATE TABLE `Avatar` (
@@ -55,8 +55,6 @@ CREATE TABLE `Chat` (
                         `content` TEXT  NOT NULL
 );
 
--- Définitions des différentes clés étrangères --
-
 ALTER TABLE `User` ADD CONSTRAINT `fk_User_avatar` FOREIGN KEY(`avatar`)
     REFERENCES `Avatar` (`avatarID`);
 
@@ -71,4 +69,5 @@ ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_kidID` FOREIGN KEY(`kidID`)
 
 ALTER TABLE `Chat` ADD CONSTRAINT `fk_Chat_userID` FOREIGN KEY(`userID`)
     REFERENCES `User` (`userID`);
+
 INSERT INTO Avatar (avatarID, image) VALUES (1,'assets/avatar1.png');
