@@ -102,9 +102,9 @@ VALUES
         $errors = $this->issetInput($user['firstnameKid'], 'Prénom enfant obligatoire');
         $errors = $this->issetInput($user['birthdayKid'], 'Date de naissance enfant obligatoire');
         $errors = $this->issetInput($user['commentKid'], 'Commentaires enfant obligatoire');
-        if ($user['password'] != $user['password2']) {
-            $errors[] = 'Mots de passe différents';
-        }
+//        if ($user['password'] != $user['password2']) {
+////            $errors[] = 'Mots de passe différents';
+//        }
 
         return $errors;
     }
