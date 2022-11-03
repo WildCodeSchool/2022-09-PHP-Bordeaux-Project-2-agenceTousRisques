@@ -1,0 +1,71 @@
+body {
+  width: 75%;
+  margin: auto;
+}
+
+.invite-user-container {
+  background-color: var(--backgroundProfil);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleInviteUser {
+  padding: 8px;
+  font-family: var(--fontTitle);
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.admin-invite-form {
+  width: 95%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.invite-user-errors {
+  list-style: none;
+  color: red;
+  font-weight: bold;
+  font-family: var(--fontText);
+  padding: 8px;
+}
+
+.invite-success-message {
+  font-family: var(--fontText);
+  color: green;
+  font-weight: bold;
+  padding: 8px;
+}
+.invite-success-message span {
+  text-decoration: underline;
+}
+
+.label-form-email {
+  font-family: var(--fontText);
+  display: block;
+  text-align: center;
+  padding: 8px;
+}
+
+#invitedEmail {
+  margin: 8px;
+  line-height: 24px;
+}
+
+.invitationButton {
+  align-self: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: var(--backgroundButton);
+  font-family: "Roboto";
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px black;
+  border: 0;
+  font-size: 1em;
+}
+
+/*# sourceMappingURL=adminInviteUser.css.map */

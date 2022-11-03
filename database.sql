@@ -1,63 +1,73 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+-- Création Base de Données nounouEntreNous --
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+CREATE DATABASE nounouEntreNous;
 
+USE nounouEntreNous;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- Création Tables User, Kid, Call, Avatar, Chat --
 
---
--- Base de données :  `simple-mvc`
---
+CREATE TABLE `User` (
+                        `userID` INT  NOT NULL ,
+                        `firstname` VARCHAR(255)  NOT NULL ,
+                        `lastname` VARCHAR(255)  NOT NULL ,
+                        `telephone` VARCHAR(10)  NOT NULL ,
+                        `adress` VARCHAR(255)  NOT NULL ,
+                        `email` VARCHAR(150)  NOT NULL ,
+                        `avatar` INT NOT NULL ,
+                        `activationCode` VARCHAR(10)  NOT NULL ,
+                        `isAdmin` BOOL  NOT NULL ,
+                        PRIMARY KEY (
+                                     `userID`
+                            )
+);
 
--- --------------------------------------------------------
+CREATE TABLE `Kid` (
+                       `kidID` INT  NOT NULL ,
+                       `userID` INT  NOT NULL ,
+                       `firstname` VARCHAR(255)  NOT NULL ,
+                       `birthday` DATE  NOT NULL ,
+                       `specs` TEXT  NOT NULL ,
+                       PRIMARY KEY (
+                                    `kidID`
+                           )
+);
 
---
--- Structure de la table `item`
---
+CREATE TABLE `Call` (
+                        `userID` INT  NOT NULL ,
+                        `kidID` INT  NOT NULL ,
+                        `startDate` DATETIME  NOT NULL ,
+                        `endDate` DATETIME  NOT NULL ,
+                        `context` TEXT  NOT NULL ,
+                        `comment` TEXT  NOT NULL
+);
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `Avatar` (
+                          `avatarID` INT  NOT NULL ,
+                          `image` VARCHAR(100)  NOT NULL ,
+                          PRIMARY KEY (
+                                       `avatarID`
+                              )
+);
 
---
--- Contenu de la table `item`
---
+CREATE TABLE `Chat` (
+                        `userID` INT  NOT NULL ,
+                        `date` DATE  NOT NULL ,
+                        `content` TEXT  NOT NULL
+);
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+-- Définitions des différentes clés étrangères --
 
---
--- Index pour les tables exportées
---
+ALTER TABLE `User` ADD CONSTRAINT `fk_User_avatar` FOREIGN KEY(`avatar`)
+    REFERENCES `Avatar` (`avatarID`);
 
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `Kid` ADD CONSTRAINT `fk_Kid_userID` FOREIGN KEY(`userID`)
+    REFERENCES `User` (`userID`);
 
---
--- AUTO_INCREMENT pour les tables exportées
---
+ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_userID` FOREIGN KEY(`userID`)
+    REFERENCES `User` (`userID`);
 
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_kidID` FOREIGN KEY(`kidID`)
+    REFERENCES `Kid` (`kidID`);
+
+ALTER TABLE `Chat` ADD CONSTRAINT `fk_Chat_userID` FOREIGN KEY(`userID`)
+    REFERENCES `User` (`userID`);
