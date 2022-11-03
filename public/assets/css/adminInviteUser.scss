@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-.titleInviteUser {
+.title-invite-user {
     padding: 8px;
     font-family: var(--fontTitle);
     align-items: center;
@@ -53,21 +53,7 @@
     margin: 8px;
     line-height: 24px;
 }
-
-.invitationButton {
-    align-self: center;
-    padding: 8px;
-    margin-bottom: 8px;
-    background-color: var(--saumon);
-    font-family: "Roboto";
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px black;
-    border: 0;
-    font-size: 1em;
-}
-
 // STYLE DU BOUTON A VOIR AVEC LE GROUPE
-
 .cta {
     position: relative;
     margin: auto;
@@ -81,7 +67,7 @@
         left: 0;
         display: block;
         border-radius: 28px;
-        background: rgba(var(--backgroundButton), .5);
+        background: rgba(var(--saumon), .5);
         width: 56px;
         height: 56px;
         transition: all .3s ease;
@@ -113,7 +99,7 @@
     &:hover {
         &:before {
             width: 100%;
-            background: rgba(var(--backgroundButton), 1);
+            background: rgba(var(--saumon), 1);
         }
 
         svg {
