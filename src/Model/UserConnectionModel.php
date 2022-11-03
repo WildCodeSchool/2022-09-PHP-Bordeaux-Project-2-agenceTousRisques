@@ -32,5 +32,4 @@ class UserConnectionModel extends AbstractManager
 
         return $errors ?? [];
     }
-
 }

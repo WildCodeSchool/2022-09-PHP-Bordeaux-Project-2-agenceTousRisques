@@ -6,7 +6,6 @@ use App\Model\UserConnectionModel;
 
 class UserConnectionController extends AbstractController
 {
-
     public function access(): string
     {
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
