@@ -91,7 +91,7 @@ VALUES
     }
 
 
-    public function validFormCompletedUser($user): ?array
+    public function validFormCompletedUser($user): ?string
     {
         $errors = [];
         $errors = $this->issetInput($user['password'], 'Mot de passe obligatoire');

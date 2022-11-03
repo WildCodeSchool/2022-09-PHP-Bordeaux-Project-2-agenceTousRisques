@@ -31,7 +31,7 @@ section {
 .presentationSite {
     padding: 20px;
     margin: 40px 1rem 1rem 1rem;
-    background-color: var(--backgroundProfil);
+    background-color: var(--saumonPastel);
     border-radius: 5px;
 }
 
@@ -96,15 +96,15 @@ section {
 }
 
 .slide:nth-child(1) {
-    background-color: var(--backgroundButton);
+    background-color: var(--saumon);
 }
 
 .slide:nth-child(2) {
-    background-color: var(--vert);
+    background-color: var(--bleuVert);
 }
 
 .slide:nth-child(3) {
-    background-color: var(--jaune);
+    background-color: var(--saumonPastel);
     margin: 0;
 }
 
@@ -117,4 +117,5 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
