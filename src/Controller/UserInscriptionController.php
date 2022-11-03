@@ -12,14 +12,14 @@ class UserInscriptionController extends AbstractController
             $user = array_map('trim', $_POST);
             $userManager = new UserManager();
             $errors = $userManager->validFormCompletedUser($user);
-
-            if (empty($errors)) {
+            var_dump($errors);
+            if ($errors == null) {
                 $userManager->insertUser($user);
                 $id = $userManager->getUserID();
                 $userManager->insertKid($id, $user);
                 $userManager->insertKid2($id, $user);
                 $userManager->insertKid3($id, $user);
-                header('Location:/home');
+                header('Location:/');
                 return null;
             } else {
                 foreach ($errors as $error) {
