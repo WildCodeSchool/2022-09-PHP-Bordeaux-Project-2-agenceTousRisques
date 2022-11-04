@@ -26,7 +26,7 @@ class AdminController extends AbstractController
     public function inviteUser()
     {
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-            $invitedEmail = $_POST['invitedEmail'];
+            $invitedEmail = $_POST['invited-email'];
             if (empty($this->validateEmail($invitedEmail))) {
                 $admin = new Admin();
                 $activationCode = $admin->codeGenerator();
