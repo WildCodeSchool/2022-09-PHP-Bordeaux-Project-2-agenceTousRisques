@@ -105,7 +105,6 @@ VALUES
         if ($user['password'] != $user['password2']) {
             $errors[] = 'Mots de passe différents';
         }
-
         return $errors;
     }
 
