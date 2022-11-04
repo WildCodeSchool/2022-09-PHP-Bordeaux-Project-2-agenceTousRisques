@@ -18,7 +18,7 @@ class AddDemandController extends AbstractController
                 return null;
             } else {
                 foreach ($errors as $error) {
-                    echo $error;
+                    echo "<p>" . $error . "</p>";
                 }
             }
         }
