@@ -6,7 +6,7 @@ class UserConnectionModel extends AbstractManager
 {
     public function access($accessEmail, $accessPassword)
     {
-        $query = 'SELECT email, password, isVisible, userID FROM user WHERE email= :email';
+        $query = 'SELECT email, password, isVisible, userID FROM User WHERE email= :email';
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':email', $accessEmail, \PDO::PARAM_STR);
         $statement->execute();
@@ -36,7 +36,7 @@ class UserConnectionModel extends AbstractManager
 
     public function selectOneByEmail($email)
     {
-        $query = 'SELECT * FROM user WHERE email= :email';
+        $query = 'SELECT * FROM User WHERE email= :email';
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':email', $email, \PDO::PARAM_STR);
         $statement->execute();
