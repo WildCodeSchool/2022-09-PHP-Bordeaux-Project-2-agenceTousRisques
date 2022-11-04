@@ -1,0 +1,16 @@
+h2 {
+    font-family: var(--fontTitle);
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    background-color: var(--saumonPastel);
+    font-family: var(--fontText);
+    padding: 30px;
+    margin: 10px;
+    border-radius: 5px;
+}
+div{
+    padding: 10px;
+}
