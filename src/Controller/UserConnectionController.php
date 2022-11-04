@@ -28,7 +28,7 @@ class UserConnectionController extends AbstractController
                     $gettingId = new UserConnectionModel();
                     $user = $gettingId->selectOneByEmail($accessEmail);
                     $_SESSION['user_id'] = $user['userID'];
-                    header('Location:/gestion');
+                    header('Location:/UserPage');
                 } else {
                     $errors[] = "Les informations que vous avez saisie ne sont pas associée à un compte";
                 }

@@ -20,4 +20,5 @@ return [
     'invite' => ['AdminController', 'inviteUser',],
     'addDemand' => ['AddDemandController', 'add'],
     'logout' => ['UserConnectionController', 'logout'],
+    'UserPage' => ['UserPageController', 'showUserPage'],
 ];
