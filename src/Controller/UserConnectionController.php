@@ -39,4 +39,11 @@ class UserConnectionController extends AbstractController
             'errors' => $errors
         ]);
     }
+
+    public function logout()
+    {
+        session_destroy();
+        unset($_SESSION['user_id']);
+        header('Location:/');
+    }
 }
