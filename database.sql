@@ -34,7 +34,6 @@ CREATE TABLE `Kid` (
 
 CREATE TABLE `Call` (
                         `userID` INT  NOT NULL ,
-                        `kidID` INT  NOT NULL ,
                         `startdate` DATETIME  NOT NULL ,
                         `enddate` DATETIME  NOT NULL ,
                         `context` TEXT ,
@@ -64,10 +63,11 @@ ALTER TABLE `Kid` ADD CONSTRAINT `fk_Kid_userID` FOREIGN KEY(`userID`)
 ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_userID` FOREIGN KEY(`userID`)
     REFERENCES `User` (`userID`);
 
-ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_kidID` FOREIGN KEY(`kidID`)
-    REFERENCES `Kid` (`kidID`);
-
 ALTER TABLE `Chat` ADD CONSTRAINT `fk_Chat_userID` FOREIGN KEY(`userID`)
     REFERENCES `User` (`userID`);
 
 INSERT INTO Avatar (avatarID, image) VALUES (1,'assets/avatar1.png');
+
+INSERT INTO User (firstname, lastname, telephone, address, email, password, avatar, activationcode, isAdmin, isVisible)
+VALUES ('Jean Le Grand' , 'Bokassa', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'jean-le-grand.bokassa@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 1, '0000001', 1, 1);
