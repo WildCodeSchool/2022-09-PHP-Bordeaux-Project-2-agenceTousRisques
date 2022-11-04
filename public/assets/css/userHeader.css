@@ -98,7 +98,6 @@
 }
 
 #menuToggle {
-  display: block;
   position: relative;
   z-index: 1;
   -webkit-user-select: none;
@@ -133,7 +132,7 @@
   transform: rotate(-45deg) translate(0, -1px);
 }
 #menuToggle input:checked ~ ul {
-  transform: translate(-90%, 0);
+  transform: translate(-110%, 0) opacity(1);
 }
 #menuToggle span {
   display: block;
@@ -156,7 +155,7 @@
 
 #menu {
   position: absolute;
-  width: 100vw;
+  width: 90vw;
   left: 10vw;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -170,4 +169,4 @@
   font-family: var(--fontTitle);
 }
 
-/*# sourceMappingURL=adminHeader.css.map */
+/*# sourceMappingURL=userHeader.css.map */
