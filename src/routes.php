@@ -18,4 +18,5 @@ return [
     'gestion' => ['AdminController','administrationPanel',],
     'adminInvite' => ['AdminController', 'inviteUserForm',],
     'invite' => ['AdminController', 'inviteUser',],
+    'addDemand' => ['AddDemandController', 'add'],
 ];

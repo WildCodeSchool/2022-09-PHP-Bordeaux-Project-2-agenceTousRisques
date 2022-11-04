@@ -12,8 +12,7 @@ class UserInscriptionController extends AbstractController
             $user = array_map('trim', $_POST);
             $userManager = new UserManager();
             $errors = $userManager->validFormCompletedUser($user);
-            var_dump($errors);
-            if ($errors == null) {
+            if (sizeof($errors)) {
                 $userManager->insertUser($user);
                 $id = $userManager->getUserID();
                 $userManager->insertKid($id, $user);
