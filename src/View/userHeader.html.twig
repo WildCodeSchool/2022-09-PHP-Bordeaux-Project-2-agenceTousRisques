@@ -1,38 +1,18 @@
 <div class="admin-header-container">
-    <div class="burger-menu-container">
-        <nav role="navigation">
-            <div id="menuToggle">
-
-                <input type="checkbox"/>
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <ul id="menu">
-                    <a href="#">
-                        <li>Home</li>
-                    </a>
-                    <a href="#">
-                        <li>About</li>
-                    </a>
-                    <a href="#">
-                        <li>Info</li>
-                    </a>
-                    <a href="#">
-                        <li>Contact</li>
-                    </a>
-                </ul>
-            </div>
-        </nav>
+    <div id="menu-btn">
+        <span class="icon"></span>
+        <span class="text">MENU</span>
     </div>
+
     <div class="avatar-container">
         <a href="UserPage"><img class="admin-avatar" src="assets/images/avatar1.png" alt=""></a>
         <p class="admin-firstname">{{ user.firstname }}</p>
         <p class="admin-lastname">{{ user.lastname }}</p>
     </div>
+
     <a class="admin-logout-link" href="logout"><img src="assets/images/power-coloreddarken.png" alt=""
                                                     class="admin-logout-img"></a>
+
     {% if user.isAdmin %}
         <a class="admin-gestion-link" href="gestion"><img class="img-gestion-link"
                                                           src="assets/images/gear-coloreddarken.png" alt=""></a>
