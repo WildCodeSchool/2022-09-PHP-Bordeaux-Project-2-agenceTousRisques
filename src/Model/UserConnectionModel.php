@@ -23,6 +23,7 @@ class UserConnectionModel extends AbstractManager
 
     public function validation(array $logs)
     {
+        $errors = [];
         if (!filter_var($logs['email'], FILTER_VALIDATE_EMAIL) || empty($logs['email'])) {
             $errors[] = 'veuillez saisir une adresse mail conforme';
         }
@@ -30,6 +31,16 @@ class UserConnectionModel extends AbstractManager
             $errors[] = 'veuillez saisir votre mot de passe';
         }
 
-        return $errors ?? [];
+        return $errors;
+    }
+
+    public function selectOneByEmail($email)
+    {
+        $query = 'SELECT * FROM user WHERE email= :email';
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':email', $email, \PDO::PARAM_STR);
+        $statement->execute();
+
+        return $statement->fetch();
     }
 }
