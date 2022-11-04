@@ -103,6 +103,7 @@
 {% endblock %}
 
 {% block javascript %}
+    {{ parent() }}
     <script type="text/javascript">
         function afficherMasquer(id) {
             if (document.getElementById(id).style.display === "none")

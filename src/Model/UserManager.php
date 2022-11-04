@@ -91,17 +91,17 @@ VALUES
     }
 
 
-    public function validFormCompletedUser($user): ?string
+    public function validFormCompletedUser($user): ?array
     {
         $errors = [];
-        $errors = $this->issetInput($user['password'], 'Mot de passe obligatoire');
-        $errors = $this->issetInput($user['firstname'], 'Prénom obligatoire');
-        $errors = $this->issetInput($user['lastname'], 'Nom obligatoire');
-        $errors = $this->issetInput($user['telephone'], 'Téléphone obligatoire');
-        $errors = $this->issetInput($user['address'], 'Adresse obligatoire');
-        $errors = $this->issetInput($user['firstnameKid'], 'Prénom enfant obligatoire');
-        $errors = $this->issetInput($user['birthdayKid'], 'Date de naissance enfant obligatoire');
-        $errors = $this->issetInput($user['commentKid'], 'Commentaires enfant obligatoire');
+        $errors[] = $this->issetInput($user['password'], 'Mot de passe obligatoire');
+        $errors[] = $this->issetInput($user['firstname'], 'Prénom obligatoire');
+        $errors[] = $this->issetInput($user['lastname'], 'Nom obligatoire');
+        $errors[] = $this->issetInput($user['telephone'], 'Téléphone obligatoire');
+        $errors[] = $this->issetInput($user['address'], 'Adresse obligatoire');
+        $errors[] = $this->issetInput($user['firstnameKid'], 'Prénom enfant obligatoire');
+        $errors[] = $this->issetInput($user['birthdayKid'], 'Date de naissance enfant obligatoire');
+        $errors[] = $this->issetInput($user['commentKid'], 'Commentaires enfant obligatoire');
         if ($user['password'] != $user['password2']) {
             $errors[] = 'Mots de passe différents';
         }

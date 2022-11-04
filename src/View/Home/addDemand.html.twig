@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/styleaddDemand.css">
+{% endblock %}
+
+{% block content %}
+<section>
+<h2>Nouvelle Demande</h2>
+<form action="" method="post">
+    <div class="date">
+        <label class="startDate" for="startDate">Du </label><br>
+        <input type="datetime-local" id="startDate" name="startDate" >
+    </div>
+    <div class="">
+        <label class="endDate" for="endDate">Au </label><br>
+        <input type="datetime-local" id="endDate" name="endDate" >
+    </div>
+    <div class="">
+        <label class="" for="context">Contexte :</label><br>
+        <select name="context" id="context">
+            <option value="">Votre Choix</option>
+            <option value="sortieEcole">Sortie d'école</option>
+            <option value="extraScolaire">Activité Extra-scolaire</option>
+            <option value="absParent">Absence parents</option>
+        </select>
+    </div>
+    <div class="">
+        <label class="comment" for="comment">Commentaires</label><br>
+        <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+    </div>
+    <div class="">
+        <button type="submit" class="login-button">Ajouter</button>
+    </div>
+</form>
+</section>
+{% endblock %}
