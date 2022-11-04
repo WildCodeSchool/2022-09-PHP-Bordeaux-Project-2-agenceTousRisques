@@ -6,18 +6,20 @@ class UserConnectionModel extends AbstractManager
 {
     public function access($accessEmail, $accessPassword)
     {
-        $query = 'SELECT email, password, isVisible, userID FROM user WHERE email= :email';
+        $query = 'SELECT email, password, isVisible FROM user WHERE email= :email';
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':email', $accessEmail, \PDO::PARAM_STR);
         $statement->execute();
         $isCredentialsFound = $statement->fetch(\PDO::FETCH_ASSOC);
-        //False
-        if (password_verify($accessPassword, $isCredentialsFound['password'])) {
-            if ($isCredentialsFound['isVisible'] === 1) {
-                return true;
-            }
-        } else {
+        if (!$isCredentialsFound) {
             return false;
+        } else {
+            $passwordVerify = password_verify($accessPassword, $isCredentialsFound['password']);
+            if ($passwordVerify && $isCredentialsFound['isVisible']) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
