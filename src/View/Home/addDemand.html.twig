@@ -4,30 +4,35 @@
     <link rel="stylesheet" href="/assets/css/styleaddDemand.css">
 {% endblock %}
 
+{% block header %}
+    {% include 'userHeader.html.twig' %}
+{% endblock %}
+
 {% block content %}
 <section>
 <h2>Nouvelle Demande</h2>
 <form action="" method="post">
     <div class="date">
         <label class="startDate" for="startDate">Du </label><br>
-        <input type="datetime-local" id="startDate" name="startDate" >
+        <input type="datetime-local" id="startDate" name="startDate" required>
     </div>
     <div class="">
         <label class="endDate" for="endDate">Au </label><br>
-        <input type="datetime-local" id="endDate" name="endDate" >
+        <input type="datetime-local" id="endDate" name="endDate" required>
     </div>
     <div class="">
         <label class="" for="context">Contexte :</label><br>
-        <select name="context" id="context">
-            <option value="">Votre Choix</option>
+        <select name="context" id="context" required>
+            <option value="" selected>Votre Choix</option>
             <option value="sortieEcole">Sortie d'école</option>
             <option value="extraScolaire">Activité Extra-scolaire</option>
             <option value="absParent">Absence parents</option>
+            <option value="absParent">Rendez-vous</option>
         </select>
     </div>
     <div class="">
-        <label class="comment" for="comment">Commentaires</label><br>
-        <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+        <label class="comment" for="comment" >Commentaires</label><br>
+        <textarea name="comment" id="comment" cols="25" rows="10" required></textarea>
     </div>
     <div class="">
         <button type="submit" class="login-button">Ajouter</button>

@@ -26,16 +26,14 @@ class AddDemandManager extends AbstractManager
 
     public function validFormCompletedAddDemand($addDemand): ?array
     {
-        // ToDo Vérif choix contexte + diff date start/end
         $errors = [];
         $errors[] = $this->issetInput($addDemand['startDate'], 'Date obligatoire');
         $errors[] = $this->issetInput($addDemand['endDate'], 'Date obligatoire');
         $errors[] = $this->issetInput($addDemand['context'], 'Context obligatoire');
         $errors[] = $this->issetInput($addDemand['comment'], 'Commentaire obligatoire');
-        $date1 = new DateTime($addDemand['startDate']);
-        $date2 = new DateTime($addDemand['endDate']);
-        $interval = $date1->diff($date2);
-        if (($interval->m) < 0) {
+        $date1 = strtotime($addDemand['startDate']);
+        $date2 = strtotime($addDemand['endDate']);
+        if ($date1 > $date2) {
             $errors[] = 'Dates incorrectes';
         }
         return $errors;
