@@ -50,11 +50,16 @@
   box-shadow: 1px 1px 3px black;
   color: var(--smallButtonColor);
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 1.5em, 1.8vw);
   border-radius: 20px;
-  padding: 8px;
-  min-width: 25vw;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 30vw;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: center;
-  font-size: 1.5em;
   top: 94%;
 }
 
