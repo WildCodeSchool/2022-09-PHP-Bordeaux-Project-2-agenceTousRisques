@@ -1,13 +1,26 @@
 <div class="admin-header-container">
-    <div id="menu-btn">
-        <span class="icon"></span>
-        <span class="text">MENU</span>
-    </div>
 
+    <div class="line"></div>
     <div class="avatar-container">
         <a href="UserPage"><img class="admin-avatar" src="assets/images/avatar1.png" alt=""></a>
         <p class="admin-firstname">{{ user.firstname }}</p>
         <p class="admin-lastname">{{ user.lastname }}</p>
+    </div>
+    <div class="menu-burger-container">
+        <div id="menu-btn">
+            <span class="icon"></span>
+            <span class="text">MENU</span>
+        </div>
+        <div id="menu-list">
+            <a href="UserPage" class="menu-burger-item">Accueil</a>
+            <a href="addDemand" class="menu-burger-item">Ajouter une demande</a>
+            <a
+                href="#"
+                class="menu-burger-item"></a>
+            <a
+                href="#" class="menu-burger-item"></a>
+            <a href="#" class="menu-burger-item"></a>
+        </div>
     </div>
 
     <a class="admin-logout-link" href="logout"><img src="assets/images/power-coloreddarken.png" alt=""
@@ -19,3 +32,7 @@
     {% endif %}
 </div>
 
+{% block javascript %}
+{{ parent }}
+ <script src="/assets/js/headerMenu.js"></script>
+{% endblock %}
