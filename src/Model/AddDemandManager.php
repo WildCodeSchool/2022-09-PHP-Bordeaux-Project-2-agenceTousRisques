@@ -15,7 +15,6 @@ class AddDemandManager extends AbstractManager
     (userID, startdate, enddate, context, comment)
     VALUES
         (:userID, :startdate, :enddate, :context, :comment)");
-        // ToDo Modif Id User
         $statementAdd->bindValue('userID', $_SESSION['user_id'], PDO::PARAM_INT);
         $statementAdd->bindValue('startdate', $addDemand['startDate'], PDO::PARAM_STR);
         $statementAdd->bindValue('enddate', $addDemand['endDate'], PDO::PARAM_STR);
