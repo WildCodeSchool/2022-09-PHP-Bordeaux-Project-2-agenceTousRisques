@@ -1,8 +1,29 @@
+html {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
 h2 {
     font-family: var(--fontTitle);
     display: flex;
     justify-content: center;
     padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    width: 50px;
+    color: var(--smallButtonColor);
+}
+
+input, textarea {
+    border: 0;
+    border-radius: 5px;
 }
 
 form {
@@ -10,27 +31,84 @@ form {
     font-family: var(--fontText);
     padding-bottom: 20px;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px var(--saumon);
 }
+
 .form-userInscription {
     display: grid;
     margin: 20px;
 }
-.form-userInscription button {
-    width: 100px ;
-}
-.submit, #activationCode{
+
+#activationCode {
     width: 100px;
 }
 
-#firstname, #lastname, #telephone, #firstnameKid{
+#firstname, #lastname, #telephone, #firstnameKid {
     width: 200px;
 }
 
-#birthdayKid{
+#birthdayKid {
     width: 140px;
 }
 
 .block-userInscription {
     border-bottom: solid 1px black;
     padding-bottom: 10px;
+}
+
+
+#submitUserInscription {
+    background-color: var(--bleu);
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: var(--fontText);
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 100%;
+    max-width: 260px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#submitUserInscription:focus {
+    outline: 0;
+}
+
+#submitUserInscription:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+}
+
+#submitUserInscription:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
+
+@media (min-width: 768px) {
+    * {
+        max-width: 1200px;
+    }
+
+    #submitUserInscription {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+    }
 }
