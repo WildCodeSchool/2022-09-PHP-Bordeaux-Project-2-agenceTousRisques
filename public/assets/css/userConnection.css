@@ -1,42 +1,3 @@
-body,html {
-    width:100vw;
-}
-
-.login-block {
-    background-color: #FFE3C7;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    width: 90%;
-    margin: auto;
-}
-
-.login-title {
-    font-family: var(--fontTitle);
-    text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-.login-form {
-    display: grid;
-    margin: 20px;
-}
-
-.login-button {
-    width: 100px;
-}
-
-.field {
-    width: 200px;
-    border: solid 1px black;
-    padding-bottom: 10px;
-}
-
-.part {
-    padding: 5px;
-    margin-left: 10px;
-}
-
 .user-connection-errors {
     list-style: none;
     text-align: center;
@@ -46,56 +7,119 @@ body,html {
     padding: 8px;
 }
 
-.label-connection {
-    font-family: var(--fontText);
+.login-form-body {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
 }
 
-.cta {
+.login-form {
+    background-color: var(--saumonPastel);
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 90vw;
+}
+
+.login-title {
+    color: black;
+    font-family: var(--fontTitle);
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.input-container {
+    height: 50px;
     position: relative;
-    margin: auto;
-    padding: 8px 8px;
-    transition: all 0.2s ease;
-}
-.cta:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 28px;
-    background: rgba(var(--saumonPastel), 0.5);
-    width: 56px;
-    height: 56px;
-    transition: all 0.3s ease;
-}
-.cta span {
-    position: relative;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 900;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    vertical-align: middle;
-}
-.cta svg {
-    position: relative;
-    top: 0;
-    margin-left: 10px;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: black;
-    stroke-width: 2;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
-}
-.cta:hover:before {
     width: 100%;
-    background: rgba(var(--saumonPastel), 1);
 }
-.cta:hover svg {
-    transform: translateX(0);
+
+.login-email-container {
+    margin-top: 40px;
 }
-.cta:active {
-    transform: scale(0.96);
+
+.login-password-container {
+    margin-top: 30px;
+}
+
+.login-input {
+    background-color: var(--saumon);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.cut {
+    background-color: var(--saumonPastel);
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 50px;
+}
+
+.cut-short {
+    width: 100px;
+}
+
+.login-input:focus ~ .cut,
+.login-input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+}
+
+.placeholder {
+    color: var(--saumonPastel);
+    font-family: var(--fontText);
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+}
+
+.login-input:focus ~ .placeholder,
+.login-input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.login-input:not(:placeholder-shown) ~ .placeholder {
+    color: var(--saumon);
+}
+
+.login-input:focus ~ .placeholder {
+    color: var(--saumon);
+}
+
+.login-submit {
+    background-color: var(--bleu);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+// outline: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.login-submit:active {
+    background-color: var(--bleuVert);
 }
