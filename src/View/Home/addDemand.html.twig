@@ -12,18 +12,18 @@
 
 {% block content %}
     <body>
-    <section>
-        <h2>Nouvelle Demande</h2>
+    <section class="addDemand">
+        <h2 class="addDemandtitle">Nouvelle Demande</h2>
         <form action="" method="post">
             <div class="date">
                 <label class="startDate" for="startDate">Du </label><br>
                 <input type="datetime-local" id="startDate" name="startDate" required>
             </div>
-            <div class="">
+            <div class="date">
                 <label class="endDate" for="endDate">Au </label><br>
                 <input type="datetime-local" id="endDate" name="endDate" required>
             </div>
-            <div class="">
+            <div class="date">
                 <label class="" for="context">Contexte :</label><br>
                 <select name="context" id="context" required>
                     <option value="" selected>Votre Choix</option>

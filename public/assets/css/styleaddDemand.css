@@ -1,10 +1,10 @@
-h2 {
+.addDemandtitle {
     font-family: var(--fontTitle);
     display: flex;
     justify-content: center;
 }
 
-section {
+.addDemand {
     background-color: var(--saumonPastel);
     font-family: var(--fontText);
     padding: 30px;
@@ -12,7 +12,7 @@ section {
     border-radius: 5px;
 }
 
-div {
+.date {
     padding: 10px;
 }
 
