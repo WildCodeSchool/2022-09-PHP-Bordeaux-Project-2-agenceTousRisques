@@ -16,12 +16,9 @@ class AddDemandController extends AbstractController
                 $addDemandManager->insertDemand($addDemand);
                 header('Location:/');
                 return null;
-            } else {
-                foreach ($errors as $error) {
-                    echo $error;
-                }
             }
         }
-        return $this->twig->render('Home/addDemand.html.twig');
+
+        return $this->twig->render('UserPage/index.html.twig');
     }
 }

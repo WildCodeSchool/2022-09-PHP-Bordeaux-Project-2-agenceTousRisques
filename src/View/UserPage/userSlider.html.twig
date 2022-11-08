@@ -1,0 +1,28 @@
+<section class="sectionSlider">
+    <h2 class="title">Ma Kangooteam</h2>
+    <div class="slider">
+        <div class="slide-track">
+            {% for teamUser in team %}
+            <div class="slide">
+                <figure class="figure">
+                    <img src="{{ teamUser.image }}" height="100" alt=""/>
+                    <figcaption class="firstnameAvatar">{{ teamUser.firstname }}</figcaption>
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <p></p>
+    <div class="slider2">
+        <div class="slide2-track">
+            {% for teamUser in team %}
+                <div class="slide2">
+                    <figure class="figure">
+                        <img src="{{ teamUser.image }}" height="100" alt=""/>
+                        <figcaption class="firstnameAvatar">{{ teamUser.firstname }}</figcaption>
+                    </figure>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

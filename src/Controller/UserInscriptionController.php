@@ -6,7 +6,9 @@ use App\Model\UserManager;
 
 class UserInscriptionController extends AbstractController
 {
-    public function add(): ?string
+    public array $errors;
+
+    public function add(): array|string|null
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = array_map('trim', $_POST);
@@ -20,10 +22,6 @@ class UserInscriptionController extends AbstractController
                 $userManager->insertKid3($id, $user);
                 header('Location:/');
                 return null;
-            } else {
-                foreach ($errors as $error) {
-                    echo $error;
-                }
             }
         }
         return $this->twig->render('Inscription/userInscription.html.twig', ["GET" => $_GET]);

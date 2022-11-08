@@ -3,9 +3,21 @@
 {% block title %}Inscription Utilisateur{% endblock %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/styleUserInscription.css"> {% endblock %}
+    <link rel="stylesheet" href="/assets/css/styleUserInscription.css">
+    <link rel="stylesheet" href="/assets/css/styleHome.css">
+{% endblock %}
 
 {% block content %}
+    <body class="container">
+    <header>
+        <h1>Nounou Entre Nous</h1>
+        <img class="logoSite" src="assets/images/logoSite.jpg" alt="Logo Site">
+    </header>
+    <div class="user-connection-errors">
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </div>
     <form action="" method="post" name="monFormulaire">
         <div class="block-userInscription">
             <div class="form-userInscription">
@@ -58,7 +70,9 @@
             <textarea id="commentKid" name="commentKid" rows="6" required></textarea>
         </div>
         <div class="form-userInscription">
-            <a href="#" id="addJoey" onclick="afficherMasquer('Kid2')">+</a>
+            <a href="#" id="addJoey" onclick="afficherMasquer('Kid2')">
+                <img src="assets/images/icons8-plus-100.png" alt="Plus">
+            </a>
         </div>
         <div id="Kid2" style="display: none">
             <div class="form-userInscription">
@@ -76,7 +90,9 @@
                 <textarea id="commentKid2" name="commentKid2" rows="6"></textarea>
             </div>
             <div class="form-userInscription">
-                <a href="#" id="addJoey" onclick="afficherMasquer('Kid3')">+</a>
+                <a href="#" id="addJoey" onclick="afficherMasquer('Kid3')">
+                    <img src="assets/images/icons8-plus-100.png" alt="Plus">
+                </a>
             </div>
         </div>
         <div id="Kid3" style="display: none">
@@ -96,14 +112,17 @@
             </div>
         </div>
         <div class="form-userInscription submit">
-            <input type="submit" id="submitUserInscription" name="submit"
-                   value="Valider mon inscription">
+            <button type="submit" name="submit" id="submitUserInscription"> Bienvenue</button>
         </div>
     </form>
+    </body>
+    <footer>
+        Agence Tous Risques @ 2022 Mentions Légales
+    </footer>
 {% endblock %}
 
 {% block javascript %}
-{{ parent() }}
+    {{ parent() }}
     <script type="text/javascript">
         function afficherMasquer(id) {
             if (document.getElementById(id).style.display === "none")
