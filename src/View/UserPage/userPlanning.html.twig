@@ -1,0 +1,13 @@
+<h2>Mardi</h2>
+{% for demand in tuesdayDemands %}
+ {{ demand.startdate }}
+    {{ demand.comment }}
+    </br>
+{% endfor %}
+<h2>Mercredi</h2>
+{% for demand in demandsByDay.wednesdayDemands %}
+        <div class="tuesday">
+            <li>{{ demand.startdate }}</li>
+            <li>{{ demand.comment }}</li>
+        </div>
+{% endfor %}

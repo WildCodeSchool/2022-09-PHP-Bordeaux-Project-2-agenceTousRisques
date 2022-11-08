@@ -34,6 +34,7 @@ CREATE TABLE `Kid` (
 
 CREATE TABLE `Call` (
                         `userID` INT  NOT NULL ,
+                        `helperID` INT NULL,
                         `startdate` DATETIME  NOT NULL ,
                         `enddate` DATETIME  NOT NULL ,
                         `context` TEXT ,
@@ -64,6 +65,8 @@ ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_userID` FOREIGN KEY(`userID`)
     REFERENCES `User` (`userID`);
 
 ALTER TABLE `Chat` ADD CONSTRAINT `fk_Chat_userID` FOREIGN KEY(`userID`)
+    REFERENCES `User` (`userID`);
+ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_helperID` FOREIGN KEY(`helperID`)
     REFERENCES `User` (`userID`);
 
 INSERT INTO Avatar (avatarID, image) VALUES (1,'assets/avatar1.png');
