@@ -1,13 +1,171 @@
-<h2>Mardi</h2>
+<div class="day-block
+{% for demand in mondayDemands %}
+{% if demand.helperID==user.userID %}
+helper
+{% elseif demand.userID==user.userID %}
+helped
+{% endif %}
+{% endfor %}">
+    <h2>Lundi</h2>
+    {% for demand in mondayDemands %}
+        {% if demand.helperID==user.userID %}
+            <p class="demand-text helper">Je rends service à {{ demand.askerName }} à
+                {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}</p></br>
+            <p class="demand-text helper">Il a précisé que "{{ demand.comment }}".</p>
+            </br>
+        {% endif %}
+        {% if demand.userID==user.userID %}
+            <p class="demand-text helped">{{ demand.helperName }} garde mon enfant de {{ demand.startdate }}
+                à {{ demand.enddate }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="day-block
 {% for demand in tuesdayDemands %}
- {{ demand.startdate }}
-    {{ demand.comment }}
-    </br>
-{% endfor %}
-<h2>Mercredi</h2>
-{% for demand in demandsByDay.wednesdayDemands %}
-        <div class="tuesday">
-            <li>{{ demand.startdate }}</li>
-            <li>{{ demand.comment }}</li>
-        </div>
-{% endfor %}
+{% if demand.helperID==user.userID %}
+helper
+{% elseif demand.userID==user.userID %}
+helped
+{% endif %}
+{% endfor %}">
+    <h2>Mardi</h2>
+    {% for demand in tuesdayDemands %}
+        {% if demand.helperID==user.userID %}
+            <p class="demand-text helper">Je rends service à {{ demand.askerName }} à
+                {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}</p></br>
+            <p class="demand-text helper">Il a précisé que "{{ demand.comment }}".</p>
+            </br>
+        {% endif %}
+        {% if demand.userID==user.userID %}
+            <p class="demand-text helped">{{ demand.helperName }} garde mon enfant de {{ demand.startdate }}
+                à {{ demand.enddate }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="day-block
+{% for demand in wednesdayDemands %}
+{% if demand.helperID==user.userID %}
+helper
+{% elseif demand.userID==user.userID %}
+helped
+{% endif %}
+{% endfor %}">
+    <h2>Mercredi</h2>
+    {% for demand in wednesdayDemands %}
+        {% if demand.helperID==user.userID %}
+            <p class="demand-text helper">Je rends service à {{ demand.askerName }} à
+                {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}</p></br>
+            <p class="demand-text helper">Il a précisé que "{{ demand.comment }}".</p>
+            </br>
+        {% endif %}
+        {% if demand.userID==user.userID %}
+            <p class="demand-text helped">{{ demand.helperName }} garde mon enfant de {{ demand.startdate }}
+                à {{ demand.enddate }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="day-block
+{% for demand in thursdayDemands %}
+{% if demand.helperID==user.userID %}
+helper
+{% elseif demand.userID==user.userID %}
+helped
+{% endif %}
+{% endfor %}">
+    <h2>Jeudi</h2>
+    {% for demand in thursdayDemands %}
+        {% if demand.helperID==user.userID %}
+            <p class="demand-text helper">Je rends service à {{ demand.askerName }} à
+                {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}</p></br>
+            <p class="demand-text helper">Il a précisé que "{{ demand.comment }}".</p>
+            </br>
+        {% endif %}
+        {% if demand.userID==user.userID %}
+            <p class="demand-text helped">{{ demand.helperName }} garde mon enfant de {{ demand.startdate }}
+                à {{ demand.enddate }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="day-block
+{% for demand in fridayDemands %}
+{% if demand.helperID==user.userID %}
+helper
+{% elseif demand.userID==user.userID %}
+helped
+{% endif %}
+{% endfor %}">
+    <h2>Vendredi</h2>
+    {% for demand in fridayDemands %}
+        {% if demand.helperID==user.userID %}
+            <p class="demand-text helper">Je rends service à {{ demand.askerName }} à
+                {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}</p></br>
+            <p class="demand-text helper">Il a précisé que "{{ demand.comment }}".</p>
+            </br>
+        {% endif %}
+        {% if demand.userID==user.userID %}
+            <p class="demand-text helped">{{ demand.helperName }} garde mon enfant de {{ demand.startdate }}
+                à {{ demand.enddate }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="day-block
+{% for demand in saturdayDemands %}
+{% if demand.helperID==user.userID %}
+helper
+{% elseif demand.userID==user.userID %}
+helped
+{% endif %}
+{% endfor %}">
+    <h2>Samedi</h2>
+    {% for demand in saturdayDemands %}
+        {% if demand.helperID==user.userID %}
+            <p class="demand-text helper">Je rends service à {{ demand.askerName }} à
+                {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}</p></br>
+            <p class="demand-text helper">Il a précisé que "{{ demand.comment }}".</p>
+            </br>
+        {% endif %}
+        {% if demand.userID==user.userID %}
+            <p class="demand-text helped">{{ demand.helperName }} garde mon enfant de {{ demand.startdate }}
+                à {{ demand.enddate }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="day-block
+{% for demand in sundayDemands %}
+{% if demand.helperID==user.userID %}
+helper
+{% elseif demand.userID==user.userID %}
+helped
+{% endif %}
+{% endfor %}">
+    <h2>Dimanche</h2>
+    {% for demand in sundayDemands %}
+        {% if demand.helperID==user.userID %}
+            <p class="demand-text helper">Je rends service à {{ demand.askerName }} à
+                {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}</p></br>
+            <p class="demand-text helper">Il a précisé que "{{ demand.comment }}".</p>
+            </br>
+        {% endif %}
+        {% if demand.userID==user.userID %}
+            <p class="demand-text helped">{{ demand.helperName }} garde mon enfant de {{ demand.startdate }}
+                à {{ demand.enddate }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+</div>
+{% block javascript %}
+{{ parent }}
+ <script src="/assets/js/userPlanning.js"></script>
+{% endblock %}

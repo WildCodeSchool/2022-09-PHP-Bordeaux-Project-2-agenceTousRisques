@@ -1,0 +1,12 @@
+.day-block  {
+    &.helper {
+        background-color: var(--bleuVert);
+    }
+    &.helped {
+        background-color: var(--saumonPastel);
+        &.helper {
+            background-color: var(--rosePastel);
+        }
+    }
+
+}

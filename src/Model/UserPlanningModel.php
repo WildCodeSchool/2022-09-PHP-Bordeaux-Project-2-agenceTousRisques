@@ -12,4 +12,10 @@ class UserPlanningModel extends AbstractManager
         $statement->execute();
         return $statement->fetchAll();
     }
+
+    public function getAskerName(int $id)
+    {
+        $nameOfAsker = $this->selectOneById($id);
+        return $nameOfAsker['firstname'];
+    }
 }
