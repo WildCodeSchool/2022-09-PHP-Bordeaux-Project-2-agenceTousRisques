@@ -22,6 +22,7 @@ class AddDemandController extends AbstractController
                 }
             }
         }
+
         return $this->twig->render('Home/addDemand.html.twig');
     }
 }

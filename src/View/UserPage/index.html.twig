@@ -1,11 +1,24 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/adminHeader.css">
+    <link rel="stylesheet" href="/assets/css/styleUserSlider.css">
+    <link rel="stylesheet" href="/assets/css/styleButtonAddDemand.css">
 {% endblock %}
-{% block title %}Nounou Entre Nous{% endblock %}
+
+{% block title %}Accueil{% endblock %}
+
 {% block header %}
     {% include 'userHeader.html.twig' %}
 {% endblock %}
+
 {% block content %}
-    {% include 'UserPage/userCalls.html.twig' %}
+
+    <section class="sectionAddDemand">
+        <div class="addDemand">
+            <h2 class="titleAddDemand">Besoin d'un Kangourou ?</h2>
+            <a href="/addDemand" class="buttonAddDemand">Ajouter une Demande</a>
+        </div>
+    </section>
+
+{% include 'UserPage/userSlider.html.twig' %}
 {% endblock %}
