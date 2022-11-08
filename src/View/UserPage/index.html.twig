@@ -2,6 +2,7 @@
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/adminHeader.css">
     <link rel="stylesheet" href="/assets/css/styleUserSlider.css">
+    <link rel="stylesheet" href="/assets/css/styleButtonAddDemand.css">
 {% endblock %}
 
 {% block title %}Accueil{% endblock %}
@@ -11,5 +12,13 @@
 {% endblock %}
 
 {% block content %}
+
+    <section class="sectionAddDemand">
+        <div class="addDemand">
+            <h2 class="titleAddDemand">Besoin d'un Kangourou ?</h2>
+            <a href="/addDemand" class="buttonAddDemand">Ajouter une Demande</a>
+        </div>
+    </section>
+
 {% include 'UserPage/userSlider.html.twig' %}
 {% endblock %}
