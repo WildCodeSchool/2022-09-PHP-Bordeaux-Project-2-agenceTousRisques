@@ -10,21 +10,21 @@ class UserPageController extends AbstractController
     public function showUserPage()
     {
         $planningController = new UserPlanningController();
-        $mondayDemands = $planningController->getMondayDemands();
-        $tuesdayDemands = $planningController->getTuesdayDemands();
-        $wednesdayDemands = $planningController->getWednesdayDemands();
-        $thursdayDemands = $planningController->getThursdayDemands();
-        $fridayDemands = $planningController->getFridayDemands();
-        $saturdayDemands = $planningController->getSaturdayDemands();
-        $sundayDemands = $planningController->getSundayDemands();
+        $monday = $planningController->getMondayDemands();
+        $tuesday = $planningController->getTuesdayDemands();
+        $wednesday = $planningController->getWednesdayDemands();
+        $thursday = $planningController->getThursdayDemands();
+        $friday = $planningController->getFridayDemands();
+        $saturday = $planningController->getSaturdayDemands();
+        $sunday = $planningController->getSundayDemands();
         return $this->twig->render('UserPage/index.html.twig', [
-            'mondayDemands' => $mondayDemands,
-            'tuesdayDemands' => $tuesdayDemands,
-            'wednesdayDemands' => $wednesdayDemands,
-            'thursdayDemands' => $thursdayDemands,
-            'fridayDemands' => $fridayDemands,
-            'saturdayDemands' => $saturdayDemands,
-            'sundayDemands' => $sundayDemands
+            'mondayDemands' => $monday,
+            'tuesdayDemands' => $tuesday,
+            'wednesdayDemands' => $wednesday,
+            'thursdayDemands' => $thursday,
+            'fridayDemands' => $friday,
+            'saturdayDemands' => $saturday,
+            'sundayDemands' => $sunday,
         ]);
     }
 }

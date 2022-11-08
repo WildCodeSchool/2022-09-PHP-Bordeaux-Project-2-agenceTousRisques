@@ -8,5 +8,19 @@
             background-color: var(--rosePastel);
         }
     }
-
+}
+.user-planning {
+    background-color: var(--bleu);
+    padding-top:16px;
+}
+.day-block {
+    width:80%;
+    margin:auto;
+    border-radius:20px;
+    box-shadow:1px 1px 3px gray;
+    margin-bottom:16px;
+    padding:8px;
+    .demand-text {
+        line-height:16px;
+    }
 }
