@@ -6,6 +6,10 @@ class UserPageController extends AbstractController
 {
     public function showUserPage()
     {
-        return $this->twig->render('UserPage/index.html.twig');
+        $userSliderController = new UserSliderController();
+        $team = $userSliderController->show();
+        return $this->twig->render('UserPage/index.html.twig', ['team'=> $team]);
     }
+
+
 }

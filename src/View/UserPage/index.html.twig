@@ -1,9 +1,15 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/adminHeader.css">
+    <link rel="stylesheet" href="/assets/css/styleUserSlider.css">
 {% endblock %}
-{% block title %}Nounou Entre Nous{% endblock %}
+
+{% block title %}Accueil{% endblock %}
+
 {% block header %}
     {% include 'userHeader.html.twig' %}
 {% endblock %}
-{% block content %}{% endblock %}
+
+{% block content %}
+{% include 'UserPage/userSlider.html.twig' %}
+{% endblock %}

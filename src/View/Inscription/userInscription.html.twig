@@ -13,6 +13,11 @@
         <h1>Nounou Entre Nous</h1>
         <img class="logoSite" src="assets/images/logoSite.jpg" alt="Logo Site">
     </header>
+    <div class="user-connection-errors">
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </div>
     <form action="" method="post" name="monFormulaire">
         <div class="block-userInscription">
             <div class="form-userInscription">
@@ -107,7 +112,7 @@
             </div>
         </div>
         <div class="form-userInscription submit">
-            <button type="submit" name="submit" id="submitUserInscription" > Bienvenue </button>
+            <button type="submit" name="submit" id="submitUserInscription"> Bienvenue</button>
         </div>
     </form>
     </body>
