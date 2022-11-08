@@ -9,7 +9,11 @@
 {% block header %}
     {% include 'userHeader.html.twig' %}
 {% endblock %}
-
+<div class="user-connection-errors">
+    {% for error in errors %}
+        <li>{{ error }}</li>
+    {% endfor %}
+</div>
 {% block content %}
     <body>
     <section class="addDemand">
