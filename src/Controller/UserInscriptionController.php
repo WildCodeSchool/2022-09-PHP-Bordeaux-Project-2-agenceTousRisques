@@ -9,7 +9,6 @@ class UserInscriptionController extends AbstractController
     public array $errors;
 
     public function add(): array|string|null
-
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = array_map('trim', $_POST);

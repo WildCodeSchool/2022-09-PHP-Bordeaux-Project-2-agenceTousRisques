@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-
 class UserSliderManager extends AbstractManager
 {
     public const TABLE = 'user';
