@@ -19,6 +19,6 @@ class AddDemandController extends AbstractController
             }
         }
 
-        return $this->twig->render('Home/addDemand.html.twig');
+        return $this->twig->render('UserPage/index.html.twig');
     }
 }
