@@ -32,39 +32,42 @@ CREATE TABLE `Kid` (
                            )
 );
 
-CREATE TABLE `Call` (
-                        `userID` INT  NOT NULL ,
-                        `startdate` DATETIME  NOT NULL ,
-                        `enddate` DATETIME  NOT NULL ,
-                        `context` TEXT ,
-                        `comment` TEXT
+CREATE TABLE Call (
+                      userID INT  NOT NULL ,
+                      helperID INT NULL,
+                      startdate DATETIME  NOT NULL ,
+                      enddate DATETIME  NOT NULL ,
+                      context TEXT ,
+                      comment TEXT
 );
 
-CREATE TABLE `Avatar` (
-                          `avatarID` INT  NOT NULL ,
-                          `image` VARCHAR(100)  NOT NULL ,
-                          PRIMARY KEY (
-                                       `avatarID`
-                              )
+CREATE TABLE Avatar (
+                        avatarID INT  NOT NULL ,
+                        image VARCHAR(100)  NOT NULL ,
+                        PRIMARY KEY (
+                                     avatarID
+                            )
 );
 
-CREATE TABLE `Chat` (
-                        `userID` INT  NOT NULL ,
-                        `date` DATE  NOT NULL ,
-                        `content` TEXT  NOT NULL
+CREATE TABLE Chat (
+                      userID INT  NOT NULL ,
+                      date DATE  NOT NULL ,
+                      content TEXT  NOT NULL
 );
 
-ALTER TABLE `User` ADD CONSTRAINT `fk_User_avatar` FOREIGN KEY(`avatar`)
-    REFERENCES `Avatar` (`avatarID`);
+ALTER TABLE User ADD CONSTRAINT fk_User_avatar FOREIGN KEY(avatar)
+    REFERENCES Avatar (avatarID);
 
-ALTER TABLE `Kid` ADD CONSTRAINT `fk_Kid_userID` FOREIGN KEY(`userID`)
-    REFERENCES `User` (`userID`);
+ALTER TABLE Kid ADD CONSTRAINT fk_Kid_userID FOREIGN KEY(userID)
+    REFERENCES User (userID);
 
-ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_userID` FOREIGN KEY(`userID`)
-    REFERENCES `User` (`userID`);
+ALTER TABLE Call ADD CONSTRAINT fk_Call_userID FOREIGN KEY(userID)
+    REFERENCES User (userID);
 
-ALTER TABLE `Chat` ADD CONSTRAINT `fk_Chat_userID` FOREIGN KEY(`userID`)
-    REFERENCES `User` (`userID`);
+ALTER TABLE Chat ADD CONSTRAINT fk_Chat_userID FOREIGN KEY(userID)
+    REFERENCES User (userID);
+ALTER TABLE Call ADD CONSTRAINT fk_Call_helperID FOREIGN KEY(helperID)
+    REFERENCES User (userID);
 
 INSERT INTO Avatar (avatarID, image) VALUES (1,'assets/avatar1.png');
 
