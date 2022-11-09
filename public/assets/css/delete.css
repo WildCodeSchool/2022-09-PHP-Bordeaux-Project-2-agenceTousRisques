@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fuzzy+Bubbles&family=Gochi+Hand&display=swap');
+
+
+div.form {
+    color: black;
+    background-color:  #FAD7D4;
+    font-family: var(--fontTitle);
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    position: relative;
+    padding: 70px 40px;
+    background-color: #C7EBDD;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgb(0, 0, 0, 0);
+
+}
+
+.container button[type="submit"]{
+    
+    max-width: 120px;
+    cursor: pointer;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 24px 0 16px;
+    letter-spacing: .25px;
+    border-radius: 24px;
+    outline: none;
+    margin-right: 8px;
+    font-size: 16px;
+    
+    display: none;
+    
+    display: block;
+
+}
+
+
+
+
+.container button[type="submit"]:hover{
+ background: #FAA07D;
+}
+
+
+.deleteformerror {
+    list-style: none;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: var(--fontText);
+    padding: 8px;
+}
+
+
+
+    
