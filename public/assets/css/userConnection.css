@@ -79,7 +79,6 @@
 .login-input:not(:placeholder-shown) ~ .cut {
     transform: translateY(8px);
 }
-
 .placeholder {
     color: var(--saumonPastel);
     font-family: var(--fontText);

@@ -1,6 +1,5 @@
 .admin-header-container {
     margin-bottom: 64px;
-    width: 100vw;
     position: relative;
     height: 315px;
     background-color: var(--bleuVert);
@@ -39,7 +38,7 @@
 }
 
 .line {
-    width: 100vw;
+    width: 100%;
     border: 1px solid var(--smallButtonColor);
     position: absolute;
     top: 50%;

@@ -1,0 +1,36 @@
+.day-block, .demand-block {
+  background-color: gray;
+  margin-bottom: 16px;
+}
+.day-block.helper, .demand-block.helper {
+  background-color: var(--bleuVert);
+}
+.day-block.helped, .demand-block.helped {
+  background-color: var(--saumonPastel);
+}
+.day-block.helped.helper, .demand-block.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+.user-planning {
+  background-color: var(--bleu);
+  padding-top: 16px;
+}
+
+.day-block {
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px gray;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+.day-block .demand-text {
+  line-height: 16px;
+}
+
+.demand-block {
+  margin: auto;
+  text-align: justify;
+}
+
+/*# sourceMappingURL=userPlanning.css.map */
