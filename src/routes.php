@@ -18,4 +18,6 @@ return [
     'gestion' => ['AdminController','administrationPanel',],
     'adminInvite' => ['AdminController', 'inviteUserForm',],
     'invite' => ['AdminController', 'inviteUser',],
+    'delete' => ['DeleteController', 'delete',],
+    'objetmetier' =>['ObjetmetierController', 'objetmetier']
 ];
