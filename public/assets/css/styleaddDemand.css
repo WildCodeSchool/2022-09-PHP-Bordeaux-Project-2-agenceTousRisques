@@ -73,14 +73,3 @@ footer {
     align-items: center;
     margin-top: 20px;
 }
-
-@media (min-width: 768px) {
-    .login-button {
-        padding: .75rem 3rem;
-        font-size: 1.25rem;
-    }
-
-    * {
-        max-width: 1200px;
-    }
-}
