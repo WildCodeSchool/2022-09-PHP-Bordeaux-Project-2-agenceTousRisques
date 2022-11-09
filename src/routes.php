@@ -19,5 +19,5 @@ return [
     'adminInvite' => ['AdminController', 'inviteUserForm',],
     'invite' => ['AdminController', 'inviteUser',],
     'delete' => ['DeleteController', 'delete',],
-    'objetmetier' =>['ObjetmetierController', 'objetmetier']
+    'objetmetier' => ['ObjetmetierController', 'objetmetier']
 ];
