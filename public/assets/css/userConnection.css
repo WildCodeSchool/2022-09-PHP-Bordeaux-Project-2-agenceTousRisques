@@ -1,7 +1,3 @@
-body,html {
-    width:100vw;
-}
-
 .login-block {
     background-color: #FFE3C7;
     padding-bottom: 20px;
@@ -56,6 +52,7 @@ body,html {
     padding: 8px 8px;
     transition: all 0.2s ease;
 }
+
 .cta:before {
     content: "";
     position: absolute;
@@ -68,6 +65,7 @@ body,html {
     height: 56px;
     transition: all 0.3s ease;
 }
+
 .cta span {
     position: relative;
     font-size: 16px;
@@ -77,6 +75,7 @@ body,html {
     text-transform: uppercase;
     vertical-align: middle;
 }
+
 .cta svg {
     position: relative;
     top: 0;
@@ -89,13 +88,16 @@ body,html {
     transform: translateX(-5px);
     transition: all 0.3s ease;
 }
+
 .cta:hover:before {
     width: 100%;
     background: rgba(var(--saumonPastel), 1);
 }
+
 .cta:hover svg {
     transform: translateX(0);
 }
+
 .cta:active {
     transform: scale(0.96);
 }

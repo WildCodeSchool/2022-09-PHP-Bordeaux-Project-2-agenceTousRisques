@@ -11,6 +11,7 @@ class UserPlanningController
     private \DateTime $date;
     private string $currentWeek;
     private UserPlanningModel $userPlanningModel;
+    private array $correspondantDay;
 
     public function __construct()
     {
@@ -18,117 +19,30 @@ class UserPlanningController
         $this->date = new DateTime();
         $this->userDemands = $this->userPlanningModel->getUserDemands($_SESSION['user_id']);
         $this->currentWeek = $this->date->format('W');
+        $this->correspondantDay = [
+            'Lundi' => 'Mon',
+            'Mardi' => 'Tue',
+            'Mercredi' => 'Wed',
+            'Jeudi' => 'Thu',
+            'Vendredi' => 'Fri',
+            'Samedi' => 'Sat',
+            'Dimanche' => 'Sun'
+        ];
     }
 
-    public function getTuesdayDemands(): array
+    public function getDemandsOfDay(string $day): array
     {
-        $tuesdayDemands = [];
+        $dayDemands = [];
         foreach ($this->userDemands as $demand) {
             $demandDate = new DateTime($demand['startdate']);
             $dayOfDemand = $demandDate->format('D');
             $weekOfDemand = $demandDate->format('W');
-            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === "Tue") {
+            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === $this->correspondantDay[$day]) {
                 $demand['askerName'] = $this->userPlanningModel->getAskerName($demand['userID']);
                 $demand['helperName'] = $this->userPlanningModel->getAskerName($demand['helperID']);
-                $tuesdayDemands[] = $demand;
+                $dayDemands[] = $demand;
             }
         }
-        return $tuesdayDemands;
-    }
-
-    public function getMondayDemands()
-    {
-        $mondayDemands = [];
-        foreach ($this->userDemands as $demand) {
-            $demandDate = new DateTime($demand['startdate']);
-            $dayOfDemand = $demandDate->format('D');
-            $weekOfDemand = $demandDate->format('W');
-            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === "Mon") {
-                $demand['askerName'] = $this->userPlanningModel->getAskerName($demand['userID']);
-                $demand['helperName'] = $this->userPlanningModel->getAskerName($demand['helperID']);
-                $mondayDemands[] = $demand;
-            }
-        }
-        return $mondayDemands;
-    }
-
-    public function getWednesdayDemands()
-    {
-        $wednesdayDemands = [];
-        foreach ($this->userDemands as $demand) {
-            $demandDate = new DateTime($demand['startdate']);
-            $dayOfDemand = $demandDate->format('D');
-            $weekOfDemand = $demandDate->format('W');
-            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === "Wed") {
-                $demand['askerName'] = $this->userPlanningModel->getAskerName($demand['userID']);
-                $demand['helperName'] = $this->userPlanningModel->getAskerName($demand['helperID']);
-                $wednesdayDemands[] = $demand;
-            }
-        }
-        return $wednesdayDemands;
-    }
-
-    public function getThursdayDemands()
-    {
-        $thursdayDemands = [];
-        foreach ($this->userDemands as $demand) {
-            $demandDate = new DateTime($demand['startdate']);
-            $dayOfDemand = $demandDate->format('D');
-            $weekOfDemand = $demandDate->format('W');
-            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === "Thu") {
-                $demand['askerName'] = $this->userPlanningModel->getAskerName($demand['userID']);
-                $demand['helperName'] = $this->userPlanningModel->getAskerName($demand['helperID']);
-                $thursdayDemands[] = $demand;
-            }
-        }
-        return $thursdayDemands;
-    }
-
-    public function getFridayDemands()
-    {
-        $fridayDemands = [];
-        foreach ($this->userDemands as $demand) {
-            $demandDate = new DateTime($demand['startdate']);
-            $dayOfDemand = $demandDate->format('D');
-            $weekOfDemand = $demandDate->format('W');
-            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === "Fri") {
-                $demand['askerName'] = $this->userPlanningModel->getAskerName($demand['userID']);
-                $demand['helperName'] = $this->userPlanningModel->getAskerName($demand['helperID']);
-                $fridayDemands[] = $demand;
-            }
-        }
-        return $fridayDemands;
-    }
-
-    public function getSaturdayDemands()
-    {
-        $saturdayDemands = [];
-        foreach ($this->userDemands as $demand) {
-            $demandDate = new DateTime($demand['startdate']);
-            $dayOfDemand = $demandDate->format('D');
-            $weekOfDemand = $demandDate->format('W');
-            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === "Fri") {
-                $demand['askerName'] = $this->userPlanningModel->getAskerName($demand['userID']);
-                $demand['helperName'] = $this->userPlanningModel->getAskerName($demand['helperID']);
-                $saturdayDemands[] = $demand;
-            }
-        }
-        return $saturdayDemands;
-    }
-
-    public function getSundayDemands()
-    {
-        $sundayDemands = [];
-        foreach ($this->userDemands as $demand) {
-            $demandDate = new DateTime($demand['startdate']);
-            $dayOfDemand = $demandDate->format('D');
-            $weekOfDemand = $demandDate->format('W');
-            if ($weekOfDemand === $this->currentWeek && $dayOfDemand === "Fri") {
-                $demand['askerName'] = $this->userPlanningModel->getAskerName($demand['userID']);
-                $demand['helperName'] = $this->userPlanningModel->getAskerName($demand['helperID']);
-                $sundayDemands[] = $demand;
-            }
-        }
-        return $sundayDemands;
+        return $dayDemands;
     }
 }

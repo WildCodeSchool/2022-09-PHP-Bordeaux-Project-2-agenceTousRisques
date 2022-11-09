@@ -102,13 +102,13 @@ form {
     left: 2px;
 }
 
-@media (min-width: 768px) {
-    * {
-        max-width: 1200px;
-    }
+/*@media (min-width: 768px) {*/
+/*    * {*/
+/*        max-width: 1200px;*/
+/*    }*/
 
-    #submitUserInscription {
-        padding: .75rem 3rem;
-        font-size: 1.25rem;
-    }
-}
+/*    #submitUserInscription {*/
+/*        padding: .75rem 3rem;*/
+/*        font-size: 1.25rem;*/
+/*    }*/
+/*}*/

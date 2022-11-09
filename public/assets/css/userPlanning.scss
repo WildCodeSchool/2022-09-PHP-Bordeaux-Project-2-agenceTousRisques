@@ -1,4 +1,6 @@
-.day-block  {
+.day-block, .demand-block  {
+    background-color: gray;
+    margin-bottom: 16px;
     &.helper {
         background-color: var(--bleuVert);
     }
@@ -14,7 +16,6 @@
     padding-top:16px;
 }
 .day-block {
-    width:80%;
     margin:auto;
     border-radius:20px;
     box-shadow:1px 1px 3px gray;
@@ -23,4 +24,8 @@
     .demand-text {
         line-height:16px;
     }
+}
+.demand-block {
+    margin:auto;
+    text-align:justify;
 }

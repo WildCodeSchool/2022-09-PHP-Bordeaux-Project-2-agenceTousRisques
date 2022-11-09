@@ -10,21 +10,13 @@ class UserPageController extends AbstractController
     public function showUserPage()
     {
         $planningController = new UserPlanningController();
-        $monday = $planningController->getMondayDemands();
-        $tuesday = $planningController->getTuesdayDemands();
-        $wednesday = $planningController->getWednesdayDemands();
-        $thursday = $planningController->getThursdayDemands();
-        $friday = $planningController->getFridayDemands();
-        $saturday = $planningController->getSaturdayDemands();
-        $sunday = $planningController->getSundayDemands();
+        $week = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+        $demandsOfCurrentWeek = [];
+        foreach ($week as $day) {
+            $demandsOfCurrentWeek[$day] = $planningController->getDemandsOfDay($day);
+        }
         return $this->twig->render('UserPage/index.html.twig', [
-            'mondayDemands' => $monday,
-            'tuesdayDemands' => $tuesday,
-            'wednesdayDemands' => $wednesday,
-            'thursdayDemands' => $thursday,
-            'fridayDemands' => $friday,
-            'saturdayDemands' => $saturday,
-            'sundayDemands' => $sunday,
+            'demandsByDay' => $demandsOfCurrentWeek,
         ]);
     }
 }

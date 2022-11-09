@@ -74,13 +74,13 @@ footer {
     margin-top: 20px;
 }
 
-@media (min-width: 768px) {
-    .login-button {
-        padding: .75rem 3rem;
-        font-size: 1.25rem;
-    }
+/*@media (min-width: 768px) {*/
+/*    .login-button {*/
+/*        padding: .75rem 3rem;*/
+/*        font-size: 1.25rem;*/
+/*    }*/
 
-    * {
-        max-width: 1200px;
-    }
-}
+/*    * {*/
+/*        max-width: 1200px;*/
+/*    }*/
+/*}*/
