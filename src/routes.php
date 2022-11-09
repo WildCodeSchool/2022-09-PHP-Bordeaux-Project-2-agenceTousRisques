@@ -21,4 +21,5 @@ return [
     'addDemand' => ['AddDemandController', 'add'],
     'logout' => ['UserConnectionController', 'logout'],
     'UserPage' => ['UserPageController', 'showUserPage'],
+    'userCalls' => ['UserCallsController', 'showUserCalls'],
 ];

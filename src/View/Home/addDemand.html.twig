@@ -11,11 +11,13 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="user-connection-errors">
         {% for error in errors %}
             <li>{{ error }}</li>
         {% endfor %}
     </div>
+
     <body>
     <section class="addDemand">
         <h2 class="addDemandtitle">Nouvelle Demande</h2>

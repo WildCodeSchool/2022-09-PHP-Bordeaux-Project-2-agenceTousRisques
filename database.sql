@@ -34,6 +34,44 @@ CREATE TABLE `Kid`
         )
 );
 
+<<<<<<< HEAD
+CREATE TABLE Call (
+                      userID INT  NOT NULL ,
+                      helperID INT NULL,
+                      startdate DATETIME  NOT NULL ,
+                      enddate DATETIME  NOT NULL ,
+                      context TEXT ,
+                      comment TEXT
+);
+
+CREATE TABLE Avatar (
+                        avatarID INT  NOT NULL ,
+                        image VARCHAR(100)  NOT NULL ,
+                        PRIMARY KEY (
+                                     avatarID
+                            )
+);
+
+CREATE TABLE Chat (
+                      userID INT  NOT NULL ,
+                      date DATE  NOT NULL ,
+                      content TEXT  NOT NULL
+);
+
+ALTER TABLE User ADD CONSTRAINT fk_User_avatar FOREIGN KEY(avatar)
+    REFERENCES Avatar (avatarID);
+
+ALTER TABLE Kid ADD CONSTRAINT fk_Kid_userID FOREIGN KEY(userID)
+    REFERENCES User (userID);
+
+ALTER TABLE Call ADD CONSTRAINT fk_Call_userID FOREIGN KEY(userID)
+    REFERENCES User (userID);
+
+ALTER TABLE Chat ADD CONSTRAINT fk_Chat_userID FOREIGN KEY(userID)
+    REFERENCES User (userID);
+ALTER TABLE Call ADD CONSTRAINT fk_Call_helperID FOREIGN KEY(helperID)
+    REFERENCES User (userID);
+=======
 CREATE TABLE `Call`
 (
     `userID`    INT      NOT NULL,
@@ -74,6 +112,7 @@ ALTER TABLE `Call`
 ALTER TABLE `Chat`
     ADD CONSTRAINT `fk_Chat_userID` FOREIGN KEY (`userID`)
         REFERENCES `User` (`userID`);
+>>>>>>> 947adae23aa0e051c4e7a9733d47bc5e65b6dcfe
 
 INSERT INTO Avatar (avatarID, image)
 VALUES (1, 'assets/avatar1.png'),

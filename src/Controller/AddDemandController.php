@@ -14,11 +14,15 @@ class AddDemandController extends AbstractController
             $errors = $addDemandManager->validFormCompletedAddDemand($addDemand);
             if (sizeof($errors)) {
                 $addDemandManager->insertDemand($addDemand);
-                header('Location:/');
+                header('Location:UserPage');
                 return null;
+            } else {
+                foreach ($errors as $error) {
+                    echo "<p>" . $error . "</p>";
+                }
             }
         }
 
-        return $this->twig->render('UserPage/index.html.twig');
+        return $this->twig->render('Home/addDemand.html.twig');
     }
 }
