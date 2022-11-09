@@ -16,6 +16,10 @@ class AddDemandController extends AbstractController
                 $addDemandManager->insertDemand($addDemand);
                 header('Location:UserPage');
                 return null;
+            } else {
+                foreach ($errors as $error) {
+                    echo "<p>" . $error . "</p>";
+                }
             }
         }
 

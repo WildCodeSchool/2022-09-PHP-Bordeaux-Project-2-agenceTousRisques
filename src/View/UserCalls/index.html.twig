@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+    Users Calls
+{% endblock %}
+
+{% block stylesheet %}{% endblock %}
+
+{% block content %}
+    {% for call in Calls %}
+        <p>{{ call.userID }} souhaite se faire aider<br>DU {{ call.startdate }} AU {{ call.enddate }} pour une {{ call.context }}<br>commentaire : {{ call.comment }}</p>
+    {% endfor %}
+{% endblock %}
