@@ -35,15 +35,16 @@ CREATE TABLE `Kid`
 );
 
 CREATE TABLE `Call` (
-
-                      userID INT  NOT NULL ,
-                      helperID INT NULL,
-                      startdate DATETIME  NOT NULL ,
-                      enddate DATETIME  NOT NULL ,
-                      context TEXT ,
-                      comment TEXT,
-                      callID INT NOT NULL AUTO_INCREMENT
-                      PRIMARY KEY ( `callID`)
+                        `callID` INT NOT NULL AUTO_INCREMENT,
+                        `userID` INT  NOT NULL ,
+                        `helperID` INT NULL,
+                        `startdate` DATETIME  NOT NULL ,
+                        `enddate` DATETIME  NOT NULL ,
+                        `context` TEXT ,
+                        `comment` TEXT ,
+                        PRIMARY KEY (
+                                     `callID`
+                            )
 );
 
 CREATE TABLE Avatar (
