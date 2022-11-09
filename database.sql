@@ -1,63 +1,93 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+DROP DATABASE nounouEntreNous;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+CREATE DATABASE nounouEntreNous;
 
+USE nounouEntreNous;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+CREATE TABLE `User`
+(
+    `userID`         INT                 NOT NULL AUTO_INCREMENT,
+    `firstname`      VARCHAR(255),
+    `lastname`       VARCHAR(255),
+    `telephone`      VARCHAR(10),
+    `address`        VARCHAR(255),
+    `email`          VARCHAR(150) UNIQUE NOT NULL,
+    `password`       VARCHAR(255),
+    `avatar`         INT,
+    `activationcode` VARCHAR(10)         NOT NULL,
+    `isAdmin`        BOOL,
+    `isVisible`      BOOL,
+    PRIMARY KEY (
+                 `userID`
+        )
+);
 
---
--- Base de données :  `simple-mvc`
---
+CREATE TABLE `Kid`
+(
+    `kidID`     INT  NOT NULL AUTO_INCREMENT,
+    `userID`    INT  NOT NULL,
+    `firstname` VARCHAR(255),
+    `birthday`  DATE,
+    `specs`     TEXT NOT NULL,
+    PRIMARY KEY (
+                 `kidID`
+        )
+);
 
--- --------------------------------------------------------
+CREATE TABLE `Call`
+(
+    `userID`    INT      NOT NULL,
+    `startdate` DATETIME NOT NULL,
+    `enddate`   DATETIME NOT NULL,
+    `context`   TEXT,
+    `comment`   TEXT
+);
 
---
--- Structure de la table `item`
---
+CREATE TABLE `Avatar`
+(
+    `avatarID` INT          NOT NULL,
+    `image`    VARCHAR(100) NOT NULL,
+    PRIMARY KEY (
+                 `avatarID`
+        )
+);
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `Chat`
+(
+    `userID`  INT  NOT NULL,
+    `date`    DATE NOT NULL,
+    `content` TEXT NOT NULL
+);
 
---
--- Contenu de la table `item`
---
+ALTER TABLE `User`
+    ADD CONSTRAINT `fk_User_avatar` FOREIGN KEY (`avatar`)
+        REFERENCES `Avatar` (`avatarID`);
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+ALTER TABLE `Kid`
+    ADD CONSTRAINT `fk_Kid_userID` FOREIGN KEY (`userID`)
+        REFERENCES `User` (`userID`);
 
---
--- Index pour les tables exportées
---
+ALTER TABLE `Call`
+    ADD CONSTRAINT `fk_Call_userID` FOREIGN KEY (`userID`)
+        REFERENCES `User` (`userID`);
 
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `Chat`
+    ADD CONSTRAINT `fk_Chat_userID` FOREIGN KEY (`userID`)
+        REFERENCES `User` (`userID`);
 
---
--- AUTO_INCREMENT pour les tables exportées
---
+INSERT INTO Avatar (avatarID, image)
+VALUES (1, 'assets/avatar1.png'),
+       (2, 'assets/avatar2.png'),
+       (3, 'assets/avatar3.png'),
+       (4, 'assets/avatar4.png'),
+       (5, 'assets/avatar5.png'),
+       (6, 'assets/avatar6.png'),
+       (7, 'assets/avatar7.png'),
+       (8, 'assets/avatar8.png'),
+       (9, 'assets/avatar9.png'),
+       (10, 'assets/avatar10.png');
 
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO User (firstname, lastname, telephone, address, email, password, avatar, activationcode, isAdmin, isVisible)
+VALUES ('Jean Le Grand', 'Bokassa', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'jean-le-grand.bokassa@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 1,
+        '0000001', 1, 1);

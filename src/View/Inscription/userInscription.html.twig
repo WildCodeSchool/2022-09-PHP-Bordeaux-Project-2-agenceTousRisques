@@ -1,0 +1,134 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Inscription Utilisateur{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/styleUserInscription.css">
+    <link rel="stylesheet" href="/assets/css/styleHome.css">
+{% endblock %}
+
+{% block content %}
+    <body class="container">
+    <header>
+        <h1>Nounou Entre Nous</h1>
+        <img class="logoSite" src="assets/images/logoSite.jpg" alt="Logo Site">
+    </header>
+    <div class="user-connection-errors">
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </div>
+    <form action="" method="post" name="monFormulaire">
+        <div class="block-userInscription">
+            <div class="form-userInscription">
+                <h2>Mon Compte</h2>
+                <label for="emailUserInscription">{{ GET['email'] }}</label>
+            </div>
+            <div class="form-userInscription">
+                <label for="activationCode">Code Activation : {{ GET['code'] }}</label>
+            </div>
+            <div class="form-userInscription">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-userInscription">
+                <label for="password2">Confirmer votre mot de passe :</label>
+                <input type="password" id="password2" name="password2" required>
+            </div>
+        </div>
+        <div class="block-userInscription">
+            <div class="form-userInscription">
+                <h2>Informations Personnelles</h2>
+                <label for="firstname">Prénom :</label>
+                <input type="text" id="firstname" name="firstname" required pattern="[a-zA-Z0-9]+">
+            </div>
+            <div class="form-userInscription">
+                <label for="lastname">Nom :</label>
+                <input type="text" id="lastname" name="lastname" required pattern="[a-zA-Z0-9]+">
+            </div>
+            <div class="form-userInscription">
+                <label for="telephone">N° de tel :</label>
+                <input type="number" id="telephone" name="telephone" required pattern="[0-9]+">
+            </div>
+            <div class="form-userInscription">
+                <label for="address">Votre adresse :</label>
+                <textarea id="address" name="address" rows="6" required></textarea>
+            </div>
+        </div>
+        <div class="form-userInscription">
+            <h2>Mes Joeys</h2>
+            <label for="firstnameKid">Prénom :</label>
+            <input type="text" id="firstnameKid" name="firstnameKid" required>
+        </div>
+        <div class="form-userInscription">
+            <label for="birthdayKid">Né(e) le :</label>
+            <input type="date" id="birthdayKid" name="birthdayKid" required
+                   pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}">
+        </div>
+        <div class="form-userInscription">
+            <label for="commentKid">Allergies / Choses à savoir :</label>
+            <textarea id="commentKid" name="commentKid" rows="6" required></textarea>
+        </div>
+        <div class="form-userInscription">
+            <a href="#" id="addJoey" onclick="afficherMasquer('Kid2')">
+                <img src="assets/images/icons8-plus-100.png" alt="Plus">
+            </a>
+        </div>
+        <div id="Kid2" style="display: none">
+            <div class="form-userInscription">
+                <h2>Mes Joeys</h2>
+                <label for="firstnameKid2">Prénom :</label>
+                <input type="text" id="firstnameKid2" name="firstnameKid2">
+            </div>
+            <div class="form-userInscription">
+                <label for="birthdayKid2">Né(e) le :</label>
+                <input type="date" id="birthdayKid2" name="birthdayKid2"
+                       pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}">
+            </div>
+            <div class="form-userInscription">
+                <label for="commentKid2">Allergies / Choses à savoir :</label>
+                <textarea id="commentKid2" name="commentKid2" rows="6"></textarea>
+            </div>
+            <div class="form-userInscription">
+                <a href="#" id="addJoey" onclick="afficherMasquer('Kid3')">
+                    <img src="assets/images/icons8-plus-100.png" alt="Plus">
+                </a>
+            </div>
+        </div>
+        <div id="Kid3" style="display: none">
+            <div class="form-userInscription">
+                <h2>Mes Joeys</h2>
+                <label for="firstnameKid3">Prénom :</label>
+                <input type="text" id="firstnameKid3" name="firstnameKid3">
+            </div>
+            <div class="form-userInscription">
+                <label for="birthdayKid3">Né(e) le :</label>
+                <input type="date" id="birthdayKid3" name="birthdayKid3"
+                       pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}">
+            </div>
+            <div class="form-userInscription">
+                <label for="commentKid3">Allergies / Choses à savoir :</label>
+                <textarea id="commentKid3" name="commentKid3" rows="6"></textarea>
+            </div>
+        </div>
+        <div class="form-userInscription submit">
+            <button type="submit" name="submit" id="submitUserInscription"> Bienvenue</button>
+        </div>
+    </form>
+    </body>
+    <footer>
+        Agence Tous Risques @ 2022 Mentions Légales
+    </footer>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript">
+        function afficherMasquer(id) {
+            if (document.getElementById(id).style.display === "none")
+                document.getElementById(id).style.display = "block";
+            else
+                document.getElementById(id).style.display = "none";
+        }
+    </script>
+{% endblock %}

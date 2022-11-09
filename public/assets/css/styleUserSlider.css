@@ -1,0 +1,127 @@
+.title{
+    font-family: var(--fontTitle);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.firstnameAvatar{
+    color: black;
+    font-family:  var(--fontText);
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.sectionSlider {
+    background-color: var(--bleuVert);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.slider {
+    --translateSlider1: translateX(400px);
+    --translateSlider2: translateX(calc(-150px * 10));
+}
+
+.slider2 {
+    --translateSlider1: translateX(-1500px);
+    --translateSlider2: translateX(calc(150px * 10));
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        transform: var(--translateSlider1);
+    }
+    100% {
+        transform: var(--translateSlider2);
+    }
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: var(--translateSlider1);
+    }
+    100% {
+        transform: var(--translateSlider2);
+    }
+}
+
+.slider {
+    height: 150px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 350px;
+}
+
+.slider::before, .slider::after {
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(150px * 10);
+}
+
+.slider .slide {
+    height: 100px;
+    width: 150px;
+}
+
+.slider2 {
+    height: 150px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 350px;
+}
+
+.slider2::before, .slider2::after {
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+}
+
+.slider2::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider2::before {
+    left: 0;
+    top: 0;
+}
+
+.slider2 .slide2-track {
+    -webkit-animation: scroll 42s linear infinite;
+    animation: scroll 42s linear infinite;
+    display: flex;
+    width: calc(150px * 10);
+}
+
+.slider2 .slide2 {
+    height: 100px;
+    width: 150px;
+}

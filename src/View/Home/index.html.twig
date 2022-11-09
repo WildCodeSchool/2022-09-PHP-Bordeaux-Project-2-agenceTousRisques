@@ -1,6 +1,110 @@
 {% extends 'layout.html.twig' %}
+{% block title %}
+    Home Page
+{% endblock %}
 
-{% block content %}
-    <h1>Hello Wilder !</h1>
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/styleHome.css">
+    <link rel="stylesheet" href="/../assets/css/userConnection.css">
+{% endblock %}
+
+
+       {% block content %}
+           <header>
+               <h1>Nounou Entre Nous</h1>
+               <img class="logoSite" src="assets/images/logoSite.jpg" alt="Logo Site">
+           </header>
+           <section class="avatar">
+               <img class="avatar1" src="assets/images/RenardAvatar3.png" alt="avatar">
+               <img class="avatar2" src="assets/images/RenardAvatar3.png" alt="avatar">
+               <img class="avatar3" src="assets/images/RenardAvatar3.png" alt="avatar">
+           </section>
+           <section class="presentationSite">
+               <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eos ratione voluptatibus? Animi
+                   esse et, laboriosam natus quis sapiente tenetur unde? Corporis ea enim harum id impedit molestiae
+                   officiis sequi!
+               </div>
+               <div>Animi at ducimus fugit ipsam, labore modi nisi nulla obcaecati possimus quia quibusdam repellendus
+                   sequi voluptatum. Accusamus ad aliquam assumenda eius exercitationem fugiat non officia quas repellat
+                   rerum sint, unde!
+               </div>
+               <div>Dignissimos, distinctio eius officiis quasi quia quidem sint! Animi at cumque eligendi eos facere
+                   ipsum nam nulla qui vel voluptatum! Harum libero magnam natus neque nihil omnis quasi quo sunt.
+               </div>
+           </section>
+           <section class="slider-wrapper">
+               <button class="slide-arrow" id="slide-arrow-prev">
+                   &#8249;
+               </button>
+               <button class="slide-arrow" id="slide-arrow-next">
+                   &#8250;
+               </button>
+               <ul class="slides-container" id="slides-container">
+                   <li class="slide">
+                       <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias delectus, dolore, dolorum
+                           eligendi harum ipsa laboriosam molestiae nobis odio officia officiis perferendis quia quidem
+                           quis quisquam ratione reiciendis rem sequi.
+                       </div>
+                       <div>Ad aliquid aperiam dolor ea et facere in itaque molestias natus nesciunt, nulla, odio
+                           praesentium quam quis quisquam ratione, rerum sunt ullam ut vitae? Eaque iure libero nobis
+                           numquam rem?
+                       </div>
+                       <div>Dignissimos, distinctio eius officiis quasi quia quidem sint! Animi at cumque eligendi eos
+                           facere
+                           ipsum nam nulla qui vel voluptatum! Harum libero magnam natus neque nihil omnis quasi quo
+                           sunt.
+                       </div>
+                   </li>
+                   <li class="slide">
+                       <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias delectus, dolore, dolorum
+                           eligendi harum ipsa laboriosam molestiae nobis odio officia officiis perferendis quia quidem
+                           quis quisquam ratione reiciendis rem sequi.
+                       </div>
+                       <div>Ad aliquid aperiam dolor ea et facere in itaque molestias natus nesciunt, nulla, odio
+                           praesentium quam quis quisquam ratione, rerum sunt ullam ut vitae? Eaque iure libero nobis
+                           numquam rem?
+                       </div>
+                       <div>Dignissimos, distinctio eius officiis quasi quia quidem sint! Animi at cumque eligendi eos
+                           facere
+                           ipsum nam nulla qui vel voluptatum! Harum libero magnam natus neque nihil omnis quasi quo
+                           sunt.
+                       </div>
+                   </li>
+                   <li class="slide">
+                       <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias delectus, dolore, dolorum
+                           eligendi harum ipsa laboriosam molestiae nobis odio officia officiis perferendis quia quidem
+                           quis quisquam ratione reiciendis rem sequi.
+                       </div>
+                       <div>Ad aliquid aperiam dolor ea et facere in itaque molestias natus nesciunt, nulla, odio
+                           praesentium quam quis quisquam ratione, rerum sunt ullam ut vitae? Eaque iure libero nobis
+                           numquam rem?
+                       </div>
+                       <div>Dignissimos, distinctio eius officiis quasi quia quidem sint! Animi at cumque eligendi eos
+                           facere
+                           ipsum nam nulla qui vel voluptatum! Harum libero magnam natus neque nihil omnis quasi quo
+                           sunt.
+                       </div>
+                   </li>
+               </ul>
+           </section>
+           {% include 'Home/userConnection.html.twig' %}
+       {% endblock %}
+{% block javascript %}
+    {{ parent() }}
+    <script>
+        const slidesContainer = document.getElementById("slides-container");
+        const slide = document.querySelector(".slide");
+        const prevButton = document.getElementById("slide-arrow-prev");
+        const nextButton = document.getElementById("slide-arrow-next");
+
+        nextButton.addEventListener("click", () => {
+            const slideWidth = slide.clientWidth;
+            slidesContainer.scrollLeft += slideWidth;
+        });
+
+        prevButton.addEventListener("click", () => {
+            const slideWidth = slide.clientWidth;
+            slidesContainer.scrollLeft -= slideWidth;
+        });
+    </script>
 {% endblock %}
