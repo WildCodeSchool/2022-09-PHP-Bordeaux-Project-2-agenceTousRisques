@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="/assets/css/adminHeader.css">
     <link rel="stylesheet" href="/assets/css/styleUserSlider.css">
     <link rel="stylesheet" href="/assets/css/styleButtonAddDemand.css">
+    <link rel="stylesheet" href="/assets/css/styleUnacceptedDemand.css">
 {% endblock %}
 
 {% block title %}Accueil{% endblock %}
@@ -13,12 +14,13 @@
 
 {% block content %}
 
+    {% include 'UserPage/userUnacceptedDemand.html.twig' %}
     <section class="sectionAddDemand">
         <div class="addDemand">
             <h2 class="titleAddDemand">Besoin d'un Kangourou ?</h2>
             <a href="/addDemand" class="buttonAddDemand">Ajouter une Demande</a>
         </div>
     </section>
+    {% include 'UserPage/userSlider.html.twig' %}
 
-{% include 'UserPage/userSlider.html.twig' %}
 {% endblock %}

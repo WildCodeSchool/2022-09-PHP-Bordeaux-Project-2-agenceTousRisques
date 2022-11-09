@@ -8,6 +8,11 @@ class UserPageController extends AbstractController
     {
         $userSliderController = new UserSliderController();
         $team = $userSliderController->show();
-        return $this->twig->render('UserPage/index.html.twig', ['team' => $team]);
+        $userUnaccepted = new UserUnacceptedDemandController();
+        $demand = $userUnaccepted->show();
+        return $this->twig->render('UserPage/index.html.twig', [
+            'team' => $team,
+            'demand' => $demand
+            ]);
     }
 }
