@@ -86,9 +86,6 @@
                </ul>
            </section>
            {% include 'Home/userConnection.html.twig' %}
-           <footer>
-               Agence Tous Risques @ 2022 Mentions Légales
-           </footer>
        {% endblock %}
 {% block javascript %}
     {{ parent() }}
@@ -104,8 +101,8 @@
         });
 
         prevButton.addEventListener("click", () => {
-        const slideWidth = slide.clientWidth;
-        slidesContainer.scrollLeft -= slideWidth;
-    });
+            const slideWidth = slide.clientWidth;
+            slidesContainer.scrollLeft -= slideWidth;
+        });
     </script>
 {% endblock %}
