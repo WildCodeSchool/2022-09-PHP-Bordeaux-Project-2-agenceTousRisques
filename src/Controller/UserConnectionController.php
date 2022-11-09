@@ -6,9 +6,9 @@ use App\Model\UserConnectionModel;
 
 class UserConnectionController extends AbstractController
 {
-
     public function access(): string
     {
+        $errors = [];
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $logs = array_map('trim', $_POST);
             $logs = array_map('htmlentities', $logs);
@@ -22,18 +22,28 @@ class UserConnectionController extends AbstractController
                 $accessPassword = $logs['password'];
                 $logsCheck = new UserConnectionModel();
                 $authorizationResult = $logsCheck->access($accessEmail, $accessPassword);
+
                 if ($authorizationResult === true) {
-                    header('Location: /');
+                    //setting session
+                    $gettingId = new UserConnectionModel();
+                    $user = $gettingId->selectOneByEmail($accessEmail);
+                    $_SESSION['user_id'] = $user['userID'];
+                    header('Location:/UserPage');
                 } else {
-                    $errors = [];
                     $errors[] = "Les informations que vous avez saisie ne sont pas associée à un compte";
                 }
             }
         }
-
         // Generate the web page
         return $this->twig->render('Home/index.html.twig', [
             'errors' => $errors
         ]);
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        unset($_SESSION['user_id']);
+        header('Location:/');
     }
 }

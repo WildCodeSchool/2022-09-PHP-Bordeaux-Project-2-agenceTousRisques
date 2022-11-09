@@ -1,8 +1,11 @@
 {% extends 'layout.html.twig' %}
-{%  block stylesheet %} <link rel="stylesheet" href="/assets/css/adminInviteUser.css"> {% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/adminInviteUser.css">
+{% endblock %}
 {% block title %}GESTION{% endblock %}
-
+{% block header %}
+    {% include 'userHeader.html.twig' %}
+{% endblock %}
     {% block content %}
-{#{% include 'Admin/adminHeader.html.twig' %}#}
-{% include 'Admin/adminInviteUser.html.twig' %}
+        {% include 'Admin/adminInviteUser.html.twig' %}
     {% endblock %}

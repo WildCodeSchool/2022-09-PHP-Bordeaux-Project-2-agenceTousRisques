@@ -19,5 +19,8 @@ return [
     'adminInvite' => ['AdminController', 'inviteUserForm',],
     'invite' => ['AdminController', 'inviteUser',],
     'delete' => ['DeleteController', 'delete',],
-    'objetmetier' => ['ObjetmetierController', 'objetmetier']
+    'addDemand' => ['AddDemandController', 'add'],
+    'logout' => ['UserConnectionController', 'logout'],
+    'UserPage' => ['UserPageController', 'showUserPage'],
+    'userCalls' => ['UserCallsController', 'showUserCalls'],
 ];

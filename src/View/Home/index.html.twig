@@ -1,18 +1,18 @@
 {% extends 'layout.html.twig' %}
 {% block title %}
     Home Page
-    {% endblock %}
+{% endblock %}
 
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/styleHome.css">
     <link rel="stylesheet" href="/../assets/css/userConnection.css">
-    {% endblock %}
+{% endblock %}
 
 
        {% block content %}
            <header>
                <h1>Nounou Entre Nous</h1>
-               <img class="logoSite" src="assets/images/logoSite.png" alt="Logo Site">
+               <img class="logoSite" src="assets/images/logoSite.jpg" alt="Logo Site">
            </header>
            <section class="avatar">
                <img class="avatar1" src="assets/images/RenardAvatar3.png" alt="avatar">
@@ -88,11 +88,9 @@
                </ul>
            </section>
            {% include 'Home/userConnection.html.twig' %}
-           <footer>
-               Agence Tous Risques @ 2022 Mentions Légales
-           </footer>
        {% endblock %}
 {% block javascript %}
+    {{ parent() }}
     <script>
         const slidesContainer = document.getElementById("slides-container");
         const slide = document.querySelector(".slide");
