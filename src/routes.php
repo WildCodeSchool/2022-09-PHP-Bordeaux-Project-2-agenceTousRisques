@@ -18,7 +18,11 @@ return [
     'gestion' => ['AdminController','administrationPanel',],
     'adminInvite' => ['AdminController', 'inviteUserForm',],
     'invite' => ['AdminController', 'inviteUser',],
+    'delete' => ['DeleteController', 'delete',],
     'addDemand' => ['AddDemandController', 'add'],
     'logout' => ['UserConnectionController', 'logout'],
     'UserPage' => ['UserPageController', 'showUserPage'],
+    'userCalls' => ['UserCallsController', 'showUserCalls'],
+    'userProfile' => ['UserProfileController', 'showUserProfile'],
+    'modifyProfile' => ['UserProfileController', 'showUserProfile'],
 ];

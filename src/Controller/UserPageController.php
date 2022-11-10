@@ -15,8 +15,14 @@ class UserPageController extends AbstractController
         foreach ($week as $day) {
             $demandsOfCurrentWeek[$day] = $planningController->getDemandsOfDay($day);
         }
+        $userSliderController = new UserSliderController();
+        $team = $userSliderController->show();
+        $userUnaccepted = new UserUnacceptedDemandController();
+        $demand = $userUnaccepted->show();
         return $this->twig->render('UserPage/index.html.twig', [
+            'team' => $team,
+            'demand' => $demand,
             'demandsByDay' => $demandsOfCurrentWeek,
-        ]);
+            ]);
     }
 }

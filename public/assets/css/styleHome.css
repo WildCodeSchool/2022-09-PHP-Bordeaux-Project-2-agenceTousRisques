@@ -108,14 +108,14 @@ section {
     margin: 0;
 }
 
-/*footer {*/
-/*    font-family: var(--fontTitle);*/
-/*    font-size: 1.2rem;*/
-/*    width: 100%;*/
-/*    height: 40px;*/
-/*    background-color: var(--bleu);*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    margin-top: 20px;*/
-/*}*/
+.footer {
+    font-family: var(--fontTitle);
+    font-size: 1.2rem;
+    width: 100%;
+    height: 40px;
+    background-color: var(--bleu);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

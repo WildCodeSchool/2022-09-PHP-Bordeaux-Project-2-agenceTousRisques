@@ -1,23 +1,12 @@
-.addDemandtitle {
-    font-family: var(--fontTitle);
-    display: flex;
+.acceptCall {
+    background-color: var(--bleuVert);
+    display: grid;
     justify-content: center;
-}
-
-.addDemand {
-    background-color: var(--saumonPastel);
-    font-family: var(--fontText);
-    padding: 30px;
-    margin: 10px;
+    margin: 0 10px;
     border-radius: 5px;
 }
 
-.date {
-    padding: 10px;
-}
-
-
-.login-button {
+.buttonAcceptCall {
     background-color: var(--bleu);
     border: 0 solid #E5E7EB;
     box-sizing: border-box;
@@ -43,11 +32,11 @@
     touch-action: manipulation;
 }
 
-.login-button:focus {
+.buttonAcceptCall:focus {
     outline: 0;
 }
 
-.login-button:after {
+.buttonAcceptCall:after {
     content: '';
     position: absolute;
     border: 1px solid #000000;
@@ -56,20 +45,12 @@
     width: calc(100% - 1px);
     height: calc(100% - 1px);
 }
-
-.login-button:hover:after {
-    bottom: 2px;
-    left: 2px;
+.buttonAcceptCall:hover{
+    color: black;
 }
 
-footer {
-    font-family: var(--fontTitle);
-    font-size: 1.2rem;
-    width: 100%;
-    height: 40px;
-    background-color: var(--bleu);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+.buttonAcceptCall:hover:after {
+
+    bottom: 2px;
+    left: 2px;
 }
