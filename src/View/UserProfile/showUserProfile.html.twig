@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+    Profil
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="assets/css/userProfile.css">
+    <link rel="stylesheet" href="assets/css/buttonAcceptCall.css">
+{% endblock %}
+{% block content %}
+    <div class="profile-body">
+        <div class="profile-container">
+            <div class="profile-title">Mon profil</div>
+            <div class="profile-infos-container">
+                <div class="personal-infos">Mes infos personnelles</div>
+                <p class="profile-infos">
+                    Nom : <span class="profile-important-info">{{ user.lastname }}</span><br>
+                    Prenom : <span class="profile-important-info">{{ user.firstname }}</span><br>
+                    Telephone : <span class="profile-important-info">{{ user.telephone }}</span><br>
+                    Adresse : <span class="profile-important-info">{{ user.address }}</span>
+                    <div class="profile-line"></div>
+                <div class="personal-infos">Mes identifiants de connexion</div>
+                    E-mail : <span class="profile-important-info">{{ user.email }}</span><br>
+                    Mot de passe : <span class="profile-important-info">**************
+                </span>
+                </p>
+            </div>
+            <div class="modify-profile-button-container">
+                <a href="modifyProfile" id="modify-profile-button">modifier mon profil</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
