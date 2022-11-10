@@ -1,6 +1,6 @@
 .day-block, .demand-block  {
     background-color: gray;
-    margin-bottom: 16px;
+    //margin-bottom: 16px;
     &.helper {
         background-color: var(--bleuVert);
     }
@@ -17,15 +17,38 @@
 }
 .day-block {
     margin:auto;
-    border-radius:20px;
+    border-radius:30px;
     box-shadow:1px 1px 3px gray;
-    margin-bottom:16px;
+    //margin-top:16px;
     padding:8px;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    width:80%;
     .demand-text {
         line-height:16px;
+    }
+    .plus-buttons {
+
     }
 }
 .demand-block {
     margin:auto;
     text-align:justify;
+    width:60%;
+    padding:16px;
+    box-shadow:1px 1px gray;
+}
+.planning-container {
+    background-color: var(--bleu);
+    width:95%;
+    padding:16px;
+}
+.block-container {
+        margin-bottom:16px;
+    .demand-block:last-child {
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+
+    }
 }
