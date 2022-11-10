@@ -11,8 +11,9 @@
     border-radius: 10px;
     margin: 0 10px 30px 10px;
     font-family: var(--fontText);
-
     padding-bottom: 10px;
+    height : 330px;
+    overflow: scroll;
 }
 .article {
     background-color: var(--saumon);
