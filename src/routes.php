@@ -23,4 +23,6 @@ return [
     'logout' => ['UserConnectionController', 'logout'],
     'UserPage' => ['UserPageController', 'showUserPage'],
     'userCalls' => ['UserCallsController', 'showUserCalls'],
+    'userProfile' => ['UserProfileController', 'showUserProfile'],
+    'modifyProfile' => ['UserProfileController', 'showUserProfile'],
 ];
