@@ -20,7 +20,6 @@
   margin: auto;
   border-radius: 30px;
   box-shadow: 1px 1px 3px gray;
-  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -29,12 +28,16 @@
 .day-block .demand-text {
   line-height: 16px;
 }
+
 .demand-block {
   margin: auto;
   text-align: justify;
   width: 60%;
   padding: 16px;
   box-shadow: 1px 1px gray;
+}
+.demand-block .show-block {
+  background-color: black;
 }
 
 .planning-container {

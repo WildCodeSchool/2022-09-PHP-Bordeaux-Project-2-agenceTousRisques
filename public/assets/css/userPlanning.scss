@@ -1,6 +1,5 @@
 .day-block, .demand-block  {
     background-color: gray;
-    //margin-bottom: 16px;
     &.helper {
         background-color: var(--bleuVert);
     }
@@ -19,8 +18,6 @@
     margin:auto;
     border-radius:30px;
     box-shadow:1px 1px 3px gray;
-    //margin-top:16px;
-    padding:8px;
     display:flex;
     align-items:center;
     justify-content: space-around;
@@ -28,9 +25,9 @@
     .demand-text {
         line-height:16px;
     }
-    .plus-buttons {
-
-    }
+    //.plus-buttons {
+    //
+    //}
 }
 .demand-block {
     margin:auto;
@@ -38,6 +35,9 @@
     width:60%;
     padding:16px;
     box-shadow:1px 1px gray;
+    .show-block {
+        background-color: black;
+    }
 }
 .planning-container {
     background-color: var(--bleu);

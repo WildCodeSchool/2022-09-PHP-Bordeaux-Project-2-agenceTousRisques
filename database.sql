@@ -77,18 +77,20 @@ ALTER TABLE `Call` ADD CONSTRAINT `fk_Call_helperID` FOREIGN KEY(`helperID`)
 );
 
 INSERT INTO Avatar (avatarID, image)
-VALUES (1, 'assets/avatar1.png'),
-       (2, 'assets/avatar2.png'),
-       (3, 'assets/avatar3.png'),
-       (4, 'assets/avatar4.png'),
-       (5, 'assets/avatar5.png'),
-       (6, 'assets/avatar6.png'),
-       (7, 'assets/avatar7.png'),
-       (8, 'assets/avatar8.png'),
-       (9, 'assets/avatar9.png'),
-       (10, 'assets/avatar10.png');
+VALUES (1, 'assets/images/avatar1.png'),
+       (2, 'assets/images/avatar2.png'),
+       (3, 'assets/images/avatar3.png'),
+       (4, 'assets/images/avatar4.png'),
+       (5, 'assets/images/avatar5.png'),
+       (6, 'assets/images/avatar6.png'),
+       (7, 'assets/images/avatar7.png'),
+       (8, 'assets/images/avatar8.png'),
+       (9, 'assets/images/avatar9.png'),
+       (10, 'assets/images/avatar10.png');
 
 INSERT INTO User (firstname, lastname, telephone, address, email, password, avatar, activationcode, isAdmin, isVisible)
 VALUES ('Jean Le Grand', 'Bokassa', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
         'jean-le-grand.bokassa@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 1,
         '0000001', 1, 1);
+
+
