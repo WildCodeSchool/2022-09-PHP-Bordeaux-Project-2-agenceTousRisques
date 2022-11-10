@@ -1,8 +1,3 @@
-.unacceptedDemand{
-    height : 330px;
-    overflow: scroll;
-}
-
 .buttonAddDemand {
     background-color: var(--saumon);
     border: 0 solid #E5E7EB;

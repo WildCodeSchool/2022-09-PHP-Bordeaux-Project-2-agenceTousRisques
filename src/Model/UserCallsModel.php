@@ -6,9 +6,9 @@ class UserCallsModel extends AbstractManager
 {
     public function getCalls(): array
     {
-        $query = "SELECT U.firstname, startdate, enddate, context, comment, callID
-            FROM `call`
-            INNER JOIN `user` U on `call`.userID = U.userID
+        $query = "SELECT U.firstname, startdate, enddate, context, comment, id
+            FROM `Call`
+            INNER JOIN `User` U on `Call`.userID = U.userID
             WHERE U.UserID != " . $_SESSION['user_id'] . " AND helperID IS NULL
             ORDER BY startdate";
         $statement = $this->pdo->prepare($query);
