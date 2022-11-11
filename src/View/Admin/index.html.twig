@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/adminInviteUser.css">
+    <link rel="stylesheet" href="/assets/css/delete.css">
 {% endblock %}
 {% block title %}GESTION{% endblock %}
 {% block header %}
@@ -8,4 +9,5 @@
 {% endblock %}
     {% block content %}
         {% include 'Admin/adminInviteUser.html.twig' %}
+        {% include 'Admin/delete.html.twig' %}
     {% endblock %}
