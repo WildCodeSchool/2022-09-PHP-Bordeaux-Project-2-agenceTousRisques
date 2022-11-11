@@ -1,57 +1,519 @@
-.day-block, .demand-block {
-  background-color: gray;
-}
-.day-block.helper, .demand-block.helper {
-  background-color: var(--bleuVert);
-}
-.day-block.helped, .demand-block.helped {
-  background-color: var(--saumonPastel);
-}
-.day-block.helped.helper, .demand-block.helped.helper {
-  background-color: var(--rosePastel);
-}
-
-.user-planning {
-  background-color: var(--bleu);
-  padding-top: 16px;
-}
-
-.day-block {
-  margin: auto;
-  border-radius: 30px;
-  box-shadow: 1px 1px 3px gray;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 80%;
-}
-.day-block .demand-text {
-  line-height: 16px;
-}
-
-.demand-block {
-  margin: auto;
-  text-align: justify;
-  width: 60%;
-  padding: 16px;
-  box-shadow: 1px 1px gray;
-}
-.demand-block .show-block {
-  background-color: black;
-}
-
 .planning-container {
   background-color: var(--bleu);
   width: 95%;
   padding: 16px;
+  margin: auto;
+  border-radius: 20px;
 }
 
-.block-container {
+.day-block {
   margin-bottom: 16px;
 }
-.block-container .demand-block:last-child {
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+
+.label-day0 {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: gray;
+}
+.label-day0.helper {
+  background-color: var(--bleuVert);
+}
+.label-day0.helped {
+  background-color: var(--saumonPastel);
+}
+.label-day0.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+#plus-button0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.label-day0 {
+  cursor: pointer;
+}
+
+.label-day0 {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: "Spicy Rice", cursive;
+}
+
+.label-day0::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+
+#plus-button0:checked ~ h2 .label-day0::before {
+  border-left: 8px solid transparent;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  margin-left: -4px;
+  margin-top: -4px;
+  color: red;
+}
+
+#plus-button0:checked ~ .demand-text {
+  max-height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.label-day1 {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: gray;
+}
+.label-day1.helper {
+  background-color: var(--bleuVert);
+}
+.label-day1.helped {
+  background-color: var(--saumonPastel);
+}
+.label-day1.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+#plus-button1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.label-day1 {
+  cursor: pointer;
+}
+
+.label-day1 {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: "Spicy Rice", cursive;
+}
+
+.label-day1::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+
+#plus-button1:checked ~ h2 .label-day1::before {
+  border-left: 8px solid transparent;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  margin-left: -4px;
+  margin-top: -4px;
+  color: red;
+}
+
+#plus-button1:checked ~ .demand-text {
+  max-height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.label-day2 {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: gray;
+}
+.label-day2.helper {
+  background-color: var(--bleuVert);
+}
+.label-day2.helped {
+  background-color: var(--saumonPastel);
+}
+.label-day2.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+#plus-button2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.label-day2 {
+  cursor: pointer;
+}
+
+.label-day2 {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: "Spicy Rice", cursive;
+}
+
+.label-day2::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+
+#plus-button2:checked ~ h2 .label-day2::before {
+  border-left: 8px solid transparent;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  margin-left: -4px;
+  margin-top: -4px;
+  color: red;
+}
+
+#plus-button2:checked ~ .demand-text {
+  max-height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.label-day3 {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: gray;
+}
+.label-day3.helper {
+  background-color: var(--bleuVert);
+}
+.label-day3.helped {
+  background-color: var(--saumonPastel);
+}
+.label-day3.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+#plus-button3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.label-day3 {
+  cursor: pointer;
+}
+
+.label-day3 {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: "Spicy Rice", cursive;
+}
+
+.label-day3::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+
+#plus-button3:checked ~ h2 .label-day3::before {
+  border-left: 8px solid transparent;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  margin-left: -4px;
+  margin-top: -4px;
+  color: red;
+}
+
+#plus-button3:checked ~ .demand-text {
+  max-height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.label-day4 {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: gray;
+}
+.label-day4.helper {
+  background-color: var(--bleuVert);
+}
+.label-day4.helped {
+  background-color: var(--saumonPastel);
+}
+.label-day4.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+#plus-button4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.label-day4 {
+  cursor: pointer;
+}
+
+.label-day4 {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: "Spicy Rice", cursive;
+}
+
+.label-day4::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+
+#plus-button4:checked ~ h2 .label-day4::before {
+  border-left: 8px solid transparent;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  margin-left: -4px;
+  margin-top: -4px;
+  color: red;
+}
+
+#plus-button4:checked ~ .demand-text {
+  max-height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.label-day5 {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: gray;
+}
+.label-day5.helper {
+  background-color: var(--bleuVert);
+}
+.label-day5.helped {
+  background-color: var(--saumonPastel);
+}
+.label-day5.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+#plus-button5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.label-day5 {
+  cursor: pointer;
+}
+
+.label-day5 {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: "Spicy Rice", cursive;
+}
+
+.label-day5::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+
+#plus-button5:checked ~ h2 .label-day5::before {
+  border-left: 8px solid transparent;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  margin-left: -4px;
+  margin-top: -4px;
+  color: red;
+}
+
+#plus-button5:checked ~ .demand-text {
+  max-height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.label-day6 {
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px gray;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: gray;
+}
+.label-day6.helper {
+  background-color: var(--bleuVert);
+}
+.label-day6.helped {
+  background-color: var(--saumonPastel);
+}
+.label-day6.helped.helper {
+  background-color: var(--rosePastel);
+}
+
+#plus-button6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.label-day6 {
+  cursor: pointer;
+}
+
+.label-day6 {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-family: "Spicy Rice", cursive;
+}
+
+.label-day6::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+
+#plus-button6:checked ~ h2 .label-day6::before {
+  border-left: 8px solid transparent;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  margin-left: -4px;
+  margin-top: -4px;
+  color: red;
+}
+
+#plus-button6:checked ~ .demand-text {
+  max-height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.demand-text {
+  max-height: 0;
+  line-height: 28px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 30px;
+  border-radius: 20px;
+  box-shadow: 1px 1px gray;
+  transition: max-height 0.7s ease-in-out, padding-top 0.7s ease-in-out, padding-bottom 0.7s ease-in-out;
+  font-family: "Habibi", serif;
+  width: 60%;
+  margin: auto;
+}
+.demand-text.helper {
+  background-color: var(--bleuVert);
+}
+.demand-text.helped {
+  background-color: var(--saumonPastel);
+}
+.demand-text.helped.helper {
+  background-color: var(--rosePastel);
 }
 
 /*# sourceMappingURL=userPlanning.css.map */
