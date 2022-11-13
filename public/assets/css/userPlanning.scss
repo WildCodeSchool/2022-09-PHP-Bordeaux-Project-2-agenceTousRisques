@@ -1,5 +1,5 @@
 .planning-container {
-    background-color: var(--bleu);
+    background-image:url("../images/planning-background.jpg");
     width: 95%;
     padding: 16px;
     margin: auto;
@@ -7,6 +7,7 @@
 }
 .day-block {
     margin-bottom: 16px;
+
 }
 
 // Animation block
@@ -20,6 +21,31 @@
         justify-content: space-around;
         width: 80%;
         background-color: gray;
+        position: relative;
+        display: block;
+        padding-left: 30px;
+        padding-bottom:16px;
+        padding-top:16px;
+        cursor: pointer;
+        font-family: var(--fontTitle);
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 10px;
+            border-left: 8px solid black;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-top: -8px;
+        }
+        &.no-demand {
+            cursor:initial;
+            &::before{
+                display:none;
+            }
+        }
 
         &.helper {
             background-color: var(--bleuVert);
@@ -41,29 +67,7 @@
         height: 100%;
         opacity: 0;
     }
-    .label-day#{$i} {
-        cursor: pointer;
-    }
-    .label-day#{$i} {
-        position: relative;
-        display: block;
-        padding-left: 30px;
-        padding-bottom:16px;
-        padding-top:16px;
-        font-family: "Spicy Rice", cursive;
-    }
-    .label-day#{$i}::before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        top: 50%;
-        left: 10px;
-        border-left: 8px solid black;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        margin-top: -8px;
-    }
+
     #plus-button#{$i}:checked ~ h2 .label-day#{$i}::before {
         border-left: 8px solid transparent;
         border-top: 8px solid black;
@@ -84,6 +88,7 @@
     max-height:0;
     line-height: 28px;
     overflow: hidden;
+    font-family: var(--fontText);
     padding:0px;
     padding-left: 30px;
     border-radius:20px;
@@ -91,7 +96,6 @@
     transition: max-height 0.7s ease-in-out,
     padding-top 0.7s ease-in-out,
     padding-bottom 0.7s ease-in-out;
-    font-family: "Habibi", serif;
     width: 60%;
     margin: auto;
 

@@ -1,5 +1,5 @@
 .planning-container {
-  background-color: var(--bleu);
+  background-image: url("../images/planning-background.jpg");
   width: 95%;
   padding: 16px;
   margin: auto;
@@ -18,6 +18,31 @@
   justify-content: space-around;
   width: 80%;
   background-color: gray;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  cursor: pointer;
+  font-family: var(--fontTitle);
+}
+.label-day0::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+.label-day0.no-demand {
+  cursor: initial;
+}
+.label-day0.no-demand::before {
+  display: none;
 }
 .label-day0.helper {
   background-color: var(--bleuVert);
@@ -36,32 +61,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-}
-
-.label-day0 {
-  cursor: pointer;
-}
-
-.label-day0 {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  font-family: "Spicy Rice", cursive;
-}
-
-.label-day0::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid black;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-top: -8px;
 }
 
 #plus-button0:checked ~ h2 .label-day0::before {
@@ -87,6 +86,31 @@
   justify-content: space-around;
   width: 80%;
   background-color: gray;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  cursor: pointer;
+  font-family: var(--fontTitle);
+}
+.label-day1::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+.label-day1.no-demand {
+  cursor: initial;
+}
+.label-day1.no-demand::before {
+  display: none;
 }
 .label-day1.helper {
   background-color: var(--bleuVert);
@@ -105,32 +129,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-}
-
-.label-day1 {
-  cursor: pointer;
-}
-
-.label-day1 {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  font-family: "Spicy Rice", cursive;
-}
-
-.label-day1::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid black;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-top: -8px;
 }
 
 #plus-button1:checked ~ h2 .label-day1::before {
@@ -156,6 +154,31 @@
   justify-content: space-around;
   width: 80%;
   background-color: gray;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  cursor: pointer;
+  font-family: var(--fontTitle);
+}
+.label-day2::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+.label-day2.no-demand {
+  cursor: initial;
+}
+.label-day2.no-demand::before {
+  display: none;
 }
 .label-day2.helper {
   background-color: var(--bleuVert);
@@ -174,32 +197,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-}
-
-.label-day2 {
-  cursor: pointer;
-}
-
-.label-day2 {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  font-family: "Spicy Rice", cursive;
-}
-
-.label-day2::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid black;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-top: -8px;
 }
 
 #plus-button2:checked ~ h2 .label-day2::before {
@@ -225,6 +222,31 @@
   justify-content: space-around;
   width: 80%;
   background-color: gray;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  cursor: pointer;
+  font-family: var(--fontTitle);
+}
+.label-day3::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+.label-day3.no-demand {
+  cursor: initial;
+}
+.label-day3.no-demand::before {
+  display: none;
 }
 .label-day3.helper {
   background-color: var(--bleuVert);
@@ -243,32 +265,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-}
-
-.label-day3 {
-  cursor: pointer;
-}
-
-.label-day3 {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  font-family: "Spicy Rice", cursive;
-}
-
-.label-day3::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid black;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-top: -8px;
 }
 
 #plus-button3:checked ~ h2 .label-day3::before {
@@ -294,6 +290,31 @@
   justify-content: space-around;
   width: 80%;
   background-color: gray;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  cursor: pointer;
+  font-family: var(--fontTitle);
+}
+.label-day4::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+.label-day4.no-demand {
+  cursor: initial;
+}
+.label-day4.no-demand::before {
+  display: none;
 }
 .label-day4.helper {
   background-color: var(--bleuVert);
@@ -312,32 +333,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-}
-
-.label-day4 {
-  cursor: pointer;
-}
-
-.label-day4 {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  font-family: "Spicy Rice", cursive;
-}
-
-.label-day4::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid black;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-top: -8px;
 }
 
 #plus-button4:checked ~ h2 .label-day4::before {
@@ -363,6 +358,31 @@
   justify-content: space-around;
   width: 80%;
   background-color: gray;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  cursor: pointer;
+  font-family: var(--fontTitle);
+}
+.label-day5::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+.label-day5.no-demand {
+  cursor: initial;
+}
+.label-day5.no-demand::before {
+  display: none;
 }
 .label-day5.helper {
   background-color: var(--bleuVert);
@@ -381,32 +401,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-}
-
-.label-day5 {
-  cursor: pointer;
-}
-
-.label-day5 {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  font-family: "Spicy Rice", cursive;
-}
-
-.label-day5::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid black;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-top: -8px;
 }
 
 #plus-button5:checked ~ h2 .label-day5::before {
@@ -432,6 +426,31 @@
   justify-content: space-around;
   width: 80%;
   background-color: gray;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  cursor: pointer;
+  font-family: var(--fontTitle);
+}
+.label-day6::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 10px;
+  border-left: 8px solid black;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+}
+.label-day6.no-demand {
+  cursor: initial;
+}
+.label-day6.no-demand::before {
+  display: none;
 }
 .label-day6.helper {
   background-color: var(--bleuVert);
@@ -450,32 +469,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-}
-
-.label-day6 {
-  cursor: pointer;
-}
-
-.label-day6 {
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-  font-family: "Spicy Rice", cursive;
-}
-
-.label-day6::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 10px;
-  border-left: 8px solid black;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  margin-top: -8px;
 }
 
 #plus-button6:checked ~ h2 .label-day6::before {
@@ -497,12 +490,12 @@
   max-height: 0;
   line-height: 28px;
   overflow: hidden;
+  font-family: var(--fontText);
   padding: 0px;
   padding-left: 30px;
   border-radius: 20px;
   box-shadow: 1px 1px gray;
   transition: max-height 0.7s ease-in-out, padding-top 0.7s ease-in-out, padding-bottom 0.7s ease-in-out;
-  font-family: "Habibi", serif;
   width: 60%;
   margin: auto;
 }
