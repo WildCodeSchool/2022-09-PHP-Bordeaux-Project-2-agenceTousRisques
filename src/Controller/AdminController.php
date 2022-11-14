@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Admin;
+use App\Model\MailModel;
 
 class AdminController extends AbstractController
 {
@@ -31,9 +32,10 @@ class AdminController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $invitedEmail = $_POST['invited-email'];
             if (empty($this->validateEmail($invitedEmail))) {
+                $mailing = new MailModel();
                 $admin = new Admin();
                 $activationCode = $admin->codeGenerator();
-                $admin->sendInvitationEmail($invitedEmail, $activationCode);
+                $mailing->sendInvitationEmail($invitedEmail, $activationCode);
                 return $this->twig->render('Admin/index.html.twig', [
                     'email' => $invitedEmail,
                     'code' => $activationCode,
