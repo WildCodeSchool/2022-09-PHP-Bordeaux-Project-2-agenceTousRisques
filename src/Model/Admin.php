@@ -64,4 +64,31 @@ class Admin extends AbstractManager
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
+
+    public function showUser(): array
+    {
+        $statementUser = $this->pdo->prepare('SELECT  U.firstname, U.lastname, COUNT(helperID) as compteur, A.image
+            FROM `Call`
+            INNER JOIN User U on `Call`.helperID = U.userID
+            INNER JOIN Avatar A on U.avatar = A.avatarID
+            WHERE (MONTH(CURRENT_DATE)  = MONTH(startdate))
+            GROUP BY U.userID
+            ORDER BY compteur DESC');
+        $statementUser->execute();
+        return $statementUser->fetchAll();
+    }
+
+    public function showUserPrevious(): array
+    {
+        $statementUser = $this->pdo->prepare('SELECT  U.firstname, U.lastname, COUNT(helperID) as compteur, A.image
+            FROM `Call`
+            INNER JOIN User U on `Call`.helperID = U.userID
+            INNER JOIN Avatar A on U.avatar = A.avatarID
+            WHERE (MONTH(CURRENT_DATE) - 1  = MONTH(startdate))
+            GROUP BY U.userID
+            ORDER BY compteur DESC');
+        $statementUser->execute();
+        return $statementUser->fetchAll();
+    }
+
 }
