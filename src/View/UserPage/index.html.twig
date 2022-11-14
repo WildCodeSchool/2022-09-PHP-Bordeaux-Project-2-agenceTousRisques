@@ -31,3 +31,7 @@
     </section>
     {% include 'UserPage/userSlider.html.twig' %}
 {% endblock %}
+{% block javascript %}
+{{ parent }}
+ <script src="/assets/js/userPlanning.js"></script>
+{% endblock %}
