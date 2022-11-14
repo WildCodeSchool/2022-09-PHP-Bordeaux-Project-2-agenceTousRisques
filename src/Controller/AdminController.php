@@ -33,7 +33,7 @@ class AdminController extends AbstractController
             if (empty($this->validateEmail($invitedEmail))) {
                 $admin = new Admin();
                 $activationCode = $admin->codeGenerator();
-                $admin->sendEmail($invitedEmail, $activationCode);
+                $admin->sendInvitationEmail($invitedEmail, $activationCode);
                 return $this->twig->render('Admin/index.html.twig', [
                     'email' => $invitedEmail,
                     'code' => $activationCode,

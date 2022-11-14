@@ -7,7 +7,7 @@
 }
 
 .unacceptedDemand {
-    background-color: var(--saumonPastel);
+    background-image:url("../images/planning-background-salmon.png");
     border-radius: 10px;
     margin: 0 10px 30px 10px;
     font-family: var(--fontText);

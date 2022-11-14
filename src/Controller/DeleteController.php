@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\DeleteModel;
+use App\Model\Admin;
 
 class DeleteController extends AbstractController
 {
@@ -17,6 +18,7 @@ class DeleteController extends AbstractController
                 ]);
             } else {
                 $deleteModel = new DeleteModel();
+                $admin = new Admin();
                 $emailfound = $deleteModel->selectOneByEmail($_POST['email']);
                 if ($emailfound == false) {
                     $message[] = "Email non disponible";
@@ -24,6 +26,7 @@ class DeleteController extends AbstractController
                         'message' => $message]);
                 } elseif (($emailfound == true)) {
                     $deleteModel->updateUser($_POST['email']);
+                    $admin->sendDeletionEmail($_POST['email']);
                     $message[] = "Utilisateur supprimé";
                     return $this->twig->render('Admin/index.html.twig', [
                         'message' => $message]);
