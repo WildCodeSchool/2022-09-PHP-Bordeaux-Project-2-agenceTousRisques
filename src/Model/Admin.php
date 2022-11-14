@@ -90,5 +90,4 @@ class Admin extends AbstractManager
         $statementUser->execute();
         return $statementUser->fetchAll();
     }
-
 }
