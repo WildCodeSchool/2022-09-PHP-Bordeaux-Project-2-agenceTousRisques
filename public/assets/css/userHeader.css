@@ -16,6 +16,9 @@
   height: 50px;
   width: 50px;
 }
+.admin-logout-img:active {
+  scale: 0.8;
+}
 
 .admin-avatar {
   height: 220px;
@@ -75,6 +78,12 @@
   width: 50px;
   border-radius: 50px;
 }
+.img-gestion-link:hover {
+  animation: gearRotation 3s linear infinite;
+}
+.img-gestion-link:active {
+  scale: 0.8;
+}
 
 .admin-gestion-link {
   display: block;
@@ -88,51 +97,136 @@
   top: 4%;
 }
 
+.menu-line1 {
+  width: 30px;
+  height: 3px;
+  background-color: var(--smallButtonColor);
+  display: block;
+  border-radius: 20px;
+  margin-bottom: 6px;
+  transition: all 1s;
+}
+
+.menu-line2 {
+  width: 30px;
+  height: 3px;
+  background-color: var(--smallButtonColor);
+  display: block;
+  border-radius: 20px;
+  margin-bottom: 6px;
+  transition: all 1s;
+}
+
+.menu-line3 {
+  width: 30px;
+  height: 3px;
+  background-color: var(--smallButtonColor);
+  display: block;
+  border-radius: 20px;
+  margin-bottom: 6px;
+  transition: all 1s;
+}
+
+.menu-line2 {
+  transition: all 0.4s;
+}
+
+#menu-btn {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+#menu-btn:hover {
+  cursor: pointer;
+}
+
+#menu-list {
+  background-color: var(--saumonPastel);
+  z-index: 10;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px gray;
+  position: fixed;
+  left: -370px;
+  transition: left 0.8s cubic-bezier(1, 0, 0, 1);
+}
+#menu-list a {
+  text-decoration: none;
+  color: var(--smallButtonColor);
+  margin-left: 16px;
+}
+
+.menu-checkbox:checked ~ #menu-list {
+  left: 2em;
+}
+
+.menu-checkbox:checked ~ .menu-btn-container .menu-line1 {
+  transform: rotate(-405deg) translate(-5px, 6px) scale(0.8);
+  width: 2.5rem;
+}
+
+.menu-checkbox:checked ~ .menu-btn-container .menu-line2 {
+  opacity: 0;
+}
+
+.menu-checkbox:checked ~ .menu-btn-container .menu-line3 {
+  transform: rotate(405deg) translate(-6px, -9px) scale(0.8);
+  width: 2.5rem;
+}
+
+@keyframes gearRotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes topBar_open {
   0% {
     transform: translateY(0px) rotate(0deg);
-    width: 35px;
+    width: 30px;
   }
   10% {
     transform: translateY(-8px) rotate(0deg);
-    width: 35px;
+    width: 30px;
   }
   50% {
     transform: translateY(20px) rotate(45deg);
-    width: 50px;
+    width: 30px;
   }
   75% {
     transform: translateY(4px) rotate(45deg);
-    width: 50px;
+    width: 30px;
   }
   100% {
     transform: translateY(8px) rotate(45deg);
-    width: 50px;
+    width: 30px;
   }
 }
-@keyframes bottomBar_open {
+@keyframes middleBar_open {
   0% {
     transform: translateY(0px) rotate(0deg);
-    width: 35px;
+    width: 30px;
   }
   10% {
     transform: translateY(-8px) rotate(0deg);
-    width: 35px;
+    width: 30px;
   }
   60% {
     transform: translateY(0px) rotate(-45deg);
-    width: 50px;
+    width: 30px;
   }
   75% {
     transform: translateY(-12px) rotate(-45deg);
-    width: 50px;
+    width: 30px;
   }
   100% {
     transform: translateY(-8px) rotate(-45deg);
-    width: 50px;
+    width: 30px;
   }
 }
-@keyframes menuLabel_open {
+@keyframes bottomBar_open {
   0% {
     transform: translateY(0px);
     opacity: 1;
@@ -224,7 +318,7 @@
     width: 35px;
   }
 }
-@keyframes menuLabel_close {
+@keyframes middleBar_close {
   0% {
     transform: translateY(30px);
     opacity: 0;
@@ -271,92 +365,6 @@
     line-height: 0px;
     opacity: 0;
   }
-}
-#menu-btn {
-  display: block;
-  position: relative;
-  text-align: center;
-  width: 50px;
-  height: 48px;
-}
-#menu-btn:before, #menu-btn:after {
-  content: "";
-  width: 35px;
-  height: 6px;
-  background-color: var(--smallButtonColor);
-  display: block;
-  position: absolute;
-  border-radius: 20px;
-}
-#menu-btn:before {
-  transform-origin: left center;
-  left: 7.5px;
-}
-#menu-btn:after {
-  right: 7.5px;
-  top: 16px;
-  transform-origin: right center;
-}
-#menu-btn .text {
-  color: var(--smallButtonColor);
-  font-family: var(--fontTitle);
-  display: block;
-  position: absolute;
-  bottom: 0;
-  font-size: 17px;
-  letter-spacing: 2.5px;
-}
-#menu-btn:hover {
-  cursor: pointer;
-}
-#menu-btn.open:before {
-  animation: topBar_open 1s ease-in-out;
-  animation-fill-mode: forwards;
-}
-#menu-btn.open:after {
-  animation: bottomBar_open 1s ease-in-out;
-  animation-fill-mode: forwards;
-}
-#menu-btn.open .text {
-  animation: menuLabel_open 1s ease-in;
-  animation-fill-mode: forwards;
-}
-#menu-btn.close:before {
-  animation: topBar_close 1s ease-in-out;
-  animation-fill-mode: forwards;
-}
-#menu-btn.close:after {
-  animation: bottomBar_close 1s ease-in-out;
-  animation-fill-mode: forwards;
-}
-#menu-btn.close .text {
-  animation: menuLabel_close 1s ease-in;
-  animation-fill-mode: forwards;
-}
-
-#menu-list {
-  background-color: var(--saumonPastel);
-  margin-top: 8px;
-  z-index: 10;
-  width: 95vw;
-  border-radius: 20px;
-  box-shadow: 1px 1px 3px gray;
-  line-height: 0;
-  opacity: 0;
-}
-#menu-list a {
-  display: block;
-  text-decoration: none;
-  color: var(--smallButtonColor);
-  margin-left: 16px;
-}
-#menu-list.open {
-  animation: menuItems_open 1s ease-in-out;
-  animation-fill-mode: forwards;
-}
-#menu-list.close {
-  animation: menuItems_close 1s ease-in-out;
-  animation-fill-mode: forwards;
 }
 
 /*# sourceMappingURL=userHeader.css.map */
