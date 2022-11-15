@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fuzzy+Bubbles&family=Gochi+Hand&display=swap');
 @import "userHeader.css";
+@import"userHeaderDesktop.css";
 * {
     margin: 0;
     padding: 0;
