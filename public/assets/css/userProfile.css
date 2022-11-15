@@ -95,3 +95,12 @@
     bottom: 2px;
     left: 2px;
 }
+
+.modify-user-profile-errors {
+    list-style: none;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: var(--fontText);
+    padding: 8px;
+}

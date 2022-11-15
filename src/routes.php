@@ -24,5 +24,5 @@ return [
     'UserPage' => ['UserPageController', 'showUserPage'],
     'userCalls' => ['UserCallsController', 'showUserCalls'],
     'userProfile' => ['UserProfileController', 'showUserProfile'],
-    'modifyProfile' => ['UserProfileController', 'showUserProfile'],
+    'modifyProfile' => ['UserProfileController', 'modifyUserProfile'],
 ];
