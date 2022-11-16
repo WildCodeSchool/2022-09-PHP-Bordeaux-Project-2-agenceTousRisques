@@ -3,12 +3,15 @@
         display: none;
     }
 }
+
 .desktop-header-container {
-    position:relative;
+    position: relative;
     background-color: var(--bleuVert);
     padding-top: 48px;
-    padding-bottom: 48px;
+    padding-bottom: 32px;
+    margin-bottom: 8px;
 }
+
 .avatar-container-desktop {
     background-color: var(--bleu);
     box-shadow: 1px 1px 3px black;
@@ -87,6 +90,7 @@
 .user-logout-link-desktop {
     top: 15%;
     right: -28%;
+
     &:before {
         left: 0;
         top: 100%;
@@ -97,6 +101,7 @@
 .user-options-link-desktop {
     top: 15%;
     left: -28%;
+
     &:before {
         right: 0;
         top: 100%;
@@ -107,6 +112,7 @@
 .user-add-link-desktop {
     top: 58%;
     right: -30%;
+
     &:before {
         left: 0;
         top: 95%;
@@ -117,6 +123,7 @@
 .user-list-link-desktop {
     top: 58%;
     left: -26%;
+
     &:before {
         right: 0;
         top: 100%;
@@ -143,6 +150,7 @@
 .user-add-img-desktop {
     height: 90px;
     width: 90px;
+
     &:hover {
         width: 110px;
         height: 110px;
@@ -151,32 +159,83 @@
 }
 
 .img-header-deco {
-    width:80px;
-    height:80px;
-    position:absolute;
-    &.avatar1{
-        top:0;
-        left:-20vw;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+
+    &.avatar1 {
+        top: 0;
+        left: -20vw;
     }
-    &.avatar2{
-        top:35%;
-        left:-25vw;
+
+    &.avatar2 {
+        top: 35%;
+        left: -25vw;
     }
-    &.avatar3{
-        bottom:7%;
-        left:-20vw;
+
+    &.avatar3 {
+        bottom: 7%;
+        left: -20vw;
     }
-    &.avatar4{
-        top:0;
-        right:-20vw;
+
+    &.avatar4 {
+        top: 0;
+        right: -20vw;
     }
-    &.avatar5{
-        top:35%;
-        right:-25vw;
+
+    &.avatar5 {
+        top: 35%;
+        right: -25vw;
     }
+
     &.avatar6 {
-        bottom:7%;
-        right:-20vw;
+        bottom: 7%;
+        right: -20vw;
+    }
+}
+
+.user-gestion-link-desktop {
+    display: block;
+    margin: auto;
+    width: max-content;
+    position: relative;
+    margin-top: -8px;
+
+    &:before {
+        content: attr(data-hover);
+        visibility: hidden;
+        opacity: 0;
+        width: max-content;
+        background-color: var(--smallButtonColor);
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 5px;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        top: 90%;
+        left: -3%;
+
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.img-gestion-desktop {
+    width: 100px;
+    height: 100px;
+    transition: width, 06s, height, 0.6s;
+
+    &:hover {
+        width: 120px;
+        height: 120px;
+
     }
 }
 
