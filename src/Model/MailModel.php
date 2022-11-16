@@ -37,7 +37,6 @@ class MailModel
     {
         $mail = $this->setMailer();
         try {
-            $mail = $this->setMailer();
             $mail->addAddress("$email");
             //Set email format to HTML
             $mail->Subject = 'Invitation à rejoindre notre communauté !';

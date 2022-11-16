@@ -1,28 +1,35 @@
 .title-deleteUSer{
+    padding: 8px;
     font-family: var(--fontTitle);
+    font-size: clamp(20px, 2em, 2.8vw);
+    align-items: center;
+    text-align: center;
+    margin: 0;
+
 }
 
 .deleteUser {
     font-family: var(--fontText);
-    margin: 0;
-    padding: 0;
-    display: grid;
-    align-content: center;
+    width: 95%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:216px;
 }
-
-.container {
-    padding: 20px;
+.delete-container {
     background-color: var(--rosePastel);
     border-radius: 10px;
     box-shadow: 1px 1px 5px gray;
-    height: 250px;
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    width: 95vw;
+    margin:auto;
+    margin-bottom:8px;
+    height:270px;
 }
 
-.container button[type="submit"] {
+.delete-container button[type="submit"] {
     max-width: 120px;
     cursor: pointer;
     font-weight: 500;
@@ -33,7 +40,7 @@
     font-size: 16px;
 }
 
-.container button[type="submit"]:hover {
+.delete-container button[type="submit"]:hover {
     background: var(--saumon);
 }
 
@@ -45,3 +52,70 @@
     font-family: var(--fontText);
     padding: 8px;
 }
+.label-delete {
+    font-family: var(--fontText);
+    text-align: center;
+    padding: 8px;
+}
+.input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.input-delete {
+    background-color: var(--saumon);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.cut {
+    background-color: var(--rosePastel);
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 50px;
+}
+
+
+.input-delete:focus ~ .cut,
+.input-delete:not(:placeholder-shown) ~ .cut {
+    transform: translateY(10px);
+
+}
+.placeholder {
+    color: var(--rosePastel);
+    font-family: var(--fontText);
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+}
+
+.input-delete:focus ~ .placeholder,
+.input-delete:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-25px) translateX(10px) scale(0.75);
+}
+
+.input-delete:not(:placeholder-shown) ~ .placeholder {
+    color: var(--saumon);
+}
+
+.input-delete:focus ~ .placeholder {
+    color: var(--saumon);
+}
+

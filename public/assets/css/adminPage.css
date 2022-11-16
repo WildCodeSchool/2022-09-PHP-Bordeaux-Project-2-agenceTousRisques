@@ -1,0 +1,13 @@
+@import "adminInviteUser.css";
+@import "delete.css";
+@import "adminUserView.css";
+@media screen and (min-width: 1024px) {
+  .users-gestion {
+    display: flex;
+    width: 95vw;
+    margin: auto;
+    gap: 10px;
+  }
+}
+
+/*# sourceMappingURL=adminPage.css.map */
