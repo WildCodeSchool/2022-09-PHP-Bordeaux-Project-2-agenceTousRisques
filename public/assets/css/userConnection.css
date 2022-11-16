@@ -165,3 +165,13 @@
     transform: scale(0.96);
 }
 
+.forgotPassword a{
+    font-family: var(--fontText);
+    color: var(--saumon);
+    text-decoration: none;
+    display: flex;
+    justify-content: left;
+    line-height: 4em;
+    padding-left: 20px;
+    width: 190px;
+}
