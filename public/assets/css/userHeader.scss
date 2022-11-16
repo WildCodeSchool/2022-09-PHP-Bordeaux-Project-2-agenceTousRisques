@@ -1,18 +1,18 @@
-.admin-header-container {
+.mobile-header-container {
     margin-bottom: 64px;
     position: relative;
     height: 315px;
     background-color: var(--bleuVert);
 }
 
-.admin-logout-link {
+.user-logout-link {
     position: absolute;
     top: 2%;
     right: 1vw;
     background-color: var(--bleuVert);
 }
 
-.admin-logout-img {
+.user-logout-img {
     height: 50px;
     width: 50px;
 
@@ -22,7 +22,7 @@
 
 }
 
-.admin-avatar {
+.user-avatar {
     height: 220px;
     width: 220px;
     display: inline;
@@ -48,7 +48,7 @@
     top: 50%;
 }
 
-.admin-firstname, .admin-lastname {
+.user-firstname, .user-lastname {
     position: absolute;
     background-color: var(--bleu);
     box-shadow: 1px 1px 3px black;
@@ -67,11 +67,11 @@
     top: 94%;
 }
 
-.admin-firstname {
+.user-firstname {
     right: 70%;
 }
 
-.admin-lastname {
+.user-lastname {
     left: 70%;
 }
 
@@ -91,7 +91,7 @@
 
 
 
-.admin-gestion-link {
+.user-gestion-link {
     display: block;
     margin: auto;
     width: 50px;
@@ -374,4 +374,10 @@ $anim_time: 1s;
         opacity: 0;
     }
 
+}
+
+@media screen and (min-width: 1024px){
+    .mobile-header-container {
+        display:none;
+    }
 }

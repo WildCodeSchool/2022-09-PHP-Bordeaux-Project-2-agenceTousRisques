@@ -39,7 +39,8 @@ abstract class AbstractManager
     public function selectOneById(int $id): array|false
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT * FROM User WHERE userID=:id");
+        $statement = $this->pdo->prepare("SELECT * FROM User INNER JOIN avatar
+    ON User.avatar=avatar.avatarID WHERE userID=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
 

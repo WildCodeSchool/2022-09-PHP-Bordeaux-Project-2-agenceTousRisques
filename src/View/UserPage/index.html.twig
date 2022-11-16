@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/adminHeader.css">
+    <link rel="stylesheet" href="/assets/css/userHeader.css">
+    <link rel="stylesheet" href="/assets/css/userHeaderDesktop.css">
     <link rel="stylesheet" href="/assets/css/userPlanning.css">
     <link rel="stylesheet" href="/assets/css/styleUserSlider.css">
     <link rel="stylesheet" href="/assets/css/styleButtonAddDemand.css">
@@ -12,6 +13,7 @@
 
 {% block header %}
     {% include 'userHeader.html.twig' %}
+    {% include 'userHeaderDesktop.html.twig' %}
 {% endblock %}
 
 {% block content %}
