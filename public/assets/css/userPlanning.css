@@ -65,7 +65,7 @@
   opacity: 0;
 }
 
-#plus-button0:checked ~ h2 .label-day0::before {
+#plus-button0:checked ~ .label-day0::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -134,7 +134,7 @@
   opacity: 0;
 }
 
-#plus-button1:checked ~ h2 .label-day1::before {
+#plus-button1:checked ~ .label-day1::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -203,7 +203,7 @@
   opacity: 0;
 }
 
-#plus-button2:checked ~ h2 .label-day2::before {
+#plus-button2:checked ~ .label-day2::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -272,7 +272,7 @@
   opacity: 0;
 }
 
-#plus-button3:checked ~ h2 .label-day3::before {
+#plus-button3:checked ~ .label-day3::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -341,7 +341,7 @@
   opacity: 0;
 }
 
-#plus-button4:checked ~ h2 .label-day4::before {
+#plus-button4:checked ~ .label-day4::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -410,7 +410,7 @@
   opacity: 0;
 }
 
-#plus-button5:checked ~ h2 .label-day5::before {
+#plus-button5:checked ~ .label-day5::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -479,7 +479,7 @@
   opacity: 0;
 }
 
-#plus-button6:checked ~ h2 .label-day6::before {
+#plus-button6:checked ~ .label-day6::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;

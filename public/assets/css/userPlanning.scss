@@ -70,7 +70,7 @@
         opacity: 0;
     }
 
-    #plus-button#{$i}:checked ~ h2 .label-day#{$i}::before {
+    #plus-button#{$i}:checked ~ .label-day#{$i}::before {
         border-left: 8px solid transparent;
         border-top: 8px solid black;
         border-right: 8px solid transparent;
