@@ -1,0 +1,45 @@
+@import url("userHeader.css");
+@import url("userHeaderDesktop.css");
+@import url("userPlanning.css");
+@import url("styleUserSlider.css");
+@import url("styleButtonAddDemand.css");
+@import url("styleUnacceptedDemand.css");
+@import url("buttonAcceptCall.css");
+
+@media screen and (min-width: 1024px) {
+    .blockAddDemand {
+        display: flex;
+        width: 95vw;
+        margin: auto;
+        gap: 10px;
+        height: auto;
+    }
+
+    .sectionAddDemand {
+        width: 100vw;
+        height: auto;
+        margin-bottom: 8px;
+    }
+
+    .sectionSlider {
+        width: 95vw;
+        margin: auto;
+        margin-bottom: 8px;
+    }
+
+    .slider, .slider2 {
+        width: 700px;
+    }
+
+    .unacceptedDemand {
+        margin: auto;
+        margin-bottom: 8px;
+    }
+    .footer{
+        margin: auto;
+    }
+    .acceptCall, .addDemand{
+        height: 250px;
+        width: auto;
+    }
+}
