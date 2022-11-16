@@ -2,7 +2,7 @@
     {% for key, value in demandsByDay %}
         <div class="day-block day{{ loop.index0 }}">
             <input class=input-day{{ loop.index0 }} type="checkbox" id="plus-button{{ loop.index0 }}" hidden>
-            <h2><label class="label-day{{ loop.index0 }}  {% if value is empty %} no-demand {% endif %}
+            <label class="label-day{{ loop.index0 }}  {% if value is empty %} no-demand {% endif %}
 {% for demand in value %}
 {% if demand.helperID==user.userID %}
 helper
@@ -10,7 +10,7 @@ helper
 helped
 {% endif %}
 {% endfor %}
-" for="plus-button{{ loop.index0 }}">{{ key }}</label></h2>
+" for="plus-button{{ loop.index0 }}">{{ key }}</label>
 
             {% for demand in value %}
                 {% if demand.helperID==user.userID %}

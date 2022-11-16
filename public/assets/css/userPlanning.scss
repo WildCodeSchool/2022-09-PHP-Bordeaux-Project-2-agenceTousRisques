@@ -29,6 +29,7 @@
         padding-top:16px;
         cursor: pointer;
         font-family: var(--fontTitle);
+        font-size:clamp(20px,2em,2.5vw);
         &::before {
             content: "";
             position: absolute;
