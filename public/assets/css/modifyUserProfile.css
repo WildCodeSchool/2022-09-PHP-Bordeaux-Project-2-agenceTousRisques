@@ -1,64 +1,79 @@
-.profile-body{
-    border-radius: 10px;
+.modify-user-profile-errors {
+    list-style: none;
+    text-align: center;
+    color: red;
+    font-weight: bold;
     font-family: var(--fontText);
-    padding-bottom: 10px;
-    width: 90vw;
-    margin: 8px auto auto;
-}
-
-.profile-container {
-    background-color: var(--bleu);
-    border-radius: 10px;
-    margin: 0 10px 30px 10px;
-    font-family: var(--fontText);
-    padding-bottom: 10px;
+    padding: 8px;
 }
 
 .profile-title {
+    text-align: center;
+    margin: 16px;
+    font-size: 35px;
     font-family: var(--fontTitle);
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    align-items: center;
-}
-
-.profile-infos-container {
-    background-color: var(--bleuVert);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    max-width: 100%;
 }
 
 .profile-line {
     width: 100%;
     border: 1px solid var(--bleu);
-    margin-right: 10px;
 }
 
 .profile-line-kid {
+    margin-left: 80px;
+    margin-right: 80px;
     border: 1px solid var(--bleu);
-    margin-right: 50px;
-    margin-left: 50px;
 }
 
-.personal-infos {
-    padding: 8px;
-    text-decoration: underline;
+.profile-body {
+    background-color: var(--bleuVert);
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    border-radius: 10px;
+}
+
+.modify-infos-kid {
+    margin-left: 22px;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.modify-form-title {
+    font-family: var(--fontTitle);
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.modify-input {
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.form-userInscription {
+    display: grid;
+    margin: 10px;
+}
+
+.modify-form {
+    background-color: var(--bleuVert);
+    font-family: var(--fontText);
+    border-radius: 10px;
 }
 
 .profile-important-info {
     font-weight: bolder;
     color: black;
+    overflow-wrap: break-word;
 }
 
-.modify-profile-button-container{
-    margin: 16px;
+.form-userInscription-submit {
+    padding: 20px;
 }
 
-#modify-profile-button {
-    background-color: var(--bleuVert);
+#submitUserInscription {
+    background-color: var(--bleu);
     border: 0 solid #E5E7EB;
     box-sizing: border-box;
     color: #000000;
@@ -83,11 +98,11 @@
     touch-action: manipulation;
 }
 
-#modify-profile-button:focus {
+#submitUserInscription:focus {
     outline: 0;
 }
 
-#modify-profile-button:after {
+#submitUserInscription:after {
     content: '';
     position: absolute;
     border: 1px solid #000000;
@@ -97,16 +112,7 @@
     height: calc(100% - 1px);
 }
 
-#modify-profile-button:hover:after {
+#submitUserInscription:hover:after {
     bottom: 2px;
     left: 2px;
-}
-
-.modify-user-profile-errors {
-    list-style: none;
-    text-align: center;
-    color: red;
-    font-weight: bold;
-    font-family: var(--fontText);
-    padding: 8px;
 }

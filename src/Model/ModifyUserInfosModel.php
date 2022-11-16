@@ -6,23 +6,28 @@ use PDO;
 
 class ModifyUserInfosModel extends AbstractManager
 {
-    public function modifyUserInfos($firstname, $lastname, $telephone, $address, $email, $password)
+    public function modifyUserInfos($infosUser)
     {
         $query = 'UPDATE `user`
                   SET firstname = :firstname,
                       lastname = :lastname,
                       telephone = :telephone,
-                      address = :address,
-                      email = :email,
-                      password = :password
+                      address = :address
                   WHERE userID = ' . $_SESSION['user_id'];
         $statement = $this->pdo->prepare($query);
-        $statement->bindValue(':firstname', $firstname);
-        $statement->bindValue(':lastname', $lastname);
-        $statement->bindValue(':telephone', $telephone, \PDO::PARAM_INT);
-        $statement->bindValue(':address', $address);
-        $statement->bindValue(':email', $email);
-        $statement->bindValue(':password', password_hash($password, PASSWORD_DEFAULT));
+        $statement->bindValue(':firstname', $infosUser['firstname']);
+        $statement->bindValue(':lastname', $infosUser['lastname']);
+        $statement->bindValue(':telephone', $infosUser['telephone'], \PDO::PARAM_INT);
+        $statement->bindValue(':address', $infosUser['address']);
+        $statement->execute();
+    }
+
+    public function modifyUserLogins(array $newLogins)
+    {
+        $query = "UPDATE `user` SET password = :newPassword, email = :newEmail WHERE userID =" . $_SESSION['user_id'];
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':newPassword', password_hash($newLogins['password1'], PASSWORD_DEFAULT));
+        $statement->bindValue(':newEmail', $newLogins['email']);
         $statement->execute();
     }
 
@@ -41,52 +46,5 @@ class ModifyUserInfosModel extends AbstractManager
         $statement->bindValue(':specs', htmlspecialchars($specs));
         $statement->bindValue(':kidID', $kidID, PDO::PARAM_INT);
         $statement->execute();
-    }
-
-    public function insertKid($user): void
-    {
-        if (!empty($user['firstnameKid']) && !empty($user['birthdayKid']) && !empty($user['commentKid'])) {
-            $statementKid = $this->pdo->prepare("INSERT INTO Kid
-                (`userID`,`firstname`, `birthday` , `specs`)
-            VALUES
-                (:userID , :firstname, :birthday , :specs)");
-            $statementKid->bindValue('userID', $_SESSION['user_id'], PDO::PARAM_INT);
-            $statementKid->bindValue('firstname', htmlspecialchars($user['firstnameKid']), PDO::PARAM_STR);
-            $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid']), PDO::PARAM_STR);
-            $statementKid->bindValue('specs', htmlspecialchars($user['commentKid']), PDO::PARAM_STR);
-            $statementKid->execute();
-        }
-    }
-
-
-    public function insertKid2($user): void
-    {
-        if (!empty($user['firstnameKid2']) && !empty($user['birthdayKid2']) && !empty($user['commentKid2'])) {
-            $statementKid = $this->pdo->prepare("INSERT INTO Kid
-                (`userID`,`firstname`, `birthday` , `specs`)
-            VALUES
-                (:userID , :firstname, :birthday , :specs)");
-            $statementKid->bindValue('userID', $_SESSION['user_id'], PDO::PARAM_INT);
-            $statementKid->bindValue('firstname', htmlspecialchars($user['firstnameKid2']), PDO::PARAM_STR);
-            $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid2']), PDO::PARAM_STR);
-            $statementKid->bindValue('specs', htmlspecialchars($user['commentKid2']), PDO::PARAM_STR);
-            $statementKid->execute();
-        }
-    }
-
-
-    public function insertKid3($user): void
-    {
-        if (!empty($user['firstnameKid3']) && !empty($user['birthdayKid3']) && !empty($user['commentKid3'])) {
-            $statementKid = $this->pdo->prepare("INSERT INTO Kid
-                (`userID`,`firstname`, `birthday` , `specs`)
-            VALUES
-                (:userID , :firstname, :birthday , :specs)");
-            $statementKid->bindValue('userID', $_SESSION['user_id'], PDO::PARAM_INT);
-            $statementKid->bindValue('firstname', htmlspecialchars($user['firstnameKid3']), PDO::PARAM_STR);
-            $statementKid->bindValue('birthday', htmlspecialchars($user['birthdayKid3']), PDO::PARAM_STR);
-            $statementKid->bindValue('specs', htmlspecialchars($user['commentKid3']), PDO::PARAM_STR);
-            $statementKid->execute();
-        }
     }
 }

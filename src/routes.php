@@ -25,4 +25,7 @@ return [
     'userCalls' => ['UserCallsController', 'showUserCalls'],
     'userProfile' => ['UserProfileController', 'showUserProfile'],
     'modifyProfile' => ['UserProfileController', 'modifyUserProfile'],
+    'modifyUserProfile' => ['UserProfileController', 'modifyUserInfos'],
+    'modifyLoginProfile' => ['UserProfileController', 'modifyLoginInfos'],
+    'modifyKidProfile' => ['UserProfileController', 'modifyKidInfos'],
 ];
