@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+    Users Calls
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/../assets/css/userCalls.css">
+{% endblock %}
+{% block header %}
+    {% include 'userHeader.html.twig' %}
+{% endblock %}
+{% block content %}
+        <div class="call-body">
+            <div class="call-container">
+                <div class="call-title">Les demandes en cours</div>
+                {% for call in Calls %}
+                    <div class="single-call">
+                        <p>
+                            <span class="importantInfo-call">{{ call.firstname }}</span> souhaite se faire aider <br>
+                            du <span class="importantInfo-call">{{ call.startdate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.startdate|date("h:i") }}</span><br>
+                            au <span class="importantInfo-call">{{ call.enddatedate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.enddatedate|date("h:i") }}</span><br>
+                            contexte : <span class="importantInfo-call">{{ call.context }}</span><br>
+                            commentaire : <span class="importantInfo-call">{{ call.comment }}</span>
+                        </p>
+                            <a href="userCalls?id={{ call.callID }}" id="submitUserInscription">Accepter</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

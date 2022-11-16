@@ -20,7 +20,8 @@ class UserInscriptionController extends AbstractController
                 $userManager->insertKid($id, $user);
                 $userManager->insertKid2($id, $user);
                 $userManager->insertKid3($id, $user);
-                header('Location:/');
+                echo "<script>alert('Votre inscription est validée. \\n Vous pouvez vous connecter.')</script>";
+                header('Refresh:0 /');
                 return null;
             }
         }

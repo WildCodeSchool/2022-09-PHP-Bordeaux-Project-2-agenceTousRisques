@@ -1,25 +1,25 @@
-<div class="login-block">
-    <h2 class="login-title">Se connecter :</h2>
-    {% block errors %}
-    <div class="user-connection-errors">
-        {% for error in errors %}
-        <li>{{ error }}</li>
-        {% endfor %}
-    </div>
-    {% endblock %}
-    <div class="login-form-container">
-        <form action="userConnection" method="post" class="loginForm">
-            <div class="email-part part">
-                <label class="label-connection" for="email">E-mail :</label><br>
-                <input type="text" id="email" name="email" class="login-email-field field" required>
+<div class="login-form-body">
+    <div class="login-form">
+        <div class="login-title">Se connecter</div>
+        {% block errors %}
+            <div class="user-connection-errors">
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
             </div>
-            <div class="passwordPart part">
-                <label class="label-connection" for="password">Mot de passe :</label><br>
-                <input type="password" id="password" name="password" class="login-password-field field" required>
+        {% endblock %}
+        <form action="userConnection" method="post">
+            <div class="input-container login-email-container">
+                <input id="email" name="email" class="login-input" type="text" placeholder=" " required/>
+                <div class="cut"></div>
+                <label for="email" class="placeholder">Email</label>
             </div>
-            <div class="button-part part">
-                <button type="submit" class="login-button">connexion</button>
+            <div class="input-container login-password-container">
+                <input id="password" name="password" class="login-input" type="password" placeholder=" " required/>
+                <div class="cut cut-short"></div>
+                <label for="password" class="placeholder">Mot de passe</label>
             </div>
+            <button type="submit" class="login-submit">connexion</button>
         </form>
     </div>
 </div>

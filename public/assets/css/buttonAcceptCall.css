@@ -1,5 +1,13 @@
-.buttonAddDemand {
-    background-color: var(--saumon);
+.acceptCall {
+    background-color: var(--bleuVert);
+    display: grid;
+    justify-content: center;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.buttonAcceptCall {
+    background-color: var(--bleu);
     border: 0 solid #E5E7EB;
     box-sizing: border-box;
     color: #000000;
@@ -24,11 +32,11 @@
     touch-action: manipulation;
 }
 
-.buttonAddDemand:focus {
+.buttonAcceptCall:focus {
     outline: 0;
 }
 
-.buttonAddDemand:after {
+.buttonAcceptCall:after {
     content: '';
     position: absolute;
     border: 1px solid #000000;
@@ -37,29 +45,12 @@
     width: calc(100% - 1px);
     height: calc(100% - 1px);
 }
-.buttonAddDemand:hover{
+.buttonAcceptCall:hover{
     color: black;
 }
 
-.buttonAddDemand:hover:after {
+.buttonAcceptCall:hover:after {
 
     bottom: 2px;
     left: 2px;
-}
-.titleAddDemand{
-    font-family: var(--fontTitle);
-    font-size: 30px;
-    padding: 20px 0;
-}
-
-.addDemand {
-    background-color: var(--saumonPastel);
-    display: grid;
-    justify-content: center;
-    margin: 0 10px;
-    border-radius: 5px;
-}
-
-.sectionAddDemand{
-    height: 160px;
 }

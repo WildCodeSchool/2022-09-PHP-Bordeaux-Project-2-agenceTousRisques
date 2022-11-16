@@ -1,0 +1,47 @@
+.title-deleteUSer{
+    font-family: var(--fontTitle);
+}
+
+.deleteUser {
+    font-family: var(--fontText);
+    margin: 0;
+    padding: 0;
+    display: grid;
+    align-content: center;
+}
+
+.container {
+    padding: 20px;
+    background-color: var(--rosePastel);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px gray;
+    height: 250px;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container button[type="submit"] {
+    max-width: 120px;
+    cursor: pointer;
+    font-weight: 500;
+    height: 48px;
+    margin: 20px;
+    border-radius: 24px;
+    outline: none;
+    font-size: 16px;
+}
+
+.container button[type="submit"]:hover {
+    background: var(--saumon);
+}
+
+.deleteformerror {
+    list-style: none;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: var(--fontText);
+    padding: 8px;
+}

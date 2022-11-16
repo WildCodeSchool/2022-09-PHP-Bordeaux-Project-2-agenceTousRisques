@@ -3,22 +3,28 @@
 namespace App\Controller;
 
 use App\Model\Admin;
+use App\Model\MailModel;
 
 class AdminController extends AbstractController
 {
     public function administrationPanel()
     {
-        return $this->twig->render('Admin/index.html.twig');
+        $usersView = new Admin();
+        $users = $usersView->showUser();
+        $usersPrevious = $usersView->showUserPrevious();
+
+        return $this->twig->render('Admin/index.html.twig', ['users' => $users, 'usersPrevious' => $usersPrevious
+        ]);
     }
 
     public function validateEmail($email): array|string
     {
         $errors = [];
         if (empty(trim($email))) {
-            $errors[] = 'Veuillez renseigner une addresse mail';
+            $errors[] = 'Veuillez renseigner une adresse mail';
         }
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "L'addresse email renseignée est invalide";
+            $errors[] = "L'adresse email renseignée est invalide";
         }
         return $errors;
     }
@@ -28,9 +34,10 @@ class AdminController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $invitedEmail = $_POST['invited-email'];
             if (empty($this->validateEmail($invitedEmail))) {
+                $mailing = new MailModel();
                 $admin = new Admin();
                 $activationCode = $admin->codeGenerator();
-                $admin->sendEmail($invitedEmail, $activationCode);
+                $mailing->sendInvitationEmail($invitedEmail, $activationCode);
                 return $this->twig->render('Admin/index.html.twig', [
                     'email' => $invitedEmail,
                     'code' => $activationCode,
