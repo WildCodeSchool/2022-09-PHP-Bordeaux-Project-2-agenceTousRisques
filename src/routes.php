@@ -18,7 +18,7 @@ return [
     'gestion' => ['AdminController', 'administrationPanel'],
     'adminInvite' => ['AdminController', 'inviteUserForm',],
     'invite' => ['AdminController', 'inviteUser'],
-    'delete' => ['DeleteController', 'delete'],
+    'delete' => ['AdminController', 'delete'],
     'addDemand' => ['AddDemandController', 'add'],
     'logout' => ['UserConnectionController', 'logout'],
     'UserPage' => ['UserPageController', 'showUserPage'],
@@ -27,5 +27,5 @@ return [
     'modifyProfile' => ['UserProfileController', 'modifyUserProfile'],
     'modifyUserProfile' => ['UserProfileController', 'modifyUserInfos'],
     'modifyLoginProfile' => ['UserProfileController', 'modifyLoginInfos'],
-    'modifyKidProfile' => ['UserProfileController', 'modifyKidInfos'],
+    'modifyKidProfile' => ['UserProfileController', 'modifyKidInfos']
 ];

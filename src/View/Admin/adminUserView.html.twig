@@ -1,58 +1,60 @@
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/adminUserView.css">
 {% endblock %}
+<div class="user-view-container">
 
-<span class="titleUserView">Palmarès des Kangourous</span>
-<section class="userViewGeneral">
-    <label class="toggle">
-        Précédent
-        <input class="toggle-checkbox" type="checkbox" checked onclick="afficherMasquer()">
-        <div class="toggle-switch"></div>
-        <span class="toggle-label">En Cours</span>
+    <h3 class="titleUserView">Palmarès des Kangourous</h3>
+    <section class="userViewGeneral">
+        <label class="toggle">
+            <span class="toggle-label">Précédent</span>
+            <input class="toggle-checkbox" type="checkbox" checked onclick="afficherMasquer()">
+            <div class="toggle-switch"></div>
+            <span class="toggle-label">En Cours</span>
 
-    </label>
-</section>
+        </label>
+    </section>
 
-<section class="userViewGeneral" id="actual">
-    <div class="userView">
-        <h2 class="titleUserView">Mois en cours</h2>
-        {% for user in users %}
-            <div class="article-userView">
-                <div class="dateDemand">
+    <section class="userViewGeneral" id="actual">
+        <div class="userView">
+            <p class="titlePeriod">Mois en cours</p>
+            {% for user in users %}
+                <div class="userView-container">
                     <img class="avatarUser" src="{{ user.image }}" alt="avatarUser">
-                    {{ user.firstname }}
-                    {{ user.lastname }}
-                    <strong class="activities">Activité(s)</strong> : {{ user.compteur }}
+                    <div class="userView-infos">
+                    <p class="user-activity-firstname">{{ user.firstname }}</p>
+                    <p class="user-activity-lastname">{{ user.lastname }}</p>
+                    <p class="activities"><strong>Activité(s)</strong> : {{ user.compteur }}</p>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
-<section class="userViewGeneral" id="previous">
-    <div class="userView">
-        <h2 class="titleUserView">Mois précédent</h2>
-        {% for userPrevious in usersPrevious %}
-            <div class="article-userView">
-                <div class="dateDemand">
+            {% endfor %}
+        </div>
+    </section>
+    <section class="userViewGeneral" id="previous">
+        <div class="userView">
+            <p class="titlePeriod">Mois précédent</p>
+            {% for userPrevious in usersPrevious %}
+                <div class="userView-container">
                     <img class="avatarUser" src="{{ userPrevious.image }}" alt="avatarUser">
-                    {{ userPrevious.firstname }}
-                    {{ userPrevious.lastname }}
-                    <strong class="activities">Activité(s)</strong> : {{ userPrevious.compteur }}
+                    <div class="userView-infos">
+                        <p class="user-activity-firstname">{{ userPrevious.firstname }}</p>
+                        <p class="user-activity-lastname">{{ userPrevious.lastname }}</p>
+                        <p class="activities"><strong>Activité(s)</strong> : {{ userPrevious.compteur }}</p>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
+            {% endfor %}
+        </div>
+    </section>
+</div>
 {% block javascript %}
-   {#  <script type="text/javascript">
-        function afficherMasquer() {
-            if (document.getElementById('previous').style.display === "flex"){
-                document.getElementById('previous').style.display = "none";
-                document.getElementById('actual').style.display = "flex";}
-            else {
-                document.getElementById('actual').style.display = "none";
-                document.getElementById('previous').style.display = "flex";
-            }
-        }
-    </script>#}
+<script type="text/javascript">
+    function afficherMasquer() {
+    if (document.getElementById('previous').style.display === "flex"){
+    document.getElementById('previous').style.display = "none";
+    document.getElementById('actual').style.display = "flex";}
+    else {
+    document.getElementById('actual').style.display = "none";
+    document.getElementById('previous').style.display = "flex";
+}
+}
+</script>
 {% endblock %}

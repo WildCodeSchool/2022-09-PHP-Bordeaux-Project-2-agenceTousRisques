@@ -13,6 +13,7 @@
         <a class="user-list-link-desktop" data-hover="Voir les demandes de ma kangooteam" href="userCalls"><img src="assets/images/demand-list.png" alt=""
                                                                                                                 class="img-btn-header user-list-img-desktop"></a>
 
+
         <img src="assets/images/avatar1.png" alt="" class="img-header-deco avatar1">
         <img src="assets/images/avatar2.png" alt="" class="img-header-deco avatar2">
         <img src="assets/images/avatar3.png" alt="" class="img-header-deco avatar3">
@@ -22,5 +23,9 @@
 {#        <img src="assets/images/avatar7.png" alt="" class="img-header-deco avatar7">#}
 {#        <img src="assets/images/avatar8.png" alt="" class="img-header-deco avatar8">#}
     </div>
+    {% if user.isAdmin %}
+        <a class="user-gestion-link-desktop" data-hover="Gestion du groupe" href="gestion"><img class="img-gestion-desktop"
+                                                                 src="assets/images/admin-gestion.png" alt=""></a>
+    {% endif %}
 
 </div>

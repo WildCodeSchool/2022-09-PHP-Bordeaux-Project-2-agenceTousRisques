@@ -1,15 +1,18 @@
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    font-family: var(--fontText);
+.user-view-container {
+    width:95vw;
+    margin:auto;
+    background-color: var(--bleuVert);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px gray;
 }
-
 .toggle {
     cursor: pointer;
     display: inline-block;
 }
+.toggle-label {
+    font-family: var(--fontText);
 
+}
 .toggle-switch {
     display: inline-block;
     background: #ccc;
@@ -40,7 +43,7 @@
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
 .toggle-checkbox:checked + .toggle-switch {
-    background: var(--bleuVert);
+    background: var(--bleu)
 }
 .toggle-checkbox:checked + .toggle-switch:before {
     left: 30px;
@@ -59,7 +62,14 @@
 
 .titleUserView {
     font-family: var(--fontTitle);
-    font-size: 25px;
+    font-size: clamp(20px, 2em, 2.8vw);
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+.titlePeriod {
+    font-size: clamp(20px, 1.8em, 2.8vw);
+    font-family: var(--fontTitle);
     display: flex;
     justify-content: center;
     padding: 20px 0;
@@ -72,25 +82,36 @@
 }
 
 .userView {
-    background-color: var(--bleuVert);
+
     border-radius: 10px;
-    margin: 30px 10px 30px 10px;
+    margin-top:30px;
+    margin-bottom:10px;
     font-family: var(--fontText);
+    background-color: var(--bleu);
     padding-bottom: 10px;
     height: 330px;
     overflow: scroll;
-    width: 90vw;
+    width:90%;
     box-shadow: 1px 1px 5px gray;
 }
-
-.article-userView {
-    background-color: var(--bleu);
-    margin: 10px;
-    padding: 10px;
+.userView-container {
+    display:flex;
+    justify-content:center;
+    background-color: var(--bleuVert);
     border-radius: 5px;
-    display: flex;
-    justify-content: center;
+    align-items:center;
+    gap:32px;
+    margin:auto;
+    margin-bottom: 8px;
+    padding: 10px;
+    width:90%;
 
+}
+.userView-infos {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    align-items:center;
 }
 .activities{
     text-decoration: underline;
