@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/">
+    <link rel="stylesheet" href="/assets/css/modifyUserProfile.css">
 {% endblock %}
 {% block header %}
     {% include 'userHeader.html.twig' %}
@@ -13,11 +13,13 @@
 {% block content %}
     <div class="profile-body">
         <div class="profile-container">
-            <div class="profile-title">Mon profil</div>
-            <form action="modifyUserProfile" method="post">
-                {% for error in errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
+            <h2 class="modify-profile-title">Modifier Mon profil</h2>
+            <form action="modifyUserProfile" method="post" class="modify-form">
+                <div class="modify-form-errors">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
                 <div>
                     <label for="lastname">Nom :</label>
                     <input type="text" name="lastname" id="lastname" value="{{ user.lastname }}">
@@ -38,7 +40,7 @@
                     <button type="submit" name="submit" id="submitUserInscription" >Modifier mes infos</button>
                 </div>
             </form>
-            <form action="modifyLoginProfile" method="post">
+            <form action="modifyLoginProfile" method="post" class="modify-form">
                 <div>
                     <label for="email">Email :</label>
                     <input type="text" name="email" id="email" value="{{ user.email }}">
@@ -55,7 +57,7 @@
                     <button type="submit" name="submit" id="submitUserInscription" >Modifier mes infos</button>
                 </div>
             </form>
-            <form action="modifyKidProfile" method="post">
+            <form action="modifyKidProfile" method="post" class="modify-form">
             {% for kid in kids %}
                     <p class="modify-infos-kid">
                         Prénom : <span class="profile-important-info">{{ kid.firstname }}</span><br>

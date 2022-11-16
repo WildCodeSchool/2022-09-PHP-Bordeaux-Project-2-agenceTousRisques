@@ -1,4 +1,4 @@
-.modify-user-profile-errors {
+.modify-form-errors {
     list-style: none;
     text-align: center;
     color: red;
@@ -7,69 +7,25 @@
     padding: 8px;
 }
 
-.profile-title {
+.modify-profile-title {
+    padding: 8px;
+    font-family: var(--fontTitle);
+    font-size: clamp(20px, 2em, 2.8vw);
+    align-items: center;
     text-align: center;
-    margin: 16px;
-    font-size: 35px;
-    font-family: var(--fontTitle);
-}
-
-.profile-line {
-    width: 100%;
-    border: 1px solid var(--bleu);
-}
-
-.profile-line-kid {
-    margin-left: 80px;
-    margin-right: 80px;
-    border: 1px solid var(--bleu);
-}
-
-.profile-body {
-    background-color: var(--bleuVert);
-    margin-left: auto;
-    margin-right: auto;
-    width: 90vw;
-    border-radius: 10px;
-}
-
-.modify-infos-kid {
-    margin-left: 22px;
-    margin-bottom: 0;
-    margin-top: 8px;
-}
-
-.modify-form-title {
-    font-family: var(--fontTitle);
-    padding-bottom: 10px;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.modify-input {
-    border: 1px black solid;
-    border-radius: 5px;
-}
-
-.form-userInscription {
-    display: grid;
-    margin: 10px;
+    margin: 0;
 }
 
 .modify-form {
-    background-color: var(--bleuVert);
     font-family: var(--fontText);
-    border-radius: 10px;
-}
-
-.profile-important-info {
-    font-weight: bolder;
-    color: black;
-    overflow-wrap: break-word;
-}
-
-.form-userInscription-submit {
-    padding: 20px;
+    width: 95%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:216px;
 }
 
 #submitUserInscription {
