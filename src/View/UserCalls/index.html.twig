@@ -19,10 +19,11 @@
                         <p>
                             <span class="importantInfo-call">{{ call.firstname }}</span> souhaite se faire aider <br>
                             du <span class="importantInfo-call">{{ call.startdate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.startdate|date("h:i") }}</span><br>
-                            au <span class="importantInfo-call">{{ call.enddatedate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.enddatedate|date("h:i") }}</span><br>
+                            au <span class="importantInfo-call">{{ call.enddate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.enddate|date("h:i") }}</span><br>
                             contexte : <span class="importantInfo-call">{{ call.context }}</span><br>
                             commentaire : <span class="importantInfo-call">{{ call.comment }}</span>
                         </p>
+                        <br>
                             <a href="userCalls?id={{ call.callID }}" id="submitUserInscription">Accepter</a>
                     </div>
                 {% endfor %}

@@ -54,6 +54,7 @@
     text-decoration-thickness: auto;
     width: 100%;
     max-width: 260px;
+    max-height: 60px;
     position: relative;
     cursor: pointer;
     transform: rotate(-2deg);
