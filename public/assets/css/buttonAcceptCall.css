@@ -2,8 +2,10 @@
     background-color: var(--bleuVert);
     display: grid;
     justify-content: center;
-    margin: 0 10px;
-    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    width: 95vw;
 }
 
 .buttonAcceptCall {
@@ -24,6 +26,7 @@
     text-decoration-thickness: auto;
     width: 100%;
     max-width: 260px;
+    max-height: 60px;
     position: relative;
     cursor: pointer;
     transform: rotate(-2deg);

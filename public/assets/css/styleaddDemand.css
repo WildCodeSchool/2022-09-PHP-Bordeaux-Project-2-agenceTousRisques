@@ -8,8 +8,9 @@
     background-color: var(--saumonPastel);
     font-family: var(--fontText);
     padding: 30px;
-    margin: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    width: 95vw;
+    margin: auto;
 }
 
 .date {

@@ -9,16 +9,18 @@
 .unacceptedDemand {
     background-image:url("../images/planning-background-salmon.png");
     border-radius: 10px;
-    margin: 20px 10px 30px 10px;
+    margin: auto;
+    margin-bottom: 8px;
     font-family: var(--fontText);
     padding-bottom: 10px;
     height : 330px;
     overflow: scroll;
+    width: 95vw;
 }
 .article {
     background-color: var(--saumon);
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
 }
 .importantInfo {
