@@ -143,12 +143,16 @@
 #menu-list {
   background-color: var(--saumonPastel);
   z-index: 10;
-  width: 350px;
+  max-width: 350px;
+  min-width: 180px;
+  width: 60vw;
   border-radius: 20px;
   box-shadow: 1px 1px 3px gray;
   position: fixed;
   left: -370px;
+  font-size: clamp(18px, 1em, 2vw);
   transition: left 0.8s cubic-bezier(1, 0, 0, 1);
+  line-height: 32px;
 }
 #menu-list a {
   text-decoration: none;
