@@ -26,6 +26,7 @@
   padding-top: 16px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day0::before {
   content: "";
@@ -94,6 +95,7 @@
   padding-top: 16px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day1::before {
   content: "";
@@ -162,6 +164,7 @@
   padding-top: 16px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day2::before {
   content: "";
@@ -230,6 +233,7 @@
   padding-top: 16px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day3::before {
   content: "";
@@ -298,6 +302,7 @@
   padding-top: 16px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day4::before {
   content: "";
@@ -366,6 +371,7 @@
   padding-top: 16px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day5::before {
   content: "";
@@ -434,6 +440,7 @@
   padding-top: 16px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day6::before {
   content: "";

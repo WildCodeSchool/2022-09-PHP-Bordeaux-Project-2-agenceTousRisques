@@ -23,31 +23,36 @@
     <section class="addDemand">
         <h2 class="addDemandtitle">Nouvelle Demande</h2>
         <form action="" method="post">
-            <div class="date">
-                <label class="startDate" for="startDate">Du </label><br>
-                <input type="datetime-local" id="startDate" name="startDate" required>
+            <div class="form-container">
+                <div class="startDate-container">
+                    <label class="startDate" for="startDate">Du </label><br>
+                    <input type="datetime-local" id="startDate" name="startDate" required>
+                </div>
+                <div class="endDate-container">
+                    <label class="endDate" for="endDate">Au </label><br>
+                    <input type="datetime-local" id="endDate" name="endDate" required>
+                </div>
+                <div class="context-container">
+                    <label class="add-context" for="context">Contexte</label><br>
+                    <select name="context" id="context" required>
+                        <option value="" selected>Votre Choix</option>
+                        <option value="sortieEcole">Sortie d'école</option>
+                        <option value="extraScolaire">Activité Extra-scolaire</option>
+                        <option value="absParent">Absence parents</option>
+                        <option value="absParent">Rendez-vous</option>
+                    </select>
+
+                </div>
+                <div class="comment-container">
+                    <label class="comment" for="comment">Commentaires</label><br>
+                    <textarea name="comment" id="comment" cols="23" rows="5" required></textarea>
+                </div>
+
             </div>
-            <div class="date">
-                <label class="endDate" for="endDate">Au </label><br>
-                <input type="datetime-local" id="endDate" name="endDate" required>
+            <div class="add-demand-submit-btn">
+                <button type="submit" class="login-button" id="submit">Ajouter</button>
             </div>
-            <div class="date">
-                <label class="" for="context">Contexte :</label><br>
-                <select name="context" id="context" required>
-                    <option value="" selected>Votre Choix</option>
-                    <option value="sortieEcole">Sortie d'école</option>
-                    <option value="extraScolaire">Activité Extra-scolaire</option>
-                    <option value="absParent">Absence parents</option>
-                    <option value="absParent">Rendez-vous</option>
-                </select>
-            </div>
-            <div class="">
-                <label class="comment" for="comment">Commentaires</label><br>
-                <textarea name="comment" id="comment" cols="25" rows="10" required></textarea>
-            </div>
-            <div class="">
-                <button type="submit" class="login-button" id="submit" >Ajouter</button>
-            </div>
+
         </form>
     </section>
     </body>
