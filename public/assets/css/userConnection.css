@@ -9,18 +9,22 @@
 
 .login-form-body {
     align-items: center;
-    background-color: white;
     display: flex;
     justify-content: center;
 }
 
 .login-form {
     background-color: var(--saumonPastel);
-    border-radius: 20px;
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 5px;
     box-sizing: border-box;
     height: 500px;
     padding: 20px;
-    width: 90vw;
+    width: 100vw;
+    margin: 0 20px;
+}
+.login-form form {
+    text-align:center;
 }
 
 .login-title {
@@ -104,21 +108,60 @@
     color: var(--saumon);
 }
 
-.login-submit {
-    background-color: var(--bleu);
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    cursor: pointer;
-    font-size: 18px;
-    height: 50px;
-    margin-top: 38px;
-// outline: 0;
+.connection-submit-button {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    transition: all 0.2s ease;
+    background-color: var(--rosePastel);
+    border-radius:30px;
+    border:0;
     text-align: center;
-    width: 100%;
+    margin-top:16px;
 }
-
-.login-submit:active {
+.connection-submit-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: var(--saumon);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+}
+.connection-submit-button span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: top;
+}
+.connection-submit-button svg {
+    position: relative;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+.connection-submit-button:hover {
+    cursor:pointer;
+}
+.connection-submit-button:hover:before {
+    width: 100%;
     background-color: var(--bleuVert);
 }
+.connection-submit-button:hover svg {
+    transform: translateX(0);
+}
+.connection-submit-button:active {
+    transform: scale(0.96);
+}
+

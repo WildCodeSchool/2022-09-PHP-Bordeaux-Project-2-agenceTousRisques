@@ -1,31 +1,112 @@
-.day-block, .demand-block  {
-    background-color: gray;
+.planning-container {
+    background-image:url("../images/planning-background-blue.png");
+    width: 95%;
+    padding: 16px;
+    margin: auto;
+    border-radius: 20px;
+}
+.day-block {
     margin-bottom: 16px;
+
+}
+
+// Animation block
+
+@for $i from 0 through 6 {
+    .label-day#{$i} {
+        margin: auto;
+        border-radius: 30px;
+        box-shadow: 1px 1px 3px gray;
+        align-items: center;
+        justify-content: space-around;
+        width: 80%;
+        background-color: gray;
+        position: relative;
+        display: block;
+        padding-left: 30px;
+        padding-bottom:16px;
+        padding-top:16px;
+        cursor: pointer;
+        font-family: var(--fontTitle);
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 10px;
+            border-left: 8px solid black;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-top: -8px;
+        }
+        &.no-demand {
+            cursor:initial;
+            &::before{
+                display:none;
+            }
+        }
+
+        &.helper {
+            background-color: var(--bleuVert);
+        }
+
+        &.helped {
+            background-color: var(--saumonPastel);
+
+            &.helper {
+                background-color: var(--rosePastel);
+            }
+        }
+    }
+    #plus-button#{$i} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    #plus-button#{$i}:checked ~ h2 .label-day#{$i}::before {
+        border-left: 8px solid transparent;
+        border-top: 8px solid black;
+        border-right: 8px solid transparent;
+        margin-left: -4px;
+        margin-top: -4px;
+        color: red;
+    }
+    #plus-button#{$i}:checked ~ .demand-text {
+        max-height:130px;
+        padding-top:16px;
+        padding-bottom:16px;
+    }
+
+}
+
+.demand-text {
+    max-height:0;
+    line-height: 28px;
+    overflow: hidden;
+    font-family: var(--fontText);
+    padding:0px;
+    padding-left: 30px;
+    border-radius:20px;
+    box-shadow: 1px 1px gray;
+    transition: max-height 0.7s ease-in-out,
+    padding-top 0.7s ease-in-out,
+    padding-bottom 0.7s ease-in-out;
+    width: 60%;
+    margin: auto;
     &.helper {
         background-color: var(--bleuVert);
     }
+
     &.helped {
         background-color: var(--saumonPastel);
+
         &.helper {
             background-color: var(--rosePastel);
         }
     }
-}
-.user-planning {
-    background-color: var(--bleu);
-    padding-top:16px;
-}
-.day-block {
-    margin:auto;
-    border-radius:20px;
-    box-shadow:1px 1px 3px gray;
-    margin-bottom:16px;
-    padding:8px;
-    .demand-text {
-        line-height:16px;
-    }
-}
-.demand-block {
-    margin:auto;
-    text-align:justify;
 }

@@ -115,4 +115,15 @@ VALUES
         }
         return null;
     }
+
+    public function opendataAPI(): mixed
+    {
+        $curl = curl_init('https://opendata.bordeaux-metropole.fr/api/records/1.0/search/?dataset=met_agenda&q=&' .
+        'facet=location_city&facet=originagenda_title&facet=keywords_fr&facet=firstdate_begin&facet=lastdate_end&' .
+        'facet=accessibility_label_fr&refine.originagenda_title=Un+air+de+Bordeaux&refine.keywords_fr=enfant');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $dataAPI = curl_exec($curl);
+        curl_close($curl);
+        return($dataAPI);
+    }
 }

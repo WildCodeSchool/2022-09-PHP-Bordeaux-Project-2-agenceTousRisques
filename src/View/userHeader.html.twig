@@ -1,40 +1,38 @@
-<div class="admin-header-container">
+<div class="mobile-header-container">
 
     <div class="line"></div>
     <div class="avatar-container">
-        <a href="UserPage"><img class="admin-avatar" src="assets/images/avatar1.png" alt=""></a>
-        <p class="admin-firstname">{{ user.firstname }}</p>
-        <p class="admin-lastname">{{ user.lastname }}</p>
+        <a href="UserPage"><img class="user-avatar" src="{{ user.image }}" alt=""></a>
+        <p class="user-firstname">{{ user.firstname }}</p>
+        <p class="user-lastname">{{ user.lastname }}</p>
     </div>
     <div class="menu-burger-container">
-        <div id="menu-btn">
-            <span class="icon"></span>
-            <span class="text">MENU</span>
+        <input type="checkbox" class="menu-checkbox" id="menu-click" hidden>
+        <div class="menu-btn-container">
+            <label for="menu-click">
+                <div id="menu-btn">
+                    <span class="menu-line1"></span>
+                    <span class="menu-line2"></span>
+                    <span class="menu-line3"></span>
+                </div>
+            </label>
         </div>
         <div id="menu-list">
-            <a href="UserPage" class="menu-burger-item">Accueil</a>
-            <a href="addDemand" class="menu-burger-item">Ajouter une demande</a>
-            <a href="userCalls" class="menu-burger-item">Accepter une demande</a>
-            <a href="userProfile" class="menu-burger-item">Mon profil</a>
-            <a
-                href="#"
-                class="menu-burger-item"></a>
-            <a
-                href="#" class="menu-burger-item"></a>
-            <a href="#" class="menu-burger-item"></a>
+            <p><a href="UserPage" class="menu-burger-item">Accueil</a></p>
+            <p><a href="addDemand" class="menu-burger-item">Ajouter une demande</a></p>
+            <p><a href="userCalls" class="menu-burger-item">Accepter une demande</a></p>
+            <p><a href="userProfile" class="menu-burger-item">Mon profil</a></p>
+            {#            <p><a href="#" class="menu-burger-item"></a></p> #}
+            {#            <p><a href="#" class="menu-burger-item"></a></p> #}
+            {#            <p><a href="#" class="menu-burger-item"></a></p> #}
         </div>
     </div>
 
-    <a class="admin-logout-link" href="logout"><img src="assets/images/power-coloreddarken.png" alt=""
-                                                    class="admin-logout-img"></a>
+    <a class="user-logout-link" href="logout"><img src="assets/images/power-coloreddarken.png" alt=""
+                                                    class="user-logout-img"></a>
 
     {% if user.isAdmin %}
-        <a class="admin-gestion-link" href="gestion"><img class="img-gestion-link"
+        <a class="user-gestion-link" href="gestion"><img class="img-gestion-link"
                                                           src="assets/images/gear-coloreddarken.png" alt=""></a>
     {% endif %}
 </div>
-
-{% block javascript %}
-{{ parent }}
- <script src="/assets/js/headerMenu.js"></script>
-{% endblock %}

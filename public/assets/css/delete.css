@@ -1,53 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fuzzy+Bubbles&family=Gochi+Hand&display=swap');
-
-
-div.form {
-    color: black;
-    background-color:  #FAD7D4;
+.title-deleteUSer{
     font-family: var(--fontTitle);
+}
+
+.deleteUser {
+    font-family: var(--fontText);
     margin: 0;
     padding: 0;
-
+    display: grid;
+    align-content: center;
 }
 
 .container {
-    position: relative;
-    padding: 70px 40px;
-    background-color: #C7EBDD;
-    border-radius: 20px;
-    box-shadow: 0 5px 25px rgb(0, 0, 0, 0);
-
+    padding: 20px;
+    background-color: var(--rosePastel);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px gray;
+    height: 250px;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.container button[type="submit"]{
-    
+.container button[type="submit"] {
     max-width: 120px;
     cursor: pointer;
     font-weight: 500;
-
-    display: flex;
-    align-items: center;
     height: 48px;
-    padding: 0 24px 0 16px;
-    letter-spacing: .25px;
+    margin: 20px;
     border-radius: 24px;
     outline: none;
-    margin-right: 8px;
     font-size: 16px;
-    
-    display: none;
-    
-    display: block;
-
 }
 
-
-
-
-.container button[type="submit"]:hover{
- background: #FAA07D;
+.container button[type="submit"]:hover {
+    background: var(--saumon);
 }
-
 
 .deleteformerror {
     list-style: none;
@@ -57,7 +45,3 @@ div.form {
     font-family: var(--fontText);
     padding: 8px;
 }
-
-
-
-    

@@ -1,0 +1,58 @@
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/adminUserView.css">
+{% endblock %}
+
+<span class="titleUserView">Palmarès des Kangourous</span>
+<section class="userViewGeneral">
+    <label class="toggle">
+        Précédent
+        <input class="toggle-checkbox" type="checkbox" checked onclick="afficherMasquer()">
+        <div class="toggle-switch"></div>
+        <span class="toggle-label">En Cours</span>
+
+    </label>
+</section>
+
+<section class="userViewGeneral" id="actual">
+    <div class="userView">
+        <h2 class="titleUserView">Mois en cours</h2>
+        {% for user in users %}
+            <div class="article-userView">
+                <div class="dateDemand">
+                    <img class="avatarUser" src="{{ user.image }}" alt="avatarUser">
+                    {{ user.firstname }}
+                    {{ user.lastname }}
+                    <strong class="activities">Activité(s)</strong> : {{ user.compteur }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="userViewGeneral" id="previous">
+    <div class="userView">
+        <h2 class="titleUserView">Mois précédent</h2>
+        {% for userPrevious in usersPrevious %}
+            <div class="article-userView">
+                <div class="dateDemand">
+                    <img class="avatarUser" src="{{ userPrevious.image }}" alt="avatarUser">
+                    {{ userPrevious.firstname }}
+                    {{ userPrevious.lastname }}
+                    <strong class="activities">Activité(s)</strong> : {{ userPrevious.compteur }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% block javascript %}
+   {#  <script type="text/javascript">
+        function afficherMasquer() {
+            if (document.getElementById('previous').style.display === "flex"){
+                document.getElementById('previous').style.display = "none";
+                document.getElementById('actual').style.display = "flex";}
+            else {
+                document.getElementById('actual').style.display = "none";
+                document.getElementById('previous').style.display = "flex";
+            }
+        }
+    </script>#}
+{% endblock %}

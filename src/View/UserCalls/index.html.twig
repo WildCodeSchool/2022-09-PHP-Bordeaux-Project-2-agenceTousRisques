@@ -6,7 +6,10 @@
 {% block stylesheet %}
     <link rel="stylesheet" href="/../assets/css/userCalls.css">
 {% endblock %}
-
+{% block header %}
+    {% include 'userHeader.html.twig' %}
+    {% include 'userHeaderDesktop.html.twig' %}
+{% endblock %}
 {% block content %}
         <div class="call-body">
             <div class="call-container">
