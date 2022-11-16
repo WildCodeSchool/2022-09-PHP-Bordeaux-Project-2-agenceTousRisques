@@ -14,8 +14,6 @@ if (!key_exists($route, $routes)) {
     exit();
 }
 
-
-
 // Get the matching route in $routes array
 $matchingRoute = $routes[$route];
 
