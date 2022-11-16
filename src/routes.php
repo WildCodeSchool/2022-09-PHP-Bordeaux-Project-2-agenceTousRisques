@@ -25,4 +25,5 @@ return [
     'userCalls' => ['UserCallsController', 'showUserCalls'],
     'userProfile' => ['UserProfileController', 'showUserProfile'],
     'modifyProfile' => ['UserProfileController', 'showUserProfile'],
+    'resetPassword' => ['ResetPasswordController', 'showResetPassword'],
 ];

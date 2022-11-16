@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
     background-color: var(--rosePastel);
-    background-image: url("/assets/images/nuageRose.png");
+    background-image: url("../images/nuageRose.png");
 }
 
 .parallax {
@@ -14,14 +14,14 @@ body, html {
 }
 @keyframes pulse {
     0%, 100% {
-        background-image: url("/assets/images/logoSiteNoir.svg");
+        background-image: url("../images/logoSiteNoir.svg");
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: 60vh;
     }
     50% {
-        background-image: url("/assets/images/logoSite.svg");
+        background-image: url("../images/logoSite.svg");
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
