@@ -24,6 +24,9 @@ return [
     'UserPage' => ['UserPageController', 'showUserPage'],
     'userCalls' => ['UserCallsController', 'showUserCalls'],
     'userProfile' => ['UserProfileController', 'showUserProfile'],
-    'modifyProfile' => ['UserProfileController', 'showUserProfile'],
+    'modifyProfile' => ['UserProfileController', 'modifyUserProfile'],
     'resetPassword' => ['ResetPasswordController', 'showResetPassword'],
+    'modifyUserProfile' => ['UserProfileController', 'modifyUserInfos'],
+    'modifyLoginProfile' => ['UserProfileController', 'modifyLoginInfos'],
+    'modifyKidProfile' => ['UserProfileController', 'modifyKidInfos'],
 ];

@@ -111,28 +111,31 @@
                 <textarea id="commentKid3" name="commentKid3" rows="6"></textarea>
             </div>
         </div>
-        <div class="form-userInscription">
-            <label for=""><input type="checkbox" required>  En soumettant ce formulaire, j'accepte que les informations saisies soient
-                exploitées dans le cadre de la demande et de la relation commerciale qui peut en découler.</label>
 
+        <div class="form-userInscription submit form-userInscription-submit">
 
-        </div>
+            <div class="form-userInscription">
+                <label for=""><input type="checkbox" required> En soumettant ce formulaire, j'accepte que les
+                    informations saisies soient
+                    exploitées dans le cadre de la demande et de la relation commerciale qui peut en découler.</label>
+            </div>
         </div>
         <div class="form-userInscription submit">
-            <button type="submit" name="submit" id="submitUserInscription" > Bienvenue </button>
+
+            <button type="submit" name="submit" id="submitUserInscription"> Bienvenue</button>
         </div>
     </form>
     </body>
 {% endblock %}
 
 {% block javascript %}
-    {{ parent() }}
-    <script type="text/javascript">
-        function afficherMasquer(id) {
-            if (document.getElementById(id).style.display === "none")
-                document.getElementById(id).style.display = "block";
-            else
-                document.getElementById(id).style.display = "none";
-        }
-    </script>
+{{ parent() }}
+<script type="text/javascript">
+    function afficherMasquer(id) {
+        if (document.getElementById(id).style.display === "none")
+            document.getElementById(id).style.display = "block";
+        else
+            document.getElementById(id).style.display = "none";
+    }
+</script>
 {% endblock %}

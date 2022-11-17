@@ -6,6 +6,7 @@ class UserCallsModel extends AbstractManager
 {
     public function getCalls(): array
     {
+
         $query = "SELECT U.firstname, startdate, enddate, context, comment, callID, `Call`.userID
             FROM `Call`
             INNER JOIN `User` U on `Call`.userID = U.userID
