@@ -14,19 +14,39 @@
         <div class="call-body">
             <div class="call-container">
                 <div class="call-title">Les demandes en cours</div>
-                {% for call in Calls %}
-                    <div class="single-call">
+
+
+                    <label for="lundi">Lundi</label>
+                    <input type="checkbox" name="lundi" id="lundi">
+                    <label for="mardi">Mardi</label>
+                    <input type="checkbox" name="mardi" id="mardi" >
+                    <label for="mercredi">Mercredi</label>
+                    <input type="checkbox" name="mercredi" id="mercredi" >
+                    <label for="jeudi">Jeudi</label>
+                    <input type="checkbox" name="jeudi" id="jeudi" >
+                    <label for="vendredi">Vendredi</label>
+                    <input type="checkbox" name="vendredi" id="vendredi" >
+                    <label for="samedi">Samedi</label>
+                    <input type="checkbox" name="samedi" id="samedi" >
+                    <label for="dimanche">Dimanche</label>
+                    <input type="checkbox" name="dimanche" id="dimanche">
+
+
+                    <div class="flex-call-container">
+                    {% for call in Calls %}
+                        <div class="single-call {{ call.startdate|date("D") }}">
                         <p>
                             <span class="importantInfo-call">{{ call.firstname }}</span> souhaite se faire aider <br>
                             du <span class="importantInfo-call">{{ call.startdate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.startdate|date("h:i") }}</span><br>
                             au <span class="importantInfo-call">{{ call.enddate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.enddate|date("h:i") }}</span><br>
                             contexte : <span class="importantInfo-call">{{ call.context }}</span><br>
-                            commentaire : <span class="importantInfo-call">{{ call.comment }}</span>
+                        <p class="call-comment">commentaire : <span class="importantInfo-call">{{ call.comment }}</span></p>
                         </p>
                         <br>
-                            <a href="userCalls?id={{ call.callID }}" id="submitUserInscription">Accepter</a>
+                        <a href="userCalls?id={{ call.callID }}" id="submitUserInscription">Accepter</a>
                     </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
 {% endblock %}
