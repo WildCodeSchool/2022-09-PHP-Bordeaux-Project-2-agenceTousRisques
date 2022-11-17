@@ -117,7 +117,6 @@
 
 .cta {
     position: relative;
-    //margin: auto;
     padding: 20px;
     transition: all 0.2s ease;
     background-color: var(--rosePastel);
@@ -125,6 +124,7 @@
     text-align: center;
     margin-top:16px;
     margin-bottom:8px;
+    cursor: pointer;
 }
 .cta:before {
     content: "";

@@ -16,7 +16,7 @@
             <h2 class="modify-profile-title">Modifier Mon profil</h2>
             <form action="modifyUserProfile" method="post" class="modify-form">
                 <div class="modify-form-errors">
-                    {% for error in errors %}
+                    {% for error in errorsInfos %}
                         <li>{{ error }}</li>
                     {% endfor %}
                 </div>
@@ -45,15 +45,23 @@
                     <label for="address" class="placeholder">Votre adresse :</label>
                 </div>
                 <div class="form-userInscription submit">
-                    <button type="submit" name="submit" id="submitUserInscription">Modifier mes infos</button>
+                    <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
+                        infos
+                    </button>
                 </div>
             </form>
         </div>
         <div class="profile-container-login">
             <form action="modifyLoginProfile" method="post" class="modify-form modify-form-top">
                 <h2 class="modify-profile-title">Mes identifiants</h2>
+                <div class="modify-form-errors">
+                    {% for error in errorsLogs %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
                 <div class="input-container">
-                    <input class="input-delete" type="text" name="email" id="email" placeholder=" " value="{{ user.email }}">
+                    <input class="input-delete" type="text" name="email" id="email" placeholder=" "
+                           value="{{ user.email }}">
                     <div class="cut-small"></div>
                     <label for="email" class="placeholder">Email :</label>
                 </div>
@@ -68,7 +76,9 @@
                     <label for="password2" class="placeholder">Confirmer votre mot de passe :</label>
                 </div>
                 <div class="form-userInscription submit">
-                    <button type="submit" name="submit" id="submitUserInscription">Modifier mes infos</button>
+                    <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
+                        infos
+                    </button>
                 </div>
             </form>
         </div>
@@ -76,22 +86,31 @@
         <div class="profile-container-kid">
             <form action="modifyKidProfile" method="post" class="modify-form modify-form-top">
                 <h2 class="modify-profile-title">Mes Joeys</h2>
-             {% for kid in kids %}
+                <div class="modify-form-errors">
+                    {% for error in errorsKids %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
+                {% for kid in kids %}
                     <p class="modify-infos-kid">
                         Prénom : <span class="profile-important-info">{{ kid.firstname }}</span><br>
                         date de naissance : <span class="profile-important-info">{{ kid.birthday|date('d/m/Y') }}</span>
                     </p>
                     <div class="input-container">
-                        <textarea class="input-delete" id="commentKid" name="commentKid{{ loop.index0 }}" rows="6" placeholder=" ">{{ kid.specs }}</textarea>
+                        <textarea class="input-delete" id="commentKid" name="commentKid{{ loop.index0 }}" rows="6"
+                                  placeholder=" ">{{ kid.specs }}</textarea>
                         <div class="cut-extra-large"></div>
                         <label for="commentKid" class="placeholder"> Allergies / Choses à préciser :</label>
                     </div>
-            {% endfor %}
+                {% endfor %}
                 <div class="form-userInscription submit">
-                    <button type="submit" name="submit" id="submitUserInscription" >Modifier mes infos</button>
+                    <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
+                        infos
+                    </button>
                 </div>
             </form>
         </div>
     </div>
     </div>
 {% endblock %}
+
