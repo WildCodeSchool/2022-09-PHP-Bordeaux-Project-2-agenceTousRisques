@@ -37,6 +37,12 @@
     margin-right: 10px;
 }
 
+.profile-line-kid {
+    border: 1px solid var(--bleu);
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
 .personal-infos {
     padding: 8px;
     text-decoration: underline;
@@ -48,7 +54,7 @@
 }
 
 .modify-profile-button-container{
-    margin: 16  px;
+    margin: 16px;
 }
 
 #modify-profile-button {
@@ -94,4 +100,13 @@
 #modify-profile-button:hover:after {
     bottom: 2px;
     left: 2px;
+}
+
+.modify-user-profile-errors {
+    list-style: none;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: var(--fontText);
+    padding: 8px;
 }
