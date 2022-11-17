@@ -119,3 +119,7 @@
     color: var(--saumon);
 }
 
+.deleteCallLink{
+    text-decoration: none;
+    color: black;
+}
