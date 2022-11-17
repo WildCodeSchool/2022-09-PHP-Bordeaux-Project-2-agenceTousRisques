@@ -19,7 +19,6 @@
     width: 400px;
     height: 400px;
     margin: auto;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,42 +157,6 @@
     }
 }
 
-.img-header-deco {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-
-    &.avatar1 {
-        top: 0;
-        left: -20vw;
-    }
-
-    &.avatar2 {
-        top: 35%;
-        left: -25vw;
-    }
-
-    &.avatar3 {
-        bottom: 7%;
-        left: -20vw;
-    }
-
-    &.avatar4 {
-        top: 0;
-        right: -20vw;
-    }
-
-    &.avatar5 {
-        top: 35%;
-        right: -25vw;
-    }
-
-    &.avatar6 {
-        bottom: 7%;
-        right: -20vw;
-    }
-}
-
 .user-gestion-link-desktop {
     display: block;
     margin: auto;
@@ -235,7 +198,45 @@
     &:hover {
         width: 120px;
         height: 120px;
+    }
+    &:active {
+        scale:0.8;
+    }
+}
 
+.img-header-deco {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+
+    &.avatar1 {
+        top: 0;
+        left: -20vw;
+    }
+
+    &.avatar2 {
+        top: 35%;
+        left: -25vw;
+    }
+
+    &.avatar3 {
+        bottom: 7%;
+        left: -20vw;
+    }
+
+    &.avatar4 {
+        top: 0;
+        right: -20vw;
+    }
+
+    &.avatar5 {
+        top: 35%;
+        right: -25vw;
+    }
+
+    &.avatar6 {
+        bottom: 7%;
+        right: -20vw;
     }
 }
 
