@@ -20,52 +20,71 @@
                         <li>{{ error }}</li>
                     {% endfor %}
                 </div>
-                <div>
-                    <label for="lastname">Nom :</label>
-                    <input type="text" name="lastname" id="lastname" value="{{ user.lastname }}">
+                <div class="input-container">
+                    <input class="input-delete" type="text" name="lastname" id="lastname" placeholder=" "
+                           value="{{ user.lastname }}">
+                    <div class="cut-small"></div>
+                    <label for="lastname" class="placeholder">Nom :</label>
                 </div>
-                <div>
-                    <label for="firstname">Prénom :</label>
-                    <input type="text" name="firstname" id="firstname" value="{{ user.firstname }}">
+                <div class="input-container">
+                    <input class="input-delete" type="text" name="firstname" id="firstname" placeholder=" "
+                           value="{{ user.firstname }}">
+                    <div class="cut"></div>
+                    <label for="firstname" class="placeholder">Prénom :</label>
                 </div>
-                <div>
-                    <label for="telephone">N° de tel :</label>
-                    <input type="text" name="telephone" id="telephone" value="{{ user.telephone }}">
+                <div class="input-container">
+                    <input class="input-delete" type="text" name="telephone" id="telephone" placeholder=" "
+                           value="{{ user.telephone }}">
+                    <div class="cut"></div>
+                    <label for="telephone" class="placeholder">N° de tel :</label>
                 </div>
-                <div>
-                    <label for="address">Votre adresse :</label>
-                    <textarea name="address" id="address"rows="6">{{ user.address }}</textarea>
-                </div>
-                <div class="form-userInscription submit">
-                    <button type="submit" name="submit" id="submitUserInscription" >Modifier mes infos</button>
-                </div>
-            </form>
-            <form action="modifyLoginProfile" method="post" class="modify-form">
-                <div>
-                    <label for="email">Email :</label>
-                    <input type="text" name="email" id="email" value="{{ user.email }}">
-                </div>
-                <div>
-                    <label for="password1">Mot de passe :</label>
-                    <input type="password" name="password1" id="password1">
-                </div>
-                <div>
-                    <label for="password2">Confirmer votre mot de passe :</label>
-                    <input type="password" name="password2" id="password2">
+                <div class="input-container">
+                    <textarea class="input-delete" name="address" id="address" rows="6"
+                              placeholder=" ">{{ user.address }}</textarea>
+                    <div class="cut-large"></div>
+                    <label for="address" class="placeholder">Votre adresse :</label>
                 </div>
                 <div class="form-userInscription submit">
-                    <button type="submit" name="submit" id="submitUserInscription" >Modifier mes infos</button>
+                    <button type="submit" name="submit" id="submitUserInscription">Modifier mes infos</button>
                 </div>
             </form>
-            <form action="modifyKidProfile" method="post" class="modify-form">
-            {% for kid in kids %}
+        </div>
+        <div class="profile-container-login">
+            <form action="modifyLoginProfile" method="post" class="modify-form modify-form-top">
+                <h2 class="modify-profile-title">Mes identifiants</h2>
+                <div class="input-container">
+                    <input class="input-delete" type="text" name="email" id="email" placeholder=" " value="{{ user.email }}">
+                    <div class="cut-small"></div>
+                    <label for="email" class="placeholder">Email :</label>
+                </div>
+                <div class="input-container">
+                    <input class="input-delete" type="password" name="password1" id="password1" placeholder=" ">
+                    <div class="cut-large"></div>
+                    <label for="password1" class="placeholder">Mot de passe :</label>
+                </div>
+                <div class="input-container">
+                    <input class="input-delete" type="password" name="password2" id="password2" placeholder=" ">
+                    <div class="cut-extra-large"></div>
+                    <label for="password2" class="placeholder">Confirmer votre mot de passe :</label>
+                </div>
+                <div class="form-userInscription submit">
+                    <button type="submit" name="submit" id="submitUserInscription">Modifier mes infos</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="profile-container-kid">
+            <form action="modifyKidProfile" method="post" class="modify-form modify-form-top">
+                <h2 class="modify-profile-title">Mes Joeys</h2>
+             {% for kid in kids %}
                     <p class="modify-infos-kid">
                         Prénom : <span class="profile-important-info">{{ kid.firstname }}</span><br>
                         date de naissance : <span class="profile-important-info">{{ kid.birthday|date('d/m/Y') }}</span>
                     </p>
-                    <div>
-                        <label for="commentKid">Allergies / Choses à savoir :</label>
-                        <textarea class="modify-input" id="commentKid" name="commentKid{{ loop.index0 }}" rows="6">{{ kid.specs }}</textarea>
+                    <div class="input-container">
+                        <textarea class="input-delete" id="commentKid" name="commentKid{{ loop.index0 }}" rows="6" placeholder=" ">{{ kid.specs }}</textarea>
+                        <div class="cut-extra-large"></div>
+                        <label for="commentKid" class="placeholder"> Allergies / Choses à préciser :</label>
                     </div>
             {% endfor %}
                 <div class="form-userInscription submit">

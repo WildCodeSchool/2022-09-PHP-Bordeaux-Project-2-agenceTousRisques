@@ -1,0 +1,30 @@
+body{
+    background-color: var(--rosePastel);
+}
+
+.resetForm{
+    display: flex;
+    justify-content: center;
+    font-family: var(--fontText);
+    font-size: 20px;
+    gap: 20px;
+    padding: 40px;
+}
+.emailInput{
+    width: 300px;
+}
+
+.emailButton {
+    width: 200px;
+}
+
+.footer{
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .resetForm{
+        display: grid;
+        align-items: center;
+    }
+}
