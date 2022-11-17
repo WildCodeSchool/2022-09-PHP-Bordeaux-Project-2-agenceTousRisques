@@ -29,4 +29,5 @@ return [
     'modifyUserProfile' => ['UserProfileController', 'modifyUserInfos'],
     'modifyLoginProfile' => ['UserProfileController', 'modifyLoginInfos'],
     'modifyKidProfile' => ['UserProfileController', 'modifyKidInfos'],
+    'deleteCall' => ['DeleteCallAdminController', 'showUserCallsToDelete'],
 ];
