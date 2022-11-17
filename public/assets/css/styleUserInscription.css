@@ -1,47 +1,110 @@
-html {
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-h2 {
+.title-inscription-bloc {
     font-family: var(--fontTitle);
+    font-size: clamp(24px, 2em, 2.5vw);
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
-    margin-top: 20px;
+    padding:20px;
 }
 
-a {
-    text-decoration: none;
-}
-
-a img {
-    width: 50px;
-    color: var(--smallButtonColor);
-}
-
-input, textarea {
+.input-inscription, textarea {
     border: 0;
     border-radius: 5px;
+    line-height: 40px;
+    padding-left: 16px;
+    margin-bottom: 2px;
+    background-color: var(--saumon);
 }
 
-form {
-    background-color: var(--rosePastel);
+.block-userInscription, .block-userInscription-kids {
+    background-color: var(--bleuVert);
+    padding-bottom: 10px;
+}
+.block-userInscription {
+    border-bottom: solid 1px black;
+}
+
+#inscription-form {
     font-family: var(--fontText);
-    padding-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px var(--saumon);
+    box-shadow: 5px 5px 5px gray;
+}
+
+.cut, .cut-short, .cut-large, .cut-medium, .cut-extra-short {
+    background-color: var(--bleuVert);
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+}
+
+.cut {
+    width: 120px;
+}
+
+.cut-large {
+    width: 240px;
+}
+
+.cut-medium {
+    width: 135px;
+}
+
+.cut-short {
+    width: 80px;
+}
+.cut-extra-short {
+    width:50px;
 }
 
 .form-userInscription {
     display: grid;
-    margin: 20px;
+    margin: auto;
+    margin-top:40px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 70%;
+
+}
+
+.placeholder {
+    color: var(--saumonPastel);
+    font-family: var(--fontText);
+    left: 10px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 15px;
+}
+
+.input-inscription:focus ~ .placeholder,
+.input-inscription:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-26px) translateX(20px) scale(0.9);
+}
+
+.input-inscription:focus ~ .cut,
+.input-inscription:not(:placeholder-shown) ~ .cut,
+.input-inscription:focus ~ .cut-large,
+.input-inscription:not(:placeholder-shown) ~ .cut-large,
+.input-inscription:focus ~ .cut-medium,
+.input-inscription:not(:placeholder-shown) ~ .cut-medium,
+.input-inscription:focus ~ .cut-short,
+.input-inscription:not(:placeholder-shown) ~ .cut-short,
+.input-inscription:focus ~ .cut-extra-short,
+.input-inscription:not(:placeholder-shown) ~ .cut-extra-short {
+    transform: translateY(5px);
+    background-color: var(--smallButtonColor);
+
 }
 
 #activationCode {
     width: 100px;
 }
+
 
 #firstname, #lastname, #telephone, #firstnameKid {
     width: 200px;
@@ -49,12 +112,10 @@ form {
 
 #birthdayKid {
     width: 140px;
+    font-size:clamp(16px,0.8em,2vw);
 }
 
-.block-userInscription {
-    border-bottom: solid 1px black;
-    padding-bottom: 10px;
-}
+
 
 
 #submitUserInscription {
@@ -81,6 +142,7 @@ form {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin:auto;
 }
 
 #submitUserInscription:focus {
