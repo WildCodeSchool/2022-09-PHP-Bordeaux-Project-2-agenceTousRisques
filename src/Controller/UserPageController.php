@@ -20,6 +20,7 @@ class UserPageController extends AbstractController
         foreach ($week as $day) {
             $demandsOfCurrentWeek[$day] = $planningController->getDemandsOfDay($day);
         }
+        var_dump($demandsOfCurrentWeek);
         $userSliderController = new UserSliderController();
         $team = $userSliderController->show();
         $userUnaccepted = new UserUnacceptedDemandController();
