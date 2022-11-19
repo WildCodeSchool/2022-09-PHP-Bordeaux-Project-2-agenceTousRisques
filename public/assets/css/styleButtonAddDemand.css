@@ -57,11 +57,13 @@
 
 .addDemand {
     background-color: var(--saumonPastel);
+    background-image: url("../images/asfalt-rose.png");
     display: grid;
     justify-content: center;
     border-radius: 10px;
     width: 95vw;
     margin: auto;
+    border:3px solid var(--saumon);
 }
 
 .sectionAddDemand {

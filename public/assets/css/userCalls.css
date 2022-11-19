@@ -1,3 +1,7 @@
+body {
+        background-color: var(--bleuVert);
+        background-image: url("../images/arches.png");
+    }
 .call-body {
     border-radius: 10px;
     margin: auto;

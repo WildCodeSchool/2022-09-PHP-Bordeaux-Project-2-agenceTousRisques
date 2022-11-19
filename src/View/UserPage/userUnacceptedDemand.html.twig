@@ -1,13 +1,14 @@
 <section class="unacceptedDemand">
     <h2 class="titleUAD">Mes demandes en attente</h2>
+    <div class="scroll-container">
     {% for demands in demand %}
         <div class="article">
             <div class="dateDemand">
                 Du <span class="importantInfo">{{ demands.startdate|date("d/m/Y") }}</span>
-                à <span class="importantInfo">{{ demands.startdate|date("h:i") }}</span>
+                à <span class="importantInfo">{{ demands.startdate|date("H:i") }}</span>
                 <br>
                 Au <span class="importantInfo">{{ demands.enddate|date("d/m/Y") }}</span>
-                à <span class="importantInfo">{{ demands.enddate|date("h:i") }}</span>
+                à <span class="importantInfo">{{ demands.enddate|date("H:i") }}</span>
             </div>
             <div class="contextUnacceptedDemand">
                 Contexte :
@@ -19,4 +20,5 @@
             </div>
         </div>
     {% endfor %}
+    </div>
 </section>
