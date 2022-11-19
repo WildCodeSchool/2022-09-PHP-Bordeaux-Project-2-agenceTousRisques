@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     {% block stylesheet %}{% endblock %}
 </head>
-<body>
+<body onload="restoreScrollPos()">
 {% block header %}{% endblock %}
 {% block content %}{% endblock %}
 
@@ -18,7 +18,9 @@
     Agence Tous Risques @ 2022 Mentions Légales
 </footer>
 {% block javascript %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="/assets/js/userPlanning.js"></script>
+<script src="/assets/js/preventScroll.js"></script>
 {% endblock %}
 </body>
 </html>

@@ -20,6 +20,7 @@
     display: flex;
     justify-content: center;
     padding-top: 10px;
+    text-align: center;
 }
 
 .single-call {
@@ -97,20 +98,53 @@
     left: 2px;
 }
 
-.Mon::after {
-    background-color: var(--bleuVert);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    max-width: 300px;
+#lundi:checked ~ .flex-call-container .single-call {
+    display: none;
+}
+#lundi:checked ~ .flex-call-container .Mon {
+    display: initial;
 }
 
-#lundi:checked ~ .flex-call-container .Mon::after {
-    background-color: var(--bleuVert);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    max-width: 300px;
+#mardi:checked ~ .flex-call-container .single-call {
+    display: none;
+}
+#mardi:checked ~ .flex-call-container .Tue {
+    display: initial;
+}
+
+#mercredi:checked ~ .flex-call-container .single-call {
+    display: none;
+}
+#mercredi:checked ~ .flex-call-container .Wed {
+    display: initial;
+}
+
+#jeudi:checked ~ .flex-call-container .single-call {
+    display: none;
+}
+#jeudi:checked ~ .flex-call-container .Thu {
+    display: initial;
+}
+
+#vendredi:checked ~ .flex-call-container .single-call {
+    display: none;
+}
+#vendredi:checked ~ .flex-call-container .Fri {
+    display: initial;
+}
+
+#samedi:checked ~ .flex-call-container .single-call {
+    display: none;
+}
+#samedi:checked ~ .flex-call-container .Sat {
+    display: initial;
+}
+
+#dimanche:checked ~ .flex-call-container .single-call {
+    display: none;
+}
+#dimanche:checked ~ .flex-call-container .Sun {
+    display: initial;
 }
 
 #deleteCallButton {
