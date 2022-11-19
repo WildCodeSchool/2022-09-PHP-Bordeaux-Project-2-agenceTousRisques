@@ -8,7 +8,7 @@ class ModifyUserInfosModel extends AbstractManager
 {
     public function modifyUserInfos($infosUser)
     {
-        $query = 'UPDATE `user`
+        $query = 'UPDATE `User`
                   SET firstname = :firstname,
                       lastname = :lastname,
                       telephone = :telephone,
@@ -24,7 +24,7 @@ class ModifyUserInfosModel extends AbstractManager
 
     public function modifyUserLogins(array $newLogins)
     {
-        $query = "UPDATE `user` SET password = :newPassword, email = :newEmail WHERE userID =" . $_SESSION['user_id'];
+        $query = "UPDATE `User` SET password = :newPassword, email = :newEmail WHERE userID =" . $_SESSION['user_id'];
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':newPassword', password_hash($newLogins['password1'], PASSWORD_DEFAULT));
         $statement->bindValue(':newEmail', $newLogins['email']);
@@ -33,7 +33,7 @@ class ModifyUserInfosModel extends AbstractManager
 
     public function selectKids(): array
     {
-        $query = "SELECT kidID, firstname, birthday, specs FROM `kid` WHERE userID =" . $_SESSION['user_id'];
+        $query = "SELECT kidID, firstname, birthday, specs FROM `Kid` WHERE userID =" . $_SESSION['user_id'];
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
@@ -41,10 +41,19 @@ class ModifyUserInfosModel extends AbstractManager
 
     public function updateKidsSpecs($kidID, $specs)
     {
-        $query = "UPDATE `kid` SET specs = :specs WHERE kidID= :kidID";
+        $query = "UPDATE `Kid` SET specs = :specs WHERE kidID= :kidID";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':specs', htmlspecialchars($specs));
         $statement->bindValue(':kidID', $kidID, PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function updateAvatar($avatarId)
+    {
+        $query = "UPDATE `User` SET avatar = :avatar WHERE userID = :userID";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':avatar', $avatarId, PDO::PARAM_INT);
+        $statement->bindValue(':userID', $_SESSION['user_id'], PDO::PARAM_INT);
         $statement->execute();
     }
 }

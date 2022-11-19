@@ -74,7 +74,6 @@ body {
     width: 100%;
     max-width: 260px;
     max-height: 60px;
-    position: relative;
     cursor: pointer;
     transform: rotate(-2deg);
     user-select: none;
@@ -116,6 +115,7 @@ body {
     border-radius: 5px;
     max-width: 300px;
 }
+
 #deleteCallButton {
     background-color: var(--saumon);
     border: 0 solid #E5E7EB;

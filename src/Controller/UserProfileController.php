@@ -110,4 +110,20 @@ class UserProfileController extends AbstractController
             'kids' => $userKids
         ]);
     }
+
+    public function modifyAvatar(): string
+    {
+        $modifyUserInfos = new ModifyUserInfosModel();
+        $userKids = $modifyUserInfos->selectKids();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $infosUser = array_map('trim', $_POST);
+            $modifyUserInfos = new ModifyUserInfosModel();
+            $modifyUserInfos->updateAvatar($infosUser['submitAvatar']);
+        }
+        echo "<script>alert('Vos informations ont bien été modifiées.')</script>";
+        header('Refresh:0 userProfile');
+        return $this->twig->render('UserProfile/modifyUserProfile.html.twig', [
+            'kids' => $userKids
+        ]);
+    }
 }

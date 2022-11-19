@@ -110,7 +110,48 @@
                 </div>
             </form>
         </div>
-    </div>
+        <div class="profile-container-avatar">
+            <form action="modifyAvatarProfile" method="post" class="modify-form modify-form-top">
+                <h2 class="modify-profile-title">Mon Avatar</h2>
+                <p class="modify-infos-avatar">
+                    <img src="{{ user.image }}" alt="avatar">
+                </p>
+                <label for="avatar-select">Votre nouvel Avatar :</label>
+                <div id="avatar-list">
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=1>
+                        <img src="assets/images/avatar1.png" alt="Avatar1">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=2>
+                        <img src="assets/images/avatar2.png" alt="Avatar2">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=3>
+                        <img src="assets/images/avatar3.png" alt="Avatar3">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=4>
+                        <img src="assets/images/avatar4.png" alt="Avatar4">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=5>
+                        <img src="assets/images/avatar5.png" alt="Avatar5">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=6>
+                        <img src="assets/images/avatar6.png" alt="Avatar6">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=7>
+                        <img src="assets/images/avatar7.png" alt="Avatar7">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=8>
+                        <img src="assets/images/avatar8.png" alt="Avatar8">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=9>
+                        <img src="assets/images/avatar9.png" alt="Avatar9">
+                    </button>
+                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=10>
+                        <img src="assets/images/avatar10.png" alt="Avatar10">
+                    </button>
+                </div>
+
+            </form>
+        </div>
     </div>
 {% endblock %}
 
