@@ -4,9 +4,14 @@
     font-size: clamp(20px, 2em, 2.8vw);
     padding:16px;
 }
+body {
+    background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
+}
 
 .addDemand {
     background-color: var(--saumonPastel);
+    background-image: url("../images/board-background-salmon.png");
     font-family: var(--fontText);
     border-radius: 10px;
     width: 95vw;
