@@ -5,6 +5,10 @@
     width: 90vw;
     margin: 8px auto auto;
 }
+body {
+    background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
+}
 
 .profile-container {
     background-color: var(--bleu);

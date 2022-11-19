@@ -1,5 +1,6 @@
 .invite-user-container {
   background-color: var(--rosePastel);
+  background-image: url("../images/asfalt-rose.png");
   border-radius: 10px;
   box-shadow: 1px 1px 5px gray;
   width: 95vw;
