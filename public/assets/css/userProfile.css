@@ -1,17 +1,14 @@
-.profile-body{
-    border-radius: 10px;
-    font-family: var(--fontText);
-    padding-bottom: 10px;
-    width: 90vw;
-    margin: 8px auto auto;
+body {
+    background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
 }
 
 .profile-container {
     background-color: var(--bleu);
     border-radius: 10px;
-    margin: 0 10px 30px 10px;
     font-family: var(--fontText);
-    padding-bottom: 10px;
+    width:95vw;
+    margin:auto;
 }
 
 .profile-title {
@@ -54,7 +51,11 @@
 }
 
 .modify-profile-button-container{
-    margin: 16px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 16px;
+    width:fit-content;
+
 }
 
 #modify-profile-button {
@@ -75,7 +76,6 @@
     text-decoration-thickness: auto;
     width: 100%;
     max-width: 260px;
-    position: relative;
     cursor: pointer;
     transform: rotate(-2deg);
     user-select: none;

@@ -1,5 +1,7 @@
 .acceptCall {
     background-color: var(--bleuVert);
+    background-image: url("../images/asfalt-rose.png");
+    border:3px solid var(--bleu);
     display: grid;
     justify-content: center;
     margin: auto;

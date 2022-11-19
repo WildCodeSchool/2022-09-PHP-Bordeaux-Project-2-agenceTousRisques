@@ -1,6 +1,6 @@
 .planning-container {
-    background-image:url("../images/planning-background-blue.png");
-    width: 95%;
+    background-image:url("../images/board-background-blue.png");
+    width: 95vw;
     padding: 16px;
     margin: auto;
     margin-bottom:8px;
@@ -8,7 +8,6 @@
 }
 .day-block {
     margin-bottom: 16px;
-
 }
 
 // Animation block
@@ -25,8 +24,8 @@
         position: relative;
         display: block;
         padding-left: 30px;
-        padding-bottom:16px;
-        padding-top:16px;
+        padding-bottom:8px;
+        padding-top:8px;
         cursor: pointer;
         font-family: var(--fontTitle);
         font-size:clamp(20px,2em,2.5vw);
@@ -88,12 +87,12 @@
 
 .demand-text {
     max-height:0;
-    line-height: 28px;
+    line-height: 24px;
     overflow: hidden;
     font-family: var(--fontText);
     padding:0px;
     padding-left: 30px;
-    border-radius:20px;
+    //border-radius:20px;
     box-shadow: 1px 1px gray;
     transition: max-height 0.7s ease-in-out,
     padding-top 0.7s ease-in-out,
@@ -110,5 +109,8 @@
         &.helper {
             background-color: var(--rosePastel);
         }
+    }
+    &:last-child{
+        border-radius:0 0 20px 20px;
     }
 }
