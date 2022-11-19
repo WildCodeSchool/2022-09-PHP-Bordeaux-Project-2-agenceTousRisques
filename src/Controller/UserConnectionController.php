@@ -30,7 +30,7 @@ class UserConnectionController extends AbstractController
                     $_SESSION['user_id'] = $user['userID'];
                     header('Location:/UserPage');
                 } else {
-                    $errors[] = "Les informations que vous avez saisie ne sont pas associée à un compte";
+                    $errors[] = "Les informations que vous avez saisi ne sont pas associées à un compte";
                 }
             }
         }

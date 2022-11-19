@@ -9,6 +9,7 @@
 
 .modify-infos-kid {
     text-align: left;
+    margin: 0;
 }
 
 .profile-important-info {
@@ -32,13 +33,15 @@
     align-items: center;
     gap: 20px;
     text-align: center;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .modify-form-top {
     margin-top: 5vw;
 }
+
 .profile-container {
     background-color: var(--bleuVert);
     border-radius: 10px;
@@ -54,7 +57,7 @@
     box-shadow: 1px 1px 5px gray;
     width: 95vw;
     margin: auto auto 8px;
-    height: 340px;
+    height: 410px;
 }
 
 .profile-container-kid {
@@ -63,6 +66,7 @@
     box-shadow: 1px 1px 5px gray;
     width: 95vw;
     margin: auto auto 8px;
+    min-height: 300px;
     max-height: 510px;
 }
 
@@ -84,7 +88,7 @@
     outline: 0;
     padding: 15px;
     max-width: 700px;
-    width: 100% ;
+    width: 100%;
 }
 
 .cut {
@@ -227,4 +231,37 @@
 #submitUserInscription:hover:after {
     bottom: 2px;
     left: 2px;
+}
+
+.profile-container-avatar {
+    background-color: var(--bleuVert);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px gray;
+    width: 95vw;
+    margin: auto auto 8px;
+    max-height: 510px;
+}
+
+.profile-container-avatar img {
+    height: 20vh;
+}
+
+#avatar-list {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+#avatar-list button img {
+    width: 8vw;
+    height: auto;
+}
+
+@media screen and (min-width: 1024px)  {
+    #avatar-list {
+        display: flex;
+        justify-content: space-between;
+    }
 }
