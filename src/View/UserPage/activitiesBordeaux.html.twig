@@ -1,12 +1,14 @@
 <section class="unacceptedDemand">
     <h2 class="titleUAD">Les News</h2>
-    <article class="article">
-        {{ dataAPI.records.0.fields.longdescription_fr | raw }}
-    </article>
-    <article class="article">
-        {{ dataAPI.records.1.fields.longdescription_fr | raw }}
-    </article>
-    <article class="article">
-        {{ dataAPI.records.2.fields.longdescription_fr | raw }}
-    </article>
+    <div class="scroll-container">
+        <article class="article">
+            {{ dataAPI.records.0.fields.longdescription_fr | raw }}
+        </article>
+        <article class="article">
+            {{ dataAPI.records.1.fields.longdescription_fr | raw }}
+        </article>
+        <article class="article">
+            {{ dataAPI.records.2.fields.longdescription_fr | raw }}
+        </article>
+    </div>
 </section>
