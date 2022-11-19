@@ -11,147 +11,146 @@
     {% include 'userHeaderDesktop.html.twig' %}
 {% endblock %}
 {% block content %}
-    <div class="profile-body">
-        <div class="profile-container">
-            <h2 class="modify-profile-title">Modifier Mon profil</h2>
-            <form action="modifyUserProfile" method="post" class="modify-form">
-                <div class="modify-form-errors">
-                    {% for error in errorsInfos %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </div>
-                <div class="input-container">
-                    <input class="input-delete" type="text" name="lastname" id="lastname" placeholder=" "
-                           value="{{ user.lastname }}">
-                    <div class="cut-small"></div>
-                    <label for="lastname" class="placeholder">Nom :</label>
-                </div>
-                <div class="input-container">
-                    <input class="input-delete" type="text" name="firstname" id="firstname" placeholder=" "
-                           value="{{ user.firstname }}">
-                    <div class="cut"></div>
-                    <label for="firstname" class="placeholder">Prénom :</label>
-                </div>
-                <div class="input-container">
-                    <input class="input-delete" type="text" name="telephone" id="telephone" placeholder=" "
-                           value="{{ user.telephone }}">
-                    <div class="cut"></div>
-                    <label for="telephone" class="placeholder">N° de tel :</label>
-                </div>
-                <div class="input-container">
+
+    <div class="profile-container">
+        <h2 class="modify-profile-title">Modifier Mon profil</h2>
+        <form action="modifyUserProfile" method="post" class="modify-form">
+            <div class="modify-form-errors">
+                {% for error in errorsInfos %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </div>
+            <div class="input-container">
+                <input class="input-delete" type="text" name="lastname" id="lastname" placeholder=" "
+                       value="{{ user.lastname }}">
+                <div class="cut-small"></div>
+                <label for="lastname" class="placeholder">Nom :</label>
+            </div>
+            <div class="input-container">
+                <input class="input-delete" type="text" name="firstname" id="firstname" placeholder=" "
+                       value="{{ user.firstname }}">
+                <div class="cut"></div>
+                <label for="firstname" class="placeholder">Prénom :</label>
+            </div>
+            <div class="input-container">
+                <input class="input-delete" type="text" name="telephone" id="telephone" placeholder=" "
+                       value="{{ user.telephone }}">
+                <div class="cut"></div>
+                <label for="telephone" class="placeholder">N° de tel :</label>
+            </div>
+            <div class="input-container">
                     <textarea class="input-delete" name="address" id="address" rows="6"
                               placeholder=" ">{{ user.address }}</textarea>
-                    <div class="cut-large"></div>
-                    <label for="address" class="placeholder">Votre adresse :</label>
-                </div>
-                <div class="form-userInscription submit">
-                    <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
-                        infos
-                    </button>
-                </div>
-            </form>
-        </div>
-        <div class="profile-container-login">
-            <form action="modifyLoginProfile" method="post" class="modify-form modify-form-top">
-                <h2 class="modify-profile-title">Mes identifiants</h2>
-                <div class="modify-form-errors">
-                    {% for error in errorsLogs %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </div>
-                <div class="input-container">
-                    <input class="input-delete" type="text" name="email" id="email" placeholder=" "
-                           value="{{ user.email }}">
-                    <div class="cut-small"></div>
-                    <label for="email" class="placeholder">Email :</label>
-                </div>
-                <div class="input-container">
-                    <input class="input-delete" type="password" name="password1" id="password1" placeholder=" ">
-                    <div class="cut-large"></div>
-                    <label for="password1" class="placeholder">Mot de passe :</label>
-                </div>
-                <div class="input-container">
-                    <input class="input-delete" type="password" name="password2" id="password2" placeholder=" ">
-                    <div class="cut-extra-large"></div>
-                    <label for="password2" class="placeholder">Confirmer votre mot de passe :</label>
-                </div>
-                <div class="form-userInscription submit">
-                    <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
-                        infos
-                    </button>
-                </div>
-            </form>
-        </div>
+                <div class="cut-large"></div>
+                <label for="address" class="placeholder">Votre adresse :</label>
+            </div>
+            <div class="form-userInscription submit">
+                <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
+                    infos
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="profile-container-login">
+        <form action="modifyLoginProfile" method="post" class="modify-form modify-form-top">
+            <h2 class="modify-profile-title">Mes identifiants</h2>
+            <div class="modify-form-errors">
+                {% for error in errorsLogs %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </div>
+            <div class="input-container">
+                <input class="input-delete" type="text" name="email" id="email" placeholder=" "
+                       value="{{ user.email }}">
+                <div class="cut-small"></div>
+                <label for="email" class="placeholder">Email :</label>
+            </div>
+            <div class="input-container">
+                <input class="input-delete" type="password" name="password1" id="password1" placeholder=" ">
+                <div class="cut-large"></div>
+                <label for="password1" class="placeholder">Mot de passe :</label>
+            </div>
+            <div class="input-container">
+                <input class="input-delete" type="password" name="password2" id="password2" placeholder=" ">
+                <div class="cut-extra-large"></div>
+                <label for="password2" class="placeholder">Confirmer votre mot de passe :</label>
+            </div>
+            <div class="form-userInscription submit">
+                <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
+                    infos
+                </button>
+            </div>
+        </form>
+    </div>
 
-        <div class="profile-container-kid">
-            <form action="modifyKidProfile" method="post" class="modify-form modify-form-top">
-                <h2 class="modify-profile-title">Mes Joeys</h2>
-                <div class="modify-form-errors">
-                    {% for error in errorsKids %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </div>
-                {% for kid in kids %}
-                    <p class="modify-infos-kid">
-                        Prénom : <span class="profile-important-info">{{ kid.firstname }}</span><br>
-                        date de naissance : <span class="profile-important-info">{{ kid.birthday|date('d/m/Y') }}</span>
-                    </p>
-                    <div class="input-container">
+    <div class="profile-container-kid">
+        <form action="modifyKidProfile" method="post" class="modify-form modify-form-top">
+            <h2 class="modify-profile-title">Mes Joeys</h2>
+            <div class="modify-form-errors">
+                {% for error in errorsKids %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </div>
+            {% for kid in kids %}
+                <p class="modify-infos-kid">
+                    Prénom : <span class="profile-important-info">{{ kid.firstname }}</span><br>
+                    date de naissance : <span class="profile-important-info">{{ kid.birthday|date('d/m/Y') }}</span>
+                </p>
+                <div class="input-container">
                         <textarea class="input-delete" id="commentKid" name="commentKid{{ loop.index0 }}" rows="6"
                                   placeholder=" ">{{ kid.specs }}</textarea>
-                        <div class="cut-extra-large"></div>
-                        <label for="commentKid" class="placeholder"> Allergies / Choses à préciser :</label>
-                    </div>
-                {% endfor %}
-                <div class="form-userInscription submit">
-                    <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
-                        infos
-                    </button>
+                    <div class="cut-extra-large"></div>
+                    <label for="commentKid" class="placeholder"> Allergies / Choses à préciser :</label>
                 </div>
-            </form>
-        </div>
-        <div class="profile-container-avatar">
-            <form action="modifyAvatarProfile" method="post" class="modify-form modify-form-top">
-                <h2 class="modify-profile-title">Mon Avatar</h2>
-                <p class="modify-infos-avatar">
-                    <img src="{{ user.image }}" alt="avatar">
-                </p>
-                <label for="avatar-select">Votre nouvel Avatar :</label>
-                <div id="avatar-list">
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=1>
-                        <img src="assets/images/avatar1.png" alt="Avatar1">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=2>
-                        <img src="assets/images/avatar2.png" alt="Avatar2">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=3>
-                        <img src="assets/images/avatar3.png" alt="Avatar3">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=4>
-                        <img src="assets/images/avatar4.png" alt="Avatar4">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=5>
-                        <img src="assets/images/avatar5.png" alt="Avatar5">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=6>
-                        <img src="assets/images/avatar6.png" alt="Avatar6">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=7>
-                        <img src="assets/images/avatar7.png" alt="Avatar7">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=8>
-                        <img src="assets/images/avatar8.png" alt="Avatar8">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=9>
-                        <img src="assets/images/avatar9.png" alt="Avatar9">
-                    </button>
-                    <button onclick="setScroll()" type="submit" name="submitAvatar" value=10>
-                        <img src="assets/images/avatar10.png" alt="Avatar10">
-                    </button>
-                </div>
+            {% endfor %}
+            <div class="form-userInscription submit">
+                <button onclick="setScroll()" type="submit" name="submit" id="submitUserInscription">Modifier mes
+                    infos
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="profile-container-avatar">
+        <form action="modifyAvatarProfile" method="post" class="modify-form modify-form-top">
+            <h2 class="modify-profile-title">Mon Avatar</h2>
+            <p class="modify-infos-avatar">
+                <img src="{{ user.image }}" alt="avatar">
+            </p>
+            <label for="avatar-select">Votre nouvel Avatar :</label>
+            <div id="avatar-list">
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=1>
+                    <img src="assets/images/avatar1.png" alt="Avatar1">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=2>
+                    <img src="assets/images/avatar2.png" alt="Avatar2">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=3>
+                    <img src="assets/images/avatar3.png" alt="Avatar3">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=4>
+                    <img src="assets/images/avatar4.png" alt="Avatar4">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=5>
+                    <img src="assets/images/avatar5.png" alt="Avatar5">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=6>
+                    <img src="assets/images/avatar6.png" alt="Avatar6">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=7>
+                    <img src="assets/images/avatar7.png" alt="Avatar7">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=8>
+                    <img src="assets/images/avatar8.png" alt="Avatar8">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=9>
+                    <img src="assets/images/avatar9.png" alt="Avatar9">
+                </button>
+                <button onclick="setScroll()" type="submit" name="submitAvatar" value=10>
+                    <img src="assets/images/avatar10.png" alt="Avatar10">
+                </button>
+            </div>
 
-            </form>
-        </div>
+        </form>
     </div>
 {% endblock %}
 
