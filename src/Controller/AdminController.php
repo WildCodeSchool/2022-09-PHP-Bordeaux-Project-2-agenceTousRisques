@@ -10,13 +10,17 @@ class AdminController extends AbstractController
 {
     public function administrationPanel()
     {
-        $usersView = new Admin();
-        $users = $usersView->showUser();
-        $usersPrevious = $usersView->showUserPrevious();
-        return $this->twig->render('Admin/index.html.twig', [
-            'users' => $users,
-            'usersPrevious' => $usersPrevious
-        ]);
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: /');
+        } else {
+            $usersView = new Admin();
+            $users = $usersView->showUser();
+            $usersPrevious = $usersView->showUserPrevious();
+            return $this->twig->render('Admin/index.html.twig', [
+                'users' => $users,
+                'usersPrevious' => $usersPrevious
+            ]);
+        }
     }
 
     public function validateEmail($email): array|string

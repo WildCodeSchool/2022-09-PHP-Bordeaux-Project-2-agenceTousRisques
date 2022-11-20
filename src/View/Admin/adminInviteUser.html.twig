@@ -1,11 +1,12 @@
 <div class="invite-user-container">
-    <h2 class="title-invite-user">Inviter un nouvel utilisateur</h2>
-    {% block errors %}
-        {% for error in errors %}
-            <li class="invite-user-errors">{{ error }}</li>
-        {% endfor %}
-    {% endblock %}
     <form action="invite" method="post" class="admin-invite-form">
+        <h2 class="title-invite-user">Inviter un nouvel utilisateur</h2>
+        {% block errors %}
+            {% for error in errors %}
+                <li class="invite-user-errors">{{ error }}</li>
+            {% endfor %}
+        {% endblock %}
+
         <p class="label-form-email">Veuillez renseigner l'adresse email de la personne que
             vous
             souhaitez inviter</p>

@@ -5,13 +5,17 @@
 @import url("styleButtonAddDemand.css");
 @import url("styleUnacceptedDemand.css");
 @import url("buttonAcceptCall.css");
+body {
+    background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
+}
 
 @media screen and (min-width: 1024px) {
     .blockAddDemand {
         display: flex;
         width: 95vw;
         margin: auto;
-        gap: 10px;
+        /*gap: 10px;*/
         height: auto;
     }
 
