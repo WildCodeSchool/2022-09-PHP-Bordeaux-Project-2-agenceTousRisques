@@ -6,9 +6,9 @@
      font-family:  'Gochi Hand', cursive;
 }
 
-body{
-  display: flex;  
-  justify-content: center;
+.accordion{
+  
+  
   align-items: center;
   min-height: 100vh;
   background:  #FAD7D4;
@@ -23,7 +23,7 @@ body{
     margin: 10px 20px;
 }
 
-.accordion .contentbox .label{
+.accordion .contentbox .question{
     position: relative;
     padding: 10px;
     background: #FAA07D;
@@ -31,7 +31,7 @@ body{
 cursor:pointer;
 }
 
-.accordion .contentbox .label::before{
+.accordion .contentbox .question::before{
     content: "+";
     position: absolute;
     top: 50%;
@@ -40,13 +40,13 @@ cursor:pointer;
     font-size: 1.5em;
 }
 
-.accordion .contentbox.active .label::before{
+.accordion .contentbox.active .question::before{
     content: "-";
 
 }
 
 
-.accordion .contentbox .content{
+.accordion .contentbox .réponse{
     position: relative;
     padding: 10px;
     background: #83E1E6;
@@ -56,7 +56,7 @@ cursor:pointer;
    overflow-y: auto;
 }
 
-.accordion .contentbox.active .content{
+.accordion .contentbox.active .réponse{
     height: 150px;
     padding:10px;
 
