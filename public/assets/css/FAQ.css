@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fuzzy+Bubbles&family=Gochi+Hand&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+     font-family:  'Gochi Hand', cursive;
+}
+
+body{
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:  #FAD7D4;
+}
+
+.accordion {
+    max-width: 800px;
+}
+
+.accordion .contentbox{
+    position: relative;
+    margin: 10px 20px;
+}
+
+.accordion .contentbox .label{
+    position: relative;
+    padding: 10px;
+    background: #FAA07D;
+    color: #fff;
+cursor:pointer;
+}
+
+.accordion .contentbox .label::before{
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .contentbox.active .label::before{
+    content: "-";
+
+}
+
+
+.accordion .contentbox .content{
+    position: relative;
+    padding: 10px;
+    background: #83E1E6;
+   height: 0; 
+   overflow: hidden;
+   transition: 0.5s;
+   overflow-y: auto;
+}
+
+.accordion .contentbox.active .content{
+    height: 150px;
+    padding:10px;
+
+}
