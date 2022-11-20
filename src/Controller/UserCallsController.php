@@ -10,9 +10,16 @@ class UserCallsController extends AbstractController
 {
     public function showUserCalls(): string
     {
+        $errors = [];
         $userCallsModel = new UserCallsModel();
         $userCalls = $userCallsModel->getCalls();
-
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if ($_POST['filterDate'] === "") {
+                $errors[] = "Veuillez selectionner une date";
+            } else {
+                $userCalls = $userCallsModel->getCallsByDay($_POST['filterDate']);
+            }
+        }
         if (isset($_GET['id'])) {
             $acceptCall = new AcceptCallModel();
             $acceptCall->acceptCall();
@@ -24,7 +31,8 @@ class UserCallsController extends AbstractController
             header('Location: UserPage');
         }
         return $this->twig->render('UserCalls/index.html.twig', [
-            'Calls' => $userCalls
+            'Calls' => $userCalls,
+            'errors' => $errors
         ]);
     }
 }
