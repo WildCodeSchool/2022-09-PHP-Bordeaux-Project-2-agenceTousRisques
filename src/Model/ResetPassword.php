@@ -20,7 +20,7 @@ class ResetPassword extends AbstractManager
         return $password;
     }
 
-    public function getEmailVerify($email): bool
+    public function getEmailVerify($email): array|bool
     {
         $query = 'SELECT email FROM User WHERE email = :email';
         $statement = $this->pdo->prepare($query);

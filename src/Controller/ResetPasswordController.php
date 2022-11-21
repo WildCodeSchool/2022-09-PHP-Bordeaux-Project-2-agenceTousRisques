@@ -13,7 +13,7 @@ class ResetPasswordController extends AbstractController
             $email = $_POST['email'];
             $resetPassword = new ResetPassword();
             $emailVerify = $resetPassword->getEmailVerify($email);
-            if ($emailVerify === true) {
+            if ($emailVerify) {
                 $password = $resetPassword->resetPassword($email);
                 $mailing = new MailModel();
                 $mailing->sendNewPasswordEmail($email, $password);

@@ -1,8 +1,8 @@
-DROP DATABASE nounouEntreNous;
+DROP DATABASE nounou_entre_nous;
 
-CREATE DATABASE nounouEntreNous;
+CREATE DATABASE nounou_entre_nous;
 
-USE nounouEntreNous;
+USE nounou_entre_nous;
 
 CREATE TABLE `User`
 (
@@ -88,37 +88,37 @@ VALUES (1, 'assets/images/avatar1.png'),
        (9, 'assets/images/avatar9.png'),
        (10, 'assets/images/avatar10.png');
 
-# INSERT INTO User (firstname, lastname, telephone, address, email, password, avatar, activationcode, isAdmin, isVisible)
-# VALUES ('Jean Le Grand', 'Bokassa', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'jean-le-grand.bokassa@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 1,
-#         '0000001', 1, 1),
-#        ('Naomie', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'naomie@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 2,
-#         '0000002', 0, 1),
-#        ('Yazid', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'yazid@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 3,
-#         '0000003', 0, 1),
-#        ('Jordan', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'jordan@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 4,
-#         '00000011', 0, 1),
-#        ('Johann', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'johann@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 5,
-#         '0000004', 0, 1),
-#        ('Pierre', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'pierre@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 6,
-#         '0000005', 0, 1),
-#        ('Alexis', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'alexis@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 7,
-#         '0000006', 0, 1),
-#        ('Helène', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'helene@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 8,
-#         '0000007', 0, 1),
-#        ('Anthony', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'anthony@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 9,
-#         '0000008', 0, 1),
-#        ('Killian', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
-#         'killian@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 10,
-#         '0000009', 0, 1);
+INSERT INTO User (firstname, lastname, telephone, address, email, password, avatar, activationcode, isAdmin, isVisible)
+VALUES ('Jean Le Grand', 'Bokassa', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'jean-le-grand.bokassa@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 1,
+        '0000001', 1, 1),
+       ('Naomie', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'naomie@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 2,
+        '0000002', 0, 1),
+       ('Yazid', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'yazid@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 3,
+        '0000003', 0, 1),
+       ('Jordan', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'jordan@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 4,
+        '00000011', 0, 1),
+       ('Johann', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'johann@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 5,
+        '0000004', 0, 1),
+       ('Pierre', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'pierre@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 6,
+        '0000005', 0, 1),
+       ('Alexis', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'alexis@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 7,
+        '0000006', 0, 1),
+       ('Helène', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'helene@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 8,
+        '0000007', 0, 1),
+       ('Anthony', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'anthony@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 9,
+        '0000008', 0, 1),
+       ('Killian', 'Wilder', '0102030405', '171 Rue Lucien Faure 33000 Bordeaux',
+        'killian@wildcodeschool.com', '$2y$10$Dwzao66hqTTPoRnIaHRaPuJppJlClGvxG67ds35hyYod4PNzOKN4G', 10,
+        '0000009', 0, 1);
 
 INSERT INTO Kid (userID, firstname, birthday, specs)
 VALUES (1, 'Michel', '2020-04-11', 'Rien de particulier'),

@@ -17,90 +17,84 @@
                    </span>
                </h1>
            </header>
-           {% endblock %}
-{% block content %}
-           <div class="parallax"></div>
-           <section class="presentationSite">
-               <div>
-                   Bienvenue sur le site Nounou Entre Nous, plateforme coopérative entre parents pour la garde
-                   des enfants. Plateforme à l’initiative de Jean Le Grandest, c'est un outil favorisant le lien social
-                   qui permet aux parents d'un même réseau d'échanger des heures de gardes
-                   d'enfants au quotidien ou ponctuellement le temps d'une soirée.
-               </div>
-               <br>
-               <div>
-                   L’entraide, la bienveillance et l’amitié sont les maîtres mots de la plateforme. Ici, Parents nous
-                   sommes tous des Kangourous et nos enfants sont des Joeys.
-               </div>
-               <br>
-               <div>
-                   Fatigué de courir après les nounous, simplifiez-vous la vie avec cet outil, auprès de connaissances
-                   et
-                   de proches.
-               </div>
-           </section>
-           <div class="flexDesktopContainer">
-               <section class="slider-wrapper">
-                   <button class="slide-arrow" id="slide-arrow-prev">
-                       &#8249;
-                   </button>
-                   <button class="slide-arrow" id="slide-arrow-next">
-                       &#8250;
-                   </button>
-                   <ul class="slides-container" id="slides-container">
-                       <li class="slide">
-                           <p>
-                               J'ai besoin de faire garder mon ou mes Joeys, j'accède à la fonctionnalité depuis mon
-                               profil
-                               et j'ajoute les demandes à proposer aux autres Kangourous.
-                           </p><br>
-                           <p>Je sélectionne mes dates et heures, je choisis un motif et j'y précise toutes les
-                               particularités dont doivent être informés les Kangourous qui m'apporteront leurs aides.
-                           </p><br>
-                           <p>Enfin lorsqu'un Kangourou accepte ma demande, je reçois un mail m'en informant et d'un
-                               coup
-                               d'œil sur mon planning, je retrouve toutes les informations concernant cette demande.
-                           </p><br>
-                           <p>A vous de jouer !
-                           </p><br>
-                       </li>
-                       <li class="slide">
-                           <p>
-                               Je suis disponible et je souhaite garder les Joeys d'autres Kangourous, j'y accède depuis
-                               mon profil et je vois toutes les demandes des autres Kangourous.
-                           </p>
-                           <br>
-                           <p>En fonction de mes disponibilités, j'aide un Kangourou et j'accueille ses Joeys chez moi.
-                               Je vois également les particularités précisées par le Kangourou.
-                           </p>
-                           <br>
-                           <p>Enfin lorsque j'accepte une demande, le Kangourou est informé et cette demande apparaît
-                               sur
-                               mon planning visible depuis mon profil.
-                           </p>
-                           <br>
-                           <p>A vous de jouer !
-                           </p><br>
-                       </li>
-                       <li class="slide">
-                           <p>Evidemment, nous sommes tous des gardants et avons besoin de faire garder nos Joeys.
-                           </p><br>
-                           <p>L'entraide au sein de la communauté est le moteur de cette plateforme.
-                           </p><br>
-                           <p>Sur votre planning, les couleurs correspondent à ces différents éléments avec une dernière
-                               couleur si vous gardez et vous êtes gardants le même jour. Avec, bien entendu le détail
-                               pour
-                               chaque évènement.
-                           </p><br>
-                           <p>A vous de jouer !
-                           </p><br>
-                       </li>
-                   </ul>
-               </section>
-               {% include 'Home/userConnection.html.twig' %}
-           </div>
-           {% include 'Home/faq.html.twig' %}
        {% endblock %}
+{% block content %}
+    <div class="parallax"></div>
+    <section class="presentationSite">
+        <div>
+            Bienvenue sur le site Nounou Entre Nous, plateforme coopérative entre parents pour la garde
+            des enfants. Plateforme à l’initiative de Jean Le Grandest, c'est un outil favorisant le lien social
+            qui permet aux parents d'un même réseau d'échanger des heures de gardes
+            d'enfants au quotidien ou ponctuellement le temps d'une soirée.
+        </div>
+        <br>
+        <div>
+            L’entraide, la bienveillance et l’amitié sont les maîtres mots de la plateforme. Ici, Parents nous
+            sommes tous des Kangourous et nos enfants sont des Joeys.
+        </div>
+        <br>
+        <div>
+            Fatigué de courir après les nounous, simplifiez-vous la vie avec cet outil, auprès de connaissances
+            et
+            de proches.
+        </div>
+    </section>
+    <div class="flexDesktopContainer">
+        <section class="slider-wrapper">
+            <button class="slide-arrow" id="slide-arrow-prev">
+                &#8249;
+            </button>
+            <button class="slide-arrow" id="slide-arrow-next">
+                &#8250;
+            </button>
+            <ul class="slides-container" id="slides-container">
+                <li class="slide">
+                    J'ai besoin de faire garder mon ou mes Joeys, j'accède à la fonctionnalité depuis mon
+                    profil et j'ajoute les demandes à proposer aux autres Kangourous. <br>
+                    Je sélectionne mes dates et heures, je choisis un motif et j'y précise toutes les
+                    particularités dont doivent être informés les Kangourous qui m'apporteront leurs aides.<br>
+                    Enfin lorsqu'un Kangourou accepte ma demande, je reçois un mail m'en informant et d'un
+                    coup
+                    d'œil sur mon planning, je retrouve toutes les informations concernant cette demande.
+                    A vous de jouer !
+                </li>
+                <li class="slide">
+
+                    Je suis disponible et je souhaite garder les Joeys d'autres Kangourous, j'y accède depuis
+                    mon profil et je vois toutes les demandes des autres Kangourous.
+
+                    <br>
+                    En fonction de mes disponibilités, j'aide un Kangourou et j'accueille ses Joeys chez moi.
+                    Je vois également les particularités précisées par le Kangourou.
+
+                    <br>
+                    Enfin lorsque j'accepte une demande, le Kangourou est informé et cette demande apparaît
+                    sur
+                    mon planning visible depuis mon profil.
+
+                    <br>
+                    A vous de jouer !
+                    <br>
+                </li>
+                <li class="slide">
+                    Evidemment, nous sommes tous des gardants et avons besoin de faire garder nos Joeys.
+                    <br>
+                    L'entraide au sein de la communauté est le moteur de cette plateforme.
+                    <br>
+                    Sur votre planning, les couleurs correspondent à ces différents éléments avec une dernière
+                        couleur si vous gardez et vous êtes gardants le même jour. Avec, bien entendu le détail
+                        pour
+                        chaque évènement.
+                    <br>
+                    A vous de jouer !
+                    <br>
+                </li>
+            </ul>
+        </section>
+        {% include 'Home/userConnection.html.twig' %}
+    </div>
+    {% include 'Home/faq.html.twig' %}
+{% endblock %}
 {% block javascript %}
 {{ parent() }}
 <script>

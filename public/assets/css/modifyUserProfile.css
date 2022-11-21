@@ -97,6 +97,7 @@ body {
 .input-delete:focus ~ .cut,
 .input-delete:not(:placeholder-shown) ~ .cut {
     transform: translateY(10px);
+    border: 1px solid var(--smallButtonColor);
 
 }
 
@@ -115,6 +116,7 @@ body {
 .input-delete:focus ~ .cut-small,
 .input-delete:not(:placeholder-shown) ~ .cut-small {
     transform: translateY(10px);
+    border: 1px solid var(--smallButtonColor);
 
 }
 
@@ -133,6 +135,7 @@ body {
 .input-delete:focus ~ .cut-large,
 .input-delete:not(:placeholder-shown) ~ .cut-large {
     transform: translateY(10px);
+    border: 1px solid var(--smallButtonColor);
 
 }
 
@@ -151,6 +154,7 @@ body {
 .input-delete:focus ~ .cut-extra-large,
 .input-delete:not(:placeholder-shown) ~ .cut-extra-large {
     transform: translateY(10px);
+    border: 1px solid var(--smallButtonColor);
 
 }
 

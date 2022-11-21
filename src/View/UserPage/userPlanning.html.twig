@@ -16,7 +16,7 @@ helped
                 {% if demand.helperID==user.userID %}
 
                     <p class="demand-text helper">Je rends service à {{ demand.askerName }} de
-                        {{ demand.startdate|date('H:i') }} jusqu'à {{ demand.enddate|date('H:i') }}<br>
+                        {{ demand.startdate|date('H:i') }} jusqu'au {{ demand.enddate|date('d/m')}} à {{ demand.enddate|date('H:i') }}<br>
                         Il a précisé que "{{ demand.comment }}".</p>
                 {% endif %}
                 {% if demand.userID==user.userID %}

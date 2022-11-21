@@ -13,7 +13,6 @@ class UserPageController extends AbstractController
         $dataView = new UserManager();
         $dataAPI = $dataView->opendataAPI();
         $dataAPI = json_decode($dataAPI, true);
-
         $planningController = new UserPlanningController();
         $week = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
         $demandsOfCurrentWeek = [];
