@@ -12,6 +12,7 @@ body {
 }
 
 .call-container {
+    background-image: url("../images/skulls.png");
     background-color: var(--bleu);
     border-radius: 10px;
     font-family: var(--fontText);

@@ -9,6 +9,7 @@ body {
     font-family: var(--fontText);
     width:95vw;
     margin:auto;
+    background-image: url("../images/skulls.png");
 }
 
 .profile-title {
