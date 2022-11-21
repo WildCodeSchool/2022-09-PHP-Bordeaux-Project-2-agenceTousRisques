@@ -9,6 +9,9 @@
 .toggle {
     cursor: pointer;
     display: inline-block;
+    background-color: var(--bleuVert);
+    padding:0px 8px 8px 8px;
+    border-radius:0px 0px 10px 10px;
 }
 .toggle-label {
     font-family: var(--fontText);
@@ -63,10 +66,13 @@
 
 .titleUserView {
     font-family: var(--fontTitle);
+    background-color: var(--bleuVert);
     font-size: clamp(20px, 2em, 2.8vw);
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+    text-align:center;
+    padding: 20px 20px;
+    border-radius:0px 0px 15px 15px;
+    width:fit-content;
+    margin:auto;
 }
 .titlePeriod {
     font-size: clamp(20px, 1.8em, 2.8vw);
@@ -79,7 +85,6 @@
 .userViewGeneral {
     display: flex;
     justify-content: space-around;
-
 }
 
 .userView {

@@ -26,21 +26,21 @@ class UserProfileController extends AbstractController
 
     public function modifyUserInfos(): string
     {
-        $errorsTotal = [];
+        $errorsInfos = [];
         $validateUserInfos = new ValidateModifiedProfileController();
         $modifyUserInfos = new ModifyUserInfosModel();
         $userKids = $modifyUserInfos->selectKids();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infosUser = array_map('trim', $_POST);
-            $errorsTotal = $validateUserInfos->validateModifiedInfos($infosUser);
-            if (empty($errorsTotal)) {
+            $errorsInfos = $validateUserInfos->validateModifiedInfos($infosUser);
+            if (empty($errorsInfos)) {
                 $modifyUserInfos->modifyUserInfos($infosUser);
                 echo "<script>alert('Vos informations ont bien été modifiées.')</script>";
                 header('Refresh:0 userProfile');
             } else {
                 return $this->twig->render('UserProfile/modifyUserProfile.html.twig', [
-                    'errors' => $errorsTotal,
+                    'errorsInfos' => $errorsInfos,
                     'kids' => $userKids
                 ]);
             }
@@ -53,21 +53,21 @@ class UserProfileController extends AbstractController
 
     public function modifyLoginInfos(): string
     {
-        $errorsTotal = [];
+        $errorsLogs = [];
         $modifyUserInfos = new ModifyUserInfosModel();
         $validateUserInfos = new ValidateModifiedProfileController();
         $userKids = $modifyUserInfos->selectKids();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infosUser = array_map('trim', $_POST);
-            $errorsTotal = $validateUserInfos->validateModifiedLogin($infosUser);
-            if (empty($errorsTotal)) {
+            $errorsLogs = $validateUserInfos->validateModifiedLogin($infosUser);
+            if (empty($errorsLogs)) {
                 $modifyUserInfos->modifyUserLogins($infosUser);
                 echo "<script>alert('Vos informations ont bien été modifiées.')</script>";
                 header('Refresh:0 userProfile');
             } else {
                 return $this->twig->render('UserProfile/modifyUserProfile.html.twig', [
-                    'errors' => $errorsTotal,
+                    'errorsLogs' => $errorsLogs,
                     'kids' => $userKids
                 ]);
             }
@@ -80,7 +80,7 @@ class UserProfileController extends AbstractController
 
     public function modifyKidInfos(): string
     {
-        $errorsTotal = [];
+        $errorsKids = [];
         $modifyUserInfos = new ModifyUserInfosModel();
         $validateUserInfos = new ValidateModifiedProfileController();
         $userKids = $modifyUserInfos->selectKids();
@@ -90,8 +90,8 @@ class UserProfileController extends AbstractController
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $infosUser = array_map('trim', $_POST);
-            $errorsTotal = $validateUserInfos->validateModifiedKid($infosUser);
-            if (empty($errorsTotal)) {
+            $errorsKids = $validateUserInfos->validateModifiedKid($infosUser);
+            if (empty($errorsKids)) {
                 for ($i = 0; $i < \count($kidIDs); $i++) {
                     $kidID = $kidIDs[$i];
                     $modifyUserInfos->updateKidsSpecs($kidID, $infosUser['commentKid' . $i]);
@@ -100,12 +100,28 @@ class UserProfileController extends AbstractController
                 header('Refresh:0 userProfile');
             } else {
                 return $this->twig->render('UserProfile/modifyUserProfile.html.twig', [
-                    'errors' => $errorsTotal,
+                    'errorsKids' => $errorsKids,
                     'kids' => $userKids
                 ]);
             }
         }
 
+        return $this->twig->render('UserProfile/modifyUserProfile.html.twig', [
+            'kids' => $userKids
+        ]);
+    }
+
+    public function modifyAvatar(): string
+    {
+        $modifyUserInfos = new ModifyUserInfosModel();
+        $userKids = $modifyUserInfos->selectKids();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $infosUser = array_map('trim', $_POST);
+            $modifyUserInfos = new ModifyUserInfosModel();
+            $modifyUserInfos->updateAvatar($infosUser['submitAvatar']);
+        }
+        echo "<script>alert('Vos informations ont bien été modifiées.')</script>";
+        header('Refresh:0 userProfile');
         return $this->twig->render('UserProfile/modifyUserProfile.html.twig', [
             'kids' => $userKids
         ]);

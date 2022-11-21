@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/userConnection.css">
     <link rel="stylesheet" href="assets/css/FAQ.css">
 {% endblock %}
-       {% block content %}
+       {% block header %}
            <header>
                <h1 class="ml6">
                    <span class="text-wrapper">
@@ -17,6 +17,8 @@
                    </span>
                </h1>
            </header>
+           {% endblock %}
+{% block content %}
            <div class="parallax"></div>
            <section class="presentationSite">
                <div>
@@ -31,105 +33,123 @@
                </div>
                <br>
                <div>
-                   Fatigué de courir après les nounous, simplifiez-vous la vie avec cet outil, auprès de connaissances et
+                   Fatigué de courir après les nounous, simplifiez-vous la vie avec cet outil, auprès de connaissances
+                   et
                    de proches.
                </div>
            </section>
            <div class="flexDesktopContainer">
-           <section class="slider-wrapper">
-               <button class="slide-arrow" id="slide-arrow-prev">
-                   &#8249;
-               </button>
-               <button class="slide-arrow" id="slide-arrow-next">
-                   &#8250;
-               </button>
-               <ul class="slides-container" id="slides-container">
-                   <li class="slide">
-                       <p>
-                           J'ai besoin de faire garder mon ou mes Joeys, j'accède à la fonctionnalité depuis mon profil
-                           et j'ajoute les demandes à proposer aux autres Kangourous.
-                       </p><br>
-                       <p>Je sélectionne mes dates et heures, je choisis un motif et j'y précise toutes les
-                           particularités dont doivent être informés les Kangourous qui m'apporteront leurs aides.
-                       </p><br>
-                       <p>Enfin lorsqu'un Kangourou accepte ma demande, je reçois un mail m'en informant et d'un coup
-                           d'œil sur mon planning, je retrouve toutes les informations concernant cette demande.
-                       </p><br>
-                       <p>A vous de jouer !
-                       </p><br>
-                   </li>
-                   <li class="slide">
-                       <p>
-                           Je suis disponible et je souhaite garder les Joeys d'autres Kangourous, j'y accède depuis
-                           mon profil et je vois toutes les demandes des autres Kangourous.
-                       </p>
-                       <br>
-                       <p>En fonction de mes disponibilités, j'aide un Kangourou et j'accueille ses Joeys chez moi.
-                           Je vois également les particularités précisées par le Kangourou.
-                       </p>
-                       <br>
-                       <p>Enfin lorsque j'accepte une demande, le Kangourou est informé et cette demande apparaît sur
-                           mon planning visible depuis mon profil.
-                       </p>
-                       <br>
-                       <p>A vous de jouer !
-                       </p><br>
-                   </li>
-                   <li class="slide">
-                       <p>Evidemment, nous sommes tous des gardants et avons besoin de faire garder nos Joeys.
-                       </p><br>
-                       <p>L'entraide au sein de la communauté est le moteur de cette plateforme.
-                       </p><br>
-                       <p>Sur votre planning, les couleurs correspondent à ces différents éléments avec une dernière
-                           couleur si vous gardez et vous êtes gardants le même jour. Avec, bien entendu le détail pour
-                           chaque évènement.
-                       </p><br>
-                       <p>A vous de jouer !
-                       </p><br>
-                   </li>
-               </ul>
-           </section>
-           {% include 'Home/userConnection.html.twig' %}
+               <section class="slider-wrapper">
+                   <button class="slide-arrow" id="slide-arrow-prev">
+                       &#8249;
+                   </button>
+                   <button class="slide-arrow" id="slide-arrow-next">
+                       &#8250;
+                   </button>
+                   <ul class="slides-container" id="slides-container">
+                       <li class="slide">
+                           <p>
+                               J'ai besoin de faire garder mon ou mes Joeys, j'accède à la fonctionnalité depuis mon
+                               profil
+                               et j'ajoute les demandes à proposer aux autres Kangourous.
+                           </p><br>
+                           <p>Je sélectionne mes dates et heures, je choisis un motif et j'y précise toutes les
+                               particularités dont doivent être informés les Kangourous qui m'apporteront leurs aides.
+                           </p><br>
+                           <p>Enfin lorsqu'un Kangourou accepte ma demande, je reçois un mail m'en informant et d'un
+                               coup
+                               d'œil sur mon planning, je retrouve toutes les informations concernant cette demande.
+                           </p><br>
+                           <p>A vous de jouer !
+                           </p><br>
+                       </li>
+                       <li class="slide">
+                           <p>
+                               Je suis disponible et je souhaite garder les Joeys d'autres Kangourous, j'y accède depuis
+                               mon profil et je vois toutes les demandes des autres Kangourous.
+                           </p>
+                           <br>
+                           <p>En fonction de mes disponibilités, j'aide un Kangourou et j'accueille ses Joeys chez moi.
+                               Je vois également les particularités précisées par le Kangourou.
+                           </p>
+                           <br>
+                           <p>Enfin lorsque j'accepte une demande, le Kangourou est informé et cette demande apparaît
+                               sur
+                               mon planning visible depuis mon profil.
+                           </p>
+                           <br>
+                           <p>A vous de jouer !
+                           </p><br>
+                       </li>
+                       <li class="slide">
+                           <p>Evidemment, nous sommes tous des gardants et avons besoin de faire garder nos Joeys.
+                           </p><br>
+                           <p>L'entraide au sein de la communauté est le moteur de cette plateforme.
+                           </p><br>
+                           <p>Sur votre planning, les couleurs correspondent à ces différents éléments avec une dernière
+                               couleur si vous gardez et vous êtes gardants le même jour. Avec, bien entendu le détail
+                               pour
+                               chaque évènement.
+                           </p><br>
+                           <p>A vous de jouer !
+                           </p><br>
+                       </li>
+                   </ul>
+               </section>
+               {% include 'Home/userConnection.html.twig' %}
            </div>
            {% include 'Home/faq.html.twig' %}
        {% endblock %}
 {% block javascript %}
-    {{ parent() }}
-    <script>
-        const slidesContainer = document.getElementById("slides-container");
-        const slide = document.querySelector(".slide");
-        const prevButton = document.getElementById("slide-arrow-prev");
-        const nextButton = document.getElementById("slide-arrow-next");
+{{ parent() }}
+<script>
+    const slidesContainer = document.getElementById("slides-container");
+    const slide = document.querySelector(".slide");
+    const prevButton = document.getElementById("slide-arrow-prev");
+    const nextButton = document.getElementById("slide-arrow-next");
 
-        nextButton.addEventListener("click", () => {
-            const slideWidth = slide.clientWidth;
-            slidesContainer.scrollLeft += slideWidth;
-        });
+    nextButton.addEventListener("click", () => {
+        const slideWidth = slide.clientWidth;
+        slidesContainer.scrollLeft += slideWidth;
+    });
 
-        prevButton.addEventListener("click", () => {
-            const slideWidth = slide.clientWidth;
-            slidesContainer.scrollLeft -= slideWidth;
-        });
+    prevButton.addEventListener("click", () => {
+        const slideWidth = slide.clientWidth;
+        slidesContainer.scrollLeft -= slideWidth;
+    });
 
-        // Wrap every letter in a span
-        let textWrapper = document.querySelector('.ml6 .letters');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    // Wrap every letter in a span
+    let textWrapper = document.querySelector('.ml6 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        anime.timeline({loop: true})
-            .add({
-                targets: '.ml6 .letter',
-                translateY: ["1.2em", 0],
-                translateZ: 0,
-                duration: 750,
-                delay: (el, i) => 50 * i
-            }).add({
-            targets: '.ml6',
-            opacity: 0,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 1000
-        });
-    </script>
+    anime.timeline({loop: true})
+        .add({
+            targets: '.ml6 .letter',
+            translateY: ["1.2em", 0],
+            translateZ: 0,
+            duration: 750,
+            delay: (el, i) => 50 * i
+        }).add({
+        targets: '.ml6',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
 
+    function setScroll() {
+    let scroll = window.scrollY;
+    let scrollString = scroll.toString();
+    localStorage.setItem("scrollPosition", scrollString);
+}
+
+
+    function restoreScrollPos() {
+    let posYString = localStorage.getItem("scrollPosition");
+    let posY = parseInt(posYString);
+    window.scroll(0, posY);
+    return true;
+}
+</script>
  <script src= "/assets/js/faq.js" ></script>
-     {% endblock %}
+{% endblock %}

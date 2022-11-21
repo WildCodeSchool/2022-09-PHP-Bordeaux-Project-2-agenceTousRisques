@@ -4,20 +4,19 @@
 {% endblock %}
 {% block content %}
     <div class="delete-container">
-        <h2 class="title-deleteUSer">Supprimer un utilisateur</h2>
         <form action='delete' method='post' class="deleteUser">
-
+            <h2 class="title-deleteUSer">Supprimer un utilisateur</h2>
                 {% for messages in message %}
                     <li class="deleteformerror">{{ messages }}</li>
                 {% endfor %}
 
-                <p class="label-delete"> Veuillez entrer le mail de la personne que vous souhaitez supprimer </p>
+                <p class="label-delete"> Veuillez entrer l'adresse email de la personne que vous souhaitez supprimer </p>
             <div class="input-container login-email-container">
                 <input id="email" name="email" class="input-delete" type="email" placeholder=" " required/>
                 <div class="cut"></div>
                 <label for="email" class="placeholder">Email</label>
             </div>
-            <button class="cta">
+            <button onclick="setScroll()" class="cta">
                 <span>Supprimer l'utilisateur</span>
                 <svg width="13px" height="10px" viewBox="0 0 13 10">
                     <path d="M1,5 L11,5"></path>

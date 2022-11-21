@@ -9,6 +9,7 @@
 
 .modify-infos-kid {
     text-align: left;
+    margin: 0;
 }
 
 .profile-important-info {
@@ -25,6 +26,11 @@
     margin: 0;
 }
 
+body {
+    background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
+}
+
 .modify-form {
     font-family: var(--fontText);
     width: 95%;
@@ -32,39 +38,28 @@
     align-items: center;
     gap: 20px;
     text-align: center;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.modify-form-top {
-    margin-top: 5vw;
-}
-.profile-container {
+
+/*.modify-form-top {*/
+/*    margin-top: 5vw;*/
+/*}*/
+
+.profile-container,
+.profile-container-kid,
+.profile-container-login,
+.profile-container-avatar
+{
     background-color: var(--bleuVert);
+    background-image: url("../images/school-background-blue.jpg");;
     border-radius: 10px;
     box-shadow: 1px 1px 5px gray;
     width: 95vw;
-    margin: auto auto 8px;
-    height: 450px;
+    margin: auto auto 16px;
 }
 
-.profile-container-login {
-    background-color: var(--bleuVert);
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px gray;
-    width: 95vw;
-    margin: auto auto 8px;
-    height: 340px;
-}
-
-.profile-container-kid {
-    background-color: var(--bleuVert);
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px gray;
-    width: 95vw;
-    margin: auto auto 8px;
-    max-height: 510px;
-}
 
 .input-container {
     height: 50px;
@@ -84,7 +79,7 @@
     outline: 0;
     padding: 15px;
     max-width: 700px;
-    width: 100% ;
+    width: 100%;
 }
 
 .cut {
@@ -177,11 +172,11 @@
 }
 
 .input-delete:not(:placeholder-shown) ~ .placeholder {
-    color: var(--bleu);
+    color: var(--smallButtonColor);
 }
 
 .input-delete:focus ~ .placeholder {
-    color: var(--bleu);
+    color: var(--smallButtonColor);
 }
 
 #submitUserInscription {
@@ -227,4 +222,29 @@
 #submitUserInscription:hover:after {
     bottom: 2px;
     left: 2px;
+}
+
+
+.profile-container-avatar img {
+    height: 20vh;
+}
+
+#avatar-list {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+#avatar-list button img {
+    width: 8vw;
+    height: auto;
+}
+
+@media screen and (min-width: 1024px)  {
+    #avatar-list {
+        display: flex;
+        justify-content: space-between;
+    }
 }

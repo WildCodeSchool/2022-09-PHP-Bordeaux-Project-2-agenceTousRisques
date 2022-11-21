@@ -17,12 +17,13 @@
     width: 100%;
     max-width: 260px;
     max-height: 60px;
-    position: relative;
     cursor: pointer;
     transform: rotate(-2deg);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 .buttonAddDemand:focus {
@@ -57,11 +58,13 @@
 
 .addDemand {
     background-color: var(--saumonPastel);
+    background-image: url("../images/asfalt-rose.png");
     display: grid;
     justify-content: center;
     border-radius: 10px;
     width: 95vw;
     margin: auto;
+    border:3px solid var(--saumon);
 }
 
 .sectionAddDemand {

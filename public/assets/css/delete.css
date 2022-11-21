@@ -1,32 +1,39 @@
 .title-deleteUSer{
     padding: 8px;
     font-family: var(--fontTitle);
-    font-size: clamp(20px, 2em, 2.8vw);
+    font-size: clamp(24px, 2em, 2.8vw);
     align-items: center;
     text-align: center;
     margin: 0;
-
+}
+body {
+    background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
 }
 
 .deleteUser {
     font-family: var(--fontText);
     width: 95%;
-    margin: auto;
+    text-align:center;
     align-items: center;
-    text-align: center;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
-    height:216px;
+    justify-content:space-between;
+    margin-right:auto;
+    margin-left:auto;
+    gap:16px;
+
 }
 .delete-container {
     background-color: var(--rosePastel);
+    background-image: url("../images/asfalt-rose.png");
     border-radius: 10px;
     box-shadow: 1px 1px 5px gray;
     width: 95vw;
-    margin:auto;
     margin-bottom:8px;
-    height:270px;
+    min-height:270px;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 .delete-container button[type="submit"] {
@@ -58,7 +65,7 @@
     padding: 8px;
 }
 .input-container {
-    height: 50px;
+    line-height:50px;
     position: relative;
     width: 100%;
 }
@@ -70,7 +77,7 @@
     box-sizing: border-box;
     color: white;
     font-size: 18px;
-    height: 100%;
+    line-height:50px;
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
@@ -119,3 +126,7 @@
     color: var(--saumon);
 }
 
+.deleteCallLink{
+    text-decoration: none;
+    color: black;
+}
