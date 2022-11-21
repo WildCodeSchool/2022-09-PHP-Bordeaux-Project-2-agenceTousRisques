@@ -8,15 +8,15 @@ body {
     margin: auto;
     font-family: var(--fontText);
     padding-bottom: 10px;
-    width: 90vw;
+    width: 95vw;
 }
 
 .call-container {
     background-color: var(--bleu);
     border-radius: 10px;
-    margin: 0 10px 30px 10px;
     font-family: var(--fontText);
     padding-bottom: 10px;
+    width: 95vw;
 }
 
 .call-title {
@@ -148,6 +148,10 @@ body {
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }
 
+.add-filter-calls:hover {
+    background-color: var(--bleuVert);
+}
+
 .delete-filter-calls {
     backface-visibility: hidden;
     background-color: var(--saumon);
@@ -181,6 +185,10 @@ body {
 
 .delete-filter-calls:focus {
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.delete-filter-calls:hover {
+    background-color: var(--saumonPastel);
 }
 
 @media screen and (min-width: 1024px) {
