@@ -6,7 +6,7 @@ body, html {
 
 .parallax {
     filter : drop-shadow(1px 1px 5px grey);
-    height:600px;
+    height:650px;
     animation:
         pulse 3s ease infinite alternate,
         nudge 5s linear infinite alternate;
@@ -92,7 +92,7 @@ body, html {
     height: 440px;
     width: 100%;
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     list-style: none;
     margin: 0;
@@ -147,6 +147,8 @@ body, html {
     font-size:clamp(20px,1.3em,2.5vw);
     line-height:1.8em;
     background-color: var(--saumon);
+    overflow-y:scroll;
+    scroll-behavior: smooth;
 }
 
 
@@ -193,4 +195,24 @@ body, html {
     li.slide{
         height: 100%;
     }
+}
+
+.slide::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.slide::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+/* Handle */
+.slide::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.slide::-webkit-scrollbar-thumb:hover {
+    background: var(--smallButtonColor);
 }
