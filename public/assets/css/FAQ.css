@@ -1,37 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fuzzy+Bubbles&family=Gochi+Hand&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-     font-family:  'Gochi Hand', cursive;
-}
-
-.accordion{
-  
-  
-  align-items: center;
-  min-height: 100vh;
-  background:  #FAD7D4;
-}
-
 .accordion {
-    max-width: 800px;
+    margin-top: 16px;
 }
 
-.accordion .contentbox{
+.faq-title {
+    text-align: center;
+    font-family: var(--fontTitle);
+    font-size: clamp(32px, 3em, 2.5vw);
+
+}
+
+.accordion .contentbox {
     position: relative;
     margin: 10px 20px;
 }
 
-.accordion .contentbox .question{
+.accordion .contentbox .question {
     position: relative;
     padding: 10px;
     background: #FAA07D;
     color: #fff;
-cursor:pointer;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
-.accordion .contentbox .question::before{
+.accordion .contentbox .question::before {
     content: "+";
     position: absolute;
     top: 50%;
@@ -40,24 +34,32 @@ cursor:pointer;
     font-size: 1.5em;
 }
 
-.accordion .contentbox.active .question::before{
+.accordion .contentbox.active .question::before {
     content: "-";
 
 }
+.question, .réponse {
+    font-family: var(--fontText);
+    font-size:clamp(16px,1.4em,2.5vw);
+}
+.réponse {
+    font-size:clamp(16px,1.2em,2.5vw);
+}
 
 
-.accordion .contentbox .réponse{
+.accordion .contentbox .réponse {
     position: relative;
     padding: 10px;
     background: #83E1E6;
-   height: 0; 
-   overflow: hidden;
-   transition: 0.5s;
-   overflow-y: auto;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+    border-radius: 16px;
 }
 
-.accordion .contentbox.active .réponse{
-    height: 150px;
-    padding:10px;
+.accordion .contentbox.active .réponse {
+    height: 100px;
+    padding: 10px;
 
 }
