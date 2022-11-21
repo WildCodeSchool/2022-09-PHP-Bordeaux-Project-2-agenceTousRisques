@@ -6,6 +6,7 @@
 {% block stylesheet %}
     <link rel="stylesheet" href="assets/css/styleHome.css">
     <link rel="stylesheet" href="assets/css/userConnection.css">
+    <link rel="stylesheet" href="assets/css/FAQ.css">
 {% endblock %}
        {% block header %}
            <header>
@@ -97,6 +98,7 @@
                </section>
                {% include 'Home/userConnection.html.twig' %}
            </div>
+           {% include 'Home/faq.html.twig' %}
        {% endblock %}
 {% block javascript %}
 {{ parent() }}
@@ -149,6 +151,5 @@
     return true;
 }
 </script>
-
-
+ <script src= "/assets/js/faq.js" ></script>
 {% endblock %}
