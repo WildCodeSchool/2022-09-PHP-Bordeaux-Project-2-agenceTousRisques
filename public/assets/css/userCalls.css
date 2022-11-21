@@ -64,6 +64,8 @@ body {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .accept-call-button:focus {
@@ -191,13 +193,14 @@ body {
     background-color: var(--saumonPastel);
 }
 
-@media screen and (min-width: 1024px) {
-    .flex-call-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
+.flex-call-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 760px) {
 
     .call-comment {
         text-overflow: clip;
