@@ -53,3 +53,8 @@
     font-weight: bolder;
     color: white
 }
+.noUnacceptedDemand {
+    text-align:center;
+    padding:8px;
+    font-size:clamp(20px,1.7em,2.5vw);
+}

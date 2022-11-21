@@ -17,12 +17,13 @@
     width: 100%;
     max-width: 260px;
     max-height: 60px;
-    position: relative;
     cursor: pointer;
     transform: rotate(-2deg);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 .buttonAddDemand:focus {
