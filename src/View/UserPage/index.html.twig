@@ -1,34 +1,32 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/adminHeader.css">
-    <link rel="stylesheet" href="/assets/css/userPlanning.css">
-    <link rel="stylesheet" href="/assets/css/styleUserSlider.css">
-    <link rel="stylesheet" href="/assets/css/styleButtonAddDemand.css">
-    <link rel="stylesheet" href="/assets/css/styleUnacceptedDemand.css">
-    <link rel="stylesheet" href="/assets/css/buttonAcceptCall.css">
+    <link rel="stylesheet" href="/assets/css/userPage.css">
 {% endblock %}
 
 {% block title %}Accueil{% endblock %}
 
 {% block header %}
     {% include 'userHeader.html.twig' %}
+    {% include 'userHeaderDesktop.html.twig' %}
 {% endblock %}
 
 {% block content %}
     {% include 'UserPage/userPlanning.html.twig' %}
     {% include 'UserPage/userUnacceptedDemand.html.twig' %}
-    <section class="sectionAddDemand">
-        <div class="addDemand">
-            <h2 class="titleAddDemand">Besoin d'un Kangourou ?</h2>
-            <a href="/addDemand" class="buttonAddDemand">Ajouter une Demande</a>
-        </div>
-    </section>
-    <section class="sectionAddDemand">
-        <div class="acceptCall">
-            <h2 class="titleAddDemand">Aider un Kangourou ?</h2>
-            <a href="/userCalls" class="buttonAcceptCall">Accepter une demande</a>
-        </div>
-    </section>
+    <div class="blockAddDemand">
+        <section class="sectionAddDemand">
+            <div class="addDemand">
+                <h2 class="titleAddDemand">Besoin d'un Kangourou ?</h2>
+                <a href="/addDemand" class="buttonAddDemand">Ajouter une Demande</a>
+            </div>
+        </section>
+        <section class="sectionAddDemand">
+            <div class="acceptCall">
+                <h2 class="titleAddDemand">Aider un Kangourou ?</h2>
+                <a href="/userCalls" class="buttonAcceptCall">Accepter une demande</a>
+            </div>
+        </section>
+    </div>
     {% include 'UserPage/userSlider.html.twig' %}
     {% include 'UserPage/activitiesBordeaux.html.twig' %}
 {% endblock %}

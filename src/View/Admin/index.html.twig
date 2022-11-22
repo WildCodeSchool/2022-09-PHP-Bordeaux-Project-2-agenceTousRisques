@@ -1,14 +1,18 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/adminInviteUser.css">
-    <link rel="stylesheet" href="/assets/css/delete.css">
+    <link rel="stylesheet" href="/assets/css/adminPage.css">
 {% endblock %}
 {% block title %}GESTION{% endblock %}
 {% block header %}
     {% include 'userHeader.html.twig' %}
+    {% include 'userHeaderDesktop.html.twig' %}
 {% endblock %}
     {% block content %}
-        {% include 'Admin/adminInviteUser.html.twig' %}
+        <div class="users-gestion">
+            {% include 'Admin/adminInviteUser.html.twig' %}
+            {% include 'Admin/delete.html.twig' %}
+            {% include 'Admin/adminDeleteCall.html.twig' %}
+        </div>
         {% include 'Admin/adminUserView.html.twig' %}
-        {% include 'Admin/delete.html.twig' %}
+
     {% endblock %}

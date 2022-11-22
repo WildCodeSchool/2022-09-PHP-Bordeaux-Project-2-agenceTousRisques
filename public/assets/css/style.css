@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fuzzy+Bubbles&family=Gochi+Hand&display=swap');
 @import "userHeader.css";
+@import "userHeaderDesktop.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +14,12 @@
     --fontText: 'Fuzzy Bubbles', cursive;
     --rosePastel: #FAD7D4;
     --saumon: #FAA07D;
-    --bleuVert:#C7EBDD;
-    --bleu:#83E1E6;
-    --saumonPastel:#FFE3C7;
-    --smallButtonColor:#9D5438;
+    --bleuVert: #C7EBDD;
+    --bleu: #83E1E6;
+    --saumonPastel: #FFE3C7;
+    --smallButtonColor: #9D5438;
 }
+
 .footer {
     font-family: var(--fontTitle);
     font-size: 1.2rem;

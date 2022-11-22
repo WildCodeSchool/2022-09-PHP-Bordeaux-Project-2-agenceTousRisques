@@ -1,27 +1,60 @@
 .titleUAD{
     font-family: var(--fontTitle);
     font-size: 30px;
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
+    text-align: center;
+    padding: 10px;
+
 }
 
 .unacceptedDemand {
-    background-image:url("../images/planning-background-salmon.png");
-    border-radius: 10px;
-    margin: 20px 10px 30px 10px;
+    background-image:url("../images/skulls.png");
+    background-color: var(--saumonPastel);
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 8px;
     font-family: var(--fontText);
     padding-bottom: 10px;
-    height : 330px;
-    overflow: scroll;
+    width: 95vw;
 }
+.scroll-container {
+    overflow-y: scroll;
+    max-height : 300px;
+}
+/* width */
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.scroll-container::-webkit-scrollbar-track {
+    background: var(--saumonPastel);
+}
+
+/* Handle */
+.scroll-container::-webkit-scrollbar-thumb {
+    background: var(--saumon);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: var(--smallButtonColor);
+}
+
 .article {
     background-color: var(--saumon);
-    margin: 10px;
-    padding: 10px;
+    margin-right: 10px;
+    margin-left:10px;
+    margin-bottom:10px;
+    padding: 20px;
     border-radius: 5px;
 }
 .importantInfo {
     font-weight: bolder;
     color: white
+}
+.noUnacceptedDemand {
+    text-align:center;
+    padding:8px;
+    font-size:clamp(20px,1.7em,2.5vw);
 }

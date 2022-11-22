@@ -1,0 +1,243 @@
+@media screen and (max-width: 1024px) {
+    .desktop-header-container {
+        display: none;
+    }
+}
+
+.desktop-header-container {
+    position: relative;
+    background-color: var(--bleuVert);
+    padding-top: 48px;
+    padding-bottom: 32px;
+    margin-bottom: 8px;
+    background-image: url("../images/arches.png");
+}
+
+.avatar-container-desktop {
+    background-color: var(--bleu);
+    box-shadow: 1px 1px 3px black;
+    border-radius: 200px;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.user-avatar-desktop {
+    width: 350px;
+    height: 350px;
+}
+
+.user-firstname-desktop, .user-lastname-desktop {
+    position: absolute;
+    top: 94%;
+    background-color: var(--bleu);
+    box-shadow: 1px 1px 3px black;
+    color: var(--smallButtonColor);
+    font-family: var(--fontTitle);
+    font-size: clamp(20px, 1.8em, 2.5vw);
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 30vw;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+
+
+}
+
+.user-firstname-desktop {
+    right: 70%
+}
+
+.user-lastname-desktop {
+    left: 70%
+}
+
+.user-logout-link-desktop, .user-options-link-desktop, .user-add-link-desktop, .user-list-link-desktop {
+    position: absolute;
+
+    &:before {
+        content: attr(data-hover);
+        visibility: hidden;
+        opacity: 0;
+        width: max-content;
+        background-color: var(--smallButtonColor);
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 5px;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.user-logout-link-desktop {
+    top: 15%;
+    right: -28%;
+
+    &:before {
+        left: 0;
+        top: 100%;
+    }
+
+}
+
+.user-options-link-desktop {
+    top: 15%;
+    left: -28%;
+
+    &:before {
+        right: 0;
+        top: 100%;
+    }
+
+}
+
+.user-add-link-desktop {
+    top: 58%;
+    right: -30%;
+
+    &:before {
+        left: 0;
+        top: 95%;
+    }
+
+}
+
+.user-list-link-desktop {
+    top: 58%;
+    left: -26%;
+
+    &:before {
+        right: 0;
+        top: 100%;
+    }
+
+}
+
+.img-btn-header {
+    height: 80px;
+    width: 80px;
+    transition: width, 0.6s, height, 0.6s;
+
+    &:hover {
+        width: 100px;
+        height: 100px;
+
+    }
+
+    &:active {
+        scale: 0.6;
+    }
+}
+
+.user-add-img-desktop {
+    height: 90px;
+    width: 90px;
+
+    &:hover {
+        width: 110px;
+        height: 110px;
+
+    }
+}
+
+.user-gestion-link-desktop {
+    display: block;
+    margin: auto;
+    width: max-content;
+    position: relative;
+    margin-top: -8px;
+
+    &:before {
+        content: attr(data-hover);
+        visibility: hidden;
+        opacity: 0;
+        width: max-content;
+        background-color: var(--smallButtonColor);
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 5px;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        top: 90%;
+        left: -3%;
+
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.img-gestion-desktop {
+    width: 100px;
+    height: 100px;
+    transition: width, 06s, height, 0.6s;
+
+    &:hover {
+        width: 120px;
+        height: 120px;
+    }
+    &:active {
+        scale:0.8;
+    }
+}
+
+.img-header-deco {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+
+    &.avatar1 {
+        top: 0;
+        left: -20vw;
+    }
+
+    &.avatar2 {
+        top: 35%;
+        left: -25vw;
+    }
+
+    &.avatar3 {
+        bottom: 7%;
+        left: -20vw;
+    }
+
+    &.avatar4 {
+        top: 0;
+        right: -20vw;
+    }
+
+    &.avatar5 {
+        top: 35%;
+        right: -25vw;
+    }
+
+    &.avatar6 {
+        bottom: 7%;
+        right: -20vw;
+    }
+}
+

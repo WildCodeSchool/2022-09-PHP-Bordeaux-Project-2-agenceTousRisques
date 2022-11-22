@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block title %}
-    Users Calls
+    Demandes de ma kangooteam
 {% endblock %}
 
 {% block stylesheet %}
@@ -8,23 +8,50 @@
 {% endblock %}
 {% block header %}
     {% include 'userHeader.html.twig' %}
+    {% include 'userHeaderDesktop.html.twig' %}
 {% endblock %}
 {% block content %}
-        <div class="call-body">
-            <div class="call-container">
-                <div class="call-title">Les demandes en cours</div>
+    <div class="call-body">
+        <div class="call-container">
+            <div class="call-title">Les demandes en cours</div>
+            <div class="calls-filter">
+                <div class="filter-errors">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
+                <form method="post" class="filter-form">
+                    <label class="importantInfo-call" for="filterDate">Filtre :</label>
+                    <input class="add-filter-calls" type="date" id="filterDate" name="filterDate">
+                    <input onclick="setScroll()" class="add-filter-calls" type="submit" value="filtrer">
+                    <a onclick="setScroll()" class="delete-filter-calls" href="userCalls">Effacer le filtre</a>
+                </form>
+            </div>
+            <div class="flex-call-container">
                 {% for call in Calls %}
                     <div class="single-call">
                         <p>
                             <span class="importantInfo-call">{{ call.firstname }}</span> souhaite se faire aider <br>
-                            du <span class="importantInfo-call">{{ call.startdate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.startdate|date("h:i") }}</span><br>
-                            au <span class="importantInfo-call">{{ call.enddatedate|date("d/m/Y") }}</span> à <span class="importantInfo-call">{{ call.enddatedate|date("h:i") }}</span><br>
+                            du <span class="importantInfo-call">{{ call.startdate|date("d/m/Y") }}</span> à <span
+                                class="importantInfo-call">{{ call.startdate|date("h:i") }}</span><br>
+                            au <span class="importantInfo-call">{{ call.enddate|date("d/m/Y") }}</span> à <span
+                                class="importantInfo-call">{{ call.enddate|date("h:i") }}</span><br>
                             contexte : <span class="importantInfo-call">{{ call.context }}</span><br>
+                        <p class="call-comment">
                             commentaire : <span class="importantInfo-call">{{ call.comment }}</span>
                         </p>
-                            <a href="userCalls?id={{ call.callID }}" id="submitUserInscription">Accepter</a>
+                        </p>
+                        <br>
+                        <a href="userCalls?id={{ call.callID }}" class="accept-call-button">Accepter</a>
+                    </div>
+                {% else %}
+                    <div class="single-call">
+                        <p class="no-demands">
+                            Désolé nous n'avons trouvé aucune demande correspondant à ce filtre
+                        </p>
                     </div>
                 {% endfor %}
             </div>
         </div>
+    </div>
 {% endblock %}

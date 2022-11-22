@@ -1,17 +1,15 @@
-.profile-body{
-    border-radius: 10px;
-    font-family: var(--fontText);
-    padding-bottom: 10px;
-    width: 90vw;
-    margin: 8px auto auto;
+body {
+    background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
 }
 
 .profile-container {
     background-color: var(--bleu);
     border-radius: 10px;
-    margin: 0 10px 30px 10px;
     font-family: var(--fontText);
-    padding-bottom: 10px;
+    width:95vw;
+    margin:auto;
+    background-image: url("../images/skulls.png");
 }
 
 .profile-title {
@@ -37,6 +35,12 @@
     margin-right: 10px;
 }
 
+.profile-line-kid {
+    border: 1px solid var(--bleu);
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
 .personal-infos {
     padding: 8px;
     text-decoration: underline;
@@ -48,7 +52,11 @@
 }
 
 .modify-profile-button-container{
-    margin: 16  px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 16px;
+    width:fit-content;
+
 }
 
 #modify-profile-button {
@@ -69,7 +77,6 @@
     text-decoration-thickness: auto;
     width: 100%;
     max-width: 260px;
-    position: relative;
     cursor: pointer;
     transform: rotate(-2deg);
     user-select: none;
@@ -94,4 +101,13 @@
 #modify-profile-button:hover:after {
     bottom: 2px;
     left: 2px;
+}
+
+.modify-user-profile-errors {
+    list-style: none;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: var(--fontText);
+    padding: 8px;
 }

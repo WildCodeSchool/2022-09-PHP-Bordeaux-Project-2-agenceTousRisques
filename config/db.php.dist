@@ -3,7 +3,7 @@
 define('APP_DB_USER', 'user');
 define('APP_DB_PASSWORD', 'password');
 define('APP_DB_HOST', 'localhost');
-define('APP_DB_NAME', 'database_name');
+define('APP_DB_NAME', 'nounou_entre_nous');
 // SMTP config
 define('SMTP_PASSWORD','password');
-define ('SMTP_USERNAME','username);
+define ('SMTP_USERNAME','username');

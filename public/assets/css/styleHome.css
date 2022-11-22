@@ -1,38 +1,81 @@
-header {
-    display: grid;
-    justify-content: center;
-    margin: 30px 0;
+body, html {
+    /*height: 100%;*/
+    background-color: var(--rosePastel);
+    background-image: url("../images/nuageRose.png");
 }
 
-h1 {
+.parallax {
+    filter : drop-shadow(1px 1px 5px grey);
+    height:650px;
+    animation:
+        pulse 3s ease infinite alternate,
+        nudge 5s linear infinite alternate;
+    width: 100vw;
+}
+@keyframes pulse {
+    0%, 100% {
+        background-image: url("../images/logoSiteNoir.svg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60vh;
+    }
+    50% {
+        background-image: url("../images/logoSite.svg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60vh;
+    }
+}
+@keyframes nudge {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(450px, 0);
+    }
+
+    80% {
+        transform: translate(-450px, 0);
+    }
+}
+
+.ml6 {
     font-family: var(--fontTitleSite);
-    font-size: 40px;
-}
-
-section {
-    font-family: var(--fontText);
-}
-
-.logoSite {
-    width: 70vw;
-    border-radius: 30px;
-    transform: translateX(-20px);
-}
-
-.avatar {
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    /*position: relative;*/
+    font-weight: 900;
+    font-size: 3.3em;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.avatar1, .avatar3 {
-    transform: translateY(-40px);
+.ml6 .text-wrapper {
+    /*position: relative;*/
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
 }
 
 .presentationSite {
     padding: 20px;
-    margin: 40px 1rem 1rem 1rem;
+    margin: 0 1rem 1rem 1rem;
     background-color: var(--saumonPastel);
     border-radius: 5px;
+    font-family: var(--fontText);
+    box-shadow: 1px 1px 5px gray;
+    font-size:clamp(24px,1.5em,2.5vw);
+    line-height:1.8em;
 }
 
 
@@ -41,17 +84,25 @@ section {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+    font-family: var(--fontText);
+    box-shadow: 1px 1px 5px gray;
 }
 
 .slides-container {
     height: 440px;
     width: 100%;
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     list-style: none;
     margin: 0;
     padding: 0;
+    font-family: var(--fontText);
+    background-color: var(--saumon);
+}
+.slides-container p{
+    padding-left: 12px;
+    width: 80vw;
 }
 
 .slide-arrow {
@@ -69,6 +120,7 @@ section {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 100ms;
+    font-family: var(--fontText);
 }
 
 .slide-arrow:hover,
@@ -90,21 +142,22 @@ section {
 
 .slide {
     width: 100%;
-    height: 100%;
     flex: 1 0 100%;
     padding: 20px;
+    font-size:clamp(20px,1.3em,2.5vw);
+    line-height:1.8em;
+    background-color: var(--saumon);
+    overflow-y:scroll;
+    scroll-behavior: smooth;
 }
 
-.slide:nth-child(1) {
-    background-color: var(--saumon);
-}
 
 .slide:nth-child(2) {
     background-color: var(--bleuVert);
 }
 
 .slide:nth-child(3) {
-    background-color: var(--saumonPastel);
+    background-color: var(--rosePastel);
     margin: 0;
 }
 
@@ -118,4 +171,48 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    .parallax {
+        background-size: 85vh;
+    }
+    .ml6 {
+        font-size: 6em;
+    }
+    .slider-wrapper {
+        margin: 0 0 0 20px;
+        line-height: 1.8rem;
+    }
+    .slides-container p{
+        width: 42vw;
+    }
+    .flexDesktopContainer{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    li.slide{
+        height: 100%;
+    }
+}
+
+.slide::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.slide::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+/* Handle */
+.slide::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.slide::-webkit-scrollbar-thumb:hover {
+    background: var(--smallButtonColor);
 }

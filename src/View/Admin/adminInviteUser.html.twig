@@ -1,17 +1,21 @@
 <div class="invite-user-container">
-    <h3 class="title-invite-user">Inviter un nouvel utilisateur</h3>
-
     <form action="invite" method="post" class="admin-invite-form">
-        <label class="label-form-email" for="invitedEmail">Veuillez renseigner l'adresse email de la personne que
-            vous
-            souhaitez inviter</label>
-        <input type="email" name="invited-email" id="invited-email" required>
-        <br>
+        <h2 class="title-invite-user">Inviter un nouvel utilisateur</h2>
         {% block errors %}
             {% for error in errors %}
                 <li class="invite-user-errors">{{ error }}</li>
             {% endfor %}
         {% endblock %}
+
+        <p class="label-form-email">Veuillez renseigner l'adresse email de la personne que
+            vous
+            souhaitez inviter</p>
+        <div class="input-container login-email-container">
+            <input id="invited-email" name="invited-email" class="input-invite" type="email" placeholder=" " required/>
+            <div class="cut"></div>
+            <label for="invited-email" class="invite-placeholder">Email</label>
+        </div>
+
         {% block invitation_success %}
             {% if email %}
                 <p class="invite-success-message">L'invitation a bien été envoyé à l'adresse

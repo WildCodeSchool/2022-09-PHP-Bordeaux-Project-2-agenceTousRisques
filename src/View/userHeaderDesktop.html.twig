@@ -1,0 +1,31 @@
+<div class="desktop-header-container">
+    <div class="avatar-container-desktop">
+        <a href="UserPage"><img class="user-avatar-desktop" src="{{ user.image }}" alt=""></a>
+        <p class="user-firstname-desktop">{{ user.firstname }}</p>
+        <p class="user-lastname-desktop">{{ user.lastname }}</p>
+        <a class="user-logout-link-desktop" data-hover="Me déconnecter" href="logout"><img src="assets/images/power-coloreddarken.png" alt=""
+                                                                                           class="img-btn-header user-logout-img-desktop"></a>
+
+        <a class="user-options-link-desktop" data-hover="Voir mon profil" href="userProfile"><img src="assets/images/gear-coloreddarken.png" alt=""
+                                                                                                        class="img-btn-header user-options-img-desktop"></a>
+        <a class="user-add-link-desktop" data-hover="Demander un coup de pattes" href="addDemand"><img src="assets/images/add-demand-btn.png" alt=""
+                                                                                                       class="img-btn-header user-add-img-desktop"></a>
+        <a class="user-list-link-desktop" data-hover="Voir les demandes de ma kangooteam" href="userCalls"><img src="assets/images/demand-list.png" alt=""
+                                                                                                                class="img-btn-header user-list-img-desktop"></a>
+
+
+        <img src="assets/images/avatar1.png" alt="" class="img-header-deco avatar1">
+        <img src="assets/images/avatar2.png" alt="" class="img-header-deco avatar2">
+        <img src="assets/images/avatar3.png" alt="" class="img-header-deco avatar3">
+        <img src="assets/images/avatar4.png" alt="" class="img-header-deco avatar4">
+        <img src="assets/images/avatar5.png" alt="" class="img-header-deco avatar5">
+        <img src="assets/images/avatar6.png" alt="" class="img-header-deco avatar6">
+{#        <img src="assets/images/avatar7.png" alt="" class="img-header-deco avatar7">#}
+{#        <img src="assets/images/avatar8.png" alt="" class="img-header-deco avatar8">#}
+    </div>
+    {% if user.isAdmin %}
+        <a class="user-gestion-link-desktop" data-hover="Gestion du groupe" href="gestion"><img class="img-gestion-desktop"
+                                                                 src="assets/images/admin-gestion.png" alt=""></a>
+    {% endif %}
+
+</div>

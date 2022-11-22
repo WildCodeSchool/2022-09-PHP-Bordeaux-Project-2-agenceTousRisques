@@ -37,7 +37,6 @@ class MailModel
     {
         $mail = $this->setMailer();
         try {
-            $mail = $this->setMailer();
             $mail->addAddress("$email");
             //Set email format to HTML
             $mail->Subject = 'Invitation à rejoindre notre communauté !';
@@ -93,6 +92,28 @@ class MailModel
             $mail->Body = $body;
             $mail->AltBody = "Votre demande d'aide a été accepté par un kangou !
             Rendez-vous sur votre planning pour plus de détails.";
+            $mail->send();
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    }
+    public function sendNewPasswordEmail($email, $password)
+    {
+        $mail = $this->setMailer();
+        try {
+            $mail->addAddress("$email");
+            //Add a recipient
+            //Content
+            $body = "<h1> Voici votre nouveau mot de passe :</h1>
+<br><br>
+<p>Suite à votre demande, nous avons réinitialisé votre mot de passe que vous trouverez ci-dessous. </p>
+<p>Nouveau mot de passe : $password</p>
+<p>Vous pouvez vous connecter à nouveau. Pensez à changer votre mot de passe !</p>
+<br><br>";
+            $mail->Subject = 'Voici votre nouveau mot de passe';
+            $mail->Body = $body;
+            $mail->AltBody = "Suite à votre demande nous avons réinitialisé votre mot de passe. Votre nouveau mot
+            de passe " . $password;
             $mail->send();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

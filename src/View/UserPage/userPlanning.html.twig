@@ -2,7 +2,7 @@
     {% for key, value in demandsByDay %}
         <div class="day-block day{{ loop.index0 }}">
             <input class=input-day{{ loop.index0 }} type="checkbox" id="plus-button{{ loop.index0 }}" hidden>
-            <h2><label class="label-day{{ loop.index0 }}  {% if value is empty %} no-demand {% endif %}
+            <label class="label-day{{ loop.index0 }}  {% if value is empty %} no-demand {% endif %}
 {% for demand in value %}
 {% if demand.helperID==user.userID %}
 helper
@@ -10,19 +10,19 @@ helper
 helped
 {% endif %}
 {% endfor %}
-" for="plus-button{{ loop.index0 }}">{{ key }}</label></h2>
+" for="plus-button{{ loop.index0 }}">{{ key }}</label>
 
             {% for demand in value %}
                 {% if demand.helperID==user.userID %}
 
                     <p class="demand-text helper">Je rends service à {{ demand.askerName }} de
-                        {{ demand.startdate|date('h:i') }} jusqu'à {{ demand.enddate|date('h:i') }}<br>
+                        {{ demand.startdate|date('H:i') }} jusqu'au {{ demand.enddate|date('d/m')}} à {{ demand.enddate|date('H:i') }}<br>
                         Il a précisé que "{{ demand.comment }}".</p>
                 {% endif %}
                 {% if demand.userID==user.userID %}
                     <p class="demand-text helped">{{ demand.helperName }} me rend service
-                        de {{ demand.startdate|date('h:i') }}
-                        à {{ demand.enddate|date('h:i') }}<br>
+                        de {{ demand.startdate|date('H:i') }}
+                        à {{ demand.enddate|date('H:i') }}<br>
                         J'ai précisé "{{ demand.comment }}"</p>
                 {% endif %}
             {% endfor %}

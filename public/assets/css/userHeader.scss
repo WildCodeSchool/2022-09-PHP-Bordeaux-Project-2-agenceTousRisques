@@ -1,18 +1,19 @@
-.admin-header-container {
-    margin-bottom: 64px;
+.mobile-header-container {
+    margin-bottom: 8px;
     position: relative;
     height: 315px;
     background-color: var(--bleuVert);
+    background-image: url("../images/arches.png");
 }
 
-.admin-logout-link {
+.user-logout-link {
     position: absolute;
     top: 2%;
     right: 1vw;
     background-color: var(--bleuVert);
 }
 
-.admin-logout-img {
+.user-logout-img {
     height: 50px;
     width: 50px;
 
@@ -22,7 +23,7 @@
 
 }
 
-.admin-avatar {
+.user-avatar {
     height: 220px;
     width: 220px;
     display: inline;
@@ -48,7 +49,7 @@
     top: 50%;
 }
 
-.admin-firstname, .admin-lastname {
+.user-firstname, .user-lastname {
     position: absolute;
     background-color: var(--bleu);
     box-shadow: 1px 1px 3px black;
@@ -67,11 +68,11 @@
     top: 94%;
 }
 
-.admin-firstname {
+.user-firstname {
     right: 70%;
 }
 
-.admin-lastname {
+.user-lastname {
     left: 70%;
 }
 
@@ -91,7 +92,7 @@
 
 
 
-.admin-gestion-link {
+.user-gestion-link {
     display: block;
     margin: auto;
     width: 50px;
@@ -133,12 +134,16 @@
 #menu-list {
     background-color: var(--saumonPastel);
     z-index: 10;
-    width: 350px;
+    max-width: 350px;
+    min-width:180px;
+    width:60vw;
     border-radius: 20px;
     box-shadow: 1px 1px 3px gray;
     position: fixed;
     left: -370px;
+    font-size:clamp(18px,1em,2vw);
     transition: left .8s cubic-bezier(1, 0, 0, 1);
+    line-height: 32px;
 
     a {
         text-decoration: none;
@@ -146,6 +151,7 @@
         margin-left: 16px;
     }
 }
+
 
 .menu-checkbox:checked ~ #menu-list {
     left: 2em;
@@ -374,4 +380,10 @@ $anim_time: 1s;
         opacity: 0;
     }
 
+}
+
+@media screen and (min-width: 1024px){
+    .mobile-header-container {
+        display:none;
+    }
 }

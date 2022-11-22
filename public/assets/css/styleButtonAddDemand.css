@@ -16,12 +16,14 @@
     text-decoration-thickness: auto;
     width: 100%;
     max-width: 260px;
-    position: relative;
+    max-height: 60px;
     cursor: pointer;
     transform: rotate(-2deg);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-right:auto;
+    margin-left:auto;
 }
 
 .buttonAddDemand:focus {
@@ -37,7 +39,8 @@
     width: calc(100% - 1px);
     height: calc(100% - 1px);
 }
-.buttonAddDemand:hover{
+
+.buttonAddDemand:hover {
     color: black;
 }
 
@@ -46,7 +49,8 @@
     bottom: 2px;
     left: 2px;
 }
-.titleAddDemand{
+
+.titleAddDemand {
     font-family: var(--fontTitle);
     font-size: 30px;
     padding: 20px 0;
@@ -54,12 +58,17 @@
 
 .addDemand {
     background-color: var(--saumonPastel);
+    background-image: url("../images/asfalt-rose.png");
     display: grid;
     justify-content: center;
-    margin: 0 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    width: 95vw;
+    margin: auto;
+    border:3px solid var(--saumon);
 }
 
-.sectionAddDemand{
-    height: 160px;
+.sectionAddDemand {
+    height: 140px;
 }
+
+

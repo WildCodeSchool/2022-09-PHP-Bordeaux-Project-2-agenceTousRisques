@@ -1,8 +1,9 @@
 .planning-container {
-  background-image: url("../images/planning-background-blue.png");
-  width: 95%;
+  background-image: url("../images/board-background-blue.png");
+  width: 95vw;
   padding: 16px;
   margin: auto;
+  margin-bottom: 8px;
   border-radius: 20px;
 }
 
@@ -21,10 +22,11 @@
   position: relative;
   display: block;
   padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day0::before {
   content: "";
@@ -63,7 +65,7 @@
   opacity: 0;
 }
 
-#plus-button0:checked ~ h2 .label-day0::before {
+#plus-button0:checked ~ .label-day0::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -89,10 +91,11 @@
   position: relative;
   display: block;
   padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day1::before {
   content: "";
@@ -131,7 +134,7 @@
   opacity: 0;
 }
 
-#plus-button1:checked ~ h2 .label-day1::before {
+#plus-button1:checked ~ .label-day1::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -157,10 +160,11 @@
   position: relative;
   display: block;
   padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day2::before {
   content: "";
@@ -199,7 +203,7 @@
   opacity: 0;
 }
 
-#plus-button2:checked ~ h2 .label-day2::before {
+#plus-button2:checked ~ .label-day2::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -225,10 +229,11 @@
   position: relative;
   display: block;
   padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day3::before {
   content: "";
@@ -267,7 +272,7 @@
   opacity: 0;
 }
 
-#plus-button3:checked ~ h2 .label-day3::before {
+#plus-button3:checked ~ .label-day3::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -293,10 +298,11 @@
   position: relative;
   display: block;
   padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day4::before {
   content: "";
@@ -335,7 +341,7 @@
   opacity: 0;
 }
 
-#plus-button4:checked ~ h2 .label-day4::before {
+#plus-button4:checked ~ .label-day4::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -361,10 +367,11 @@
   position: relative;
   display: block;
   padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day5::before {
   content: "";
@@ -403,7 +410,7 @@
   opacity: 0;
 }
 
-#plus-button5:checked ~ h2 .label-day5::before {
+#plus-button5:checked ~ .label-day5::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -429,10 +436,11 @@
   position: relative;
   display: block;
   padding-left: 30px;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   cursor: pointer;
   font-family: var(--fontTitle);
+  font-size: clamp(20px, 2em, 2.5vw);
 }
 .label-day6::before {
   content: "";
@@ -471,7 +479,7 @@
   opacity: 0;
 }
 
-#plus-button6:checked ~ h2 .label-day6::before {
+#plus-button6:checked ~ .label-day6::before {
   border-left: 8px solid transparent;
   border-top: 8px solid black;
   border-right: 8px solid transparent;
@@ -488,12 +496,11 @@
 
 .demand-text {
   max-height: 0;
-  line-height: 28px;
+  line-height: 24px;
   overflow: hidden;
   font-family: var(--fontText);
   padding: 0px;
   padding-left: 30px;
-  border-radius: 20px;
   box-shadow: 1px 1px gray;
   transition: max-height 0.7s ease-in-out, padding-top 0.7s ease-in-out, padding-bottom 0.7s ease-in-out;
   width: 60%;
@@ -507,6 +514,9 @@
 }
 .demand-text.helped.helper {
   background-color: var(--rosePastel);
+}
+.demand-text:last-child {
+  border-radius: 0 0 20px 20px;
 }
 
 /*# sourceMappingURL=userPlanning.css.map */

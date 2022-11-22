@@ -4,8 +4,13 @@
 {% endblock %}
 
 {% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/userHeader.css">
+    <link rel="stylesheet" href="/assets/css/userHeaderDesktop.css">
     <link rel="stylesheet" href="assets/css/userProfile.css">
-    <link rel="stylesheet" href="assets/css/buttonAcceptCall.css">
+{% endblock %}
+{% block header %}
+    {% include 'userHeader.html.twig' %}
+    {% include 'userHeaderDesktop.html.twig' %}
 {% endblock %}
 {% block content %}
     <div class="profile-body">
@@ -15,14 +20,20 @@
                 <div class="personal-infos">Mes infos personnelles</div>
                 <p class="profile-infos">
                     Nom : <span class="profile-important-info">{{ user.lastname }}</span><br>
-                    Prenom : <span class="profile-important-info">{{ user.firstname }}</span><br>
-                    Telephone : <span class="profile-important-info">{{ user.telephone }}</span><br>
+                    Prénom : <span class="profile-important-info">{{ user.firstname }}</span><br>
+                    Telephone : <span class="profile-important-info">0{{ user.telephone }}</span><br>
                     Adresse : <span class="profile-important-info">{{ user.address }}</span>
                     <div class="profile-line"></div>
-                <div class="personal-infos">Mes identifiants de connexion</div>
-                    E-mail : <span class="profile-important-info">{{ user.email }}</span><br>
-                    Mot de passe : <span class="profile-important-info">**************
-                </span>
+                    <div class="personal-infos">Mes identifiants de connexion</div>
+                    E-mail : <span class="profile-important-info">{{ user.email }}</span>
+                    <div class="profile-line"></div>
+                    <div class="personal-infos">Mes Joeys</div>
+                    {% for kid in kids %}
+                        Prénom : <span class="profile-important-info">{{ kid.firstname }}</span><br>
+                        date de naissance : <span class="profile-important-info">{{ kid.birthday|date('d/m/Y') }}</span><br>
+                        Allergies/Choses à savoir : <span class="profile-important-info">{{ kid.specs }}</span><br>
+                        <div class="profile-line-kid"></div>
+                    {% endfor %}
                 </p>
             </div>
             <div class="modify-profile-button-container">
